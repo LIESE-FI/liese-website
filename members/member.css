@@ -1,6 +1,6 @@
 body {
-    background-color: black;
-    color: white;
+    background-color: var(--black-liese);
+    color: var(--white-liese);
 }
 .mt-7 {
     margin-top: 7rem;

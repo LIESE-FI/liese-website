@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 :root {
-    --primary-color: #393d64;
-    --azul-liese: #022968;
-    --verde-lima: #D1F2C3;
-    --artic-blue: #AAEFFF;
+    --azul-liese: #0042aa;
+    --red-liese: #A3310C;
+    --white-liese: #FFFFFF;
+    --black-liese: #000000;
+    --complementary-black: #14141e;
+    --complementary-gray: #7D7C7a;
+    --complementary-gray-light: #d9d9d9;
+    --complementary-green: #40653E;
+    --complementary-green-light: #8d8c02;
+    --complementary-yellow: #eeb124;
 }
 
 h1 {
@@ -88,52 +94,55 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: var(--black-liese);
 }
 .btn-primary:hover {
-    background-color: var(--primary-color);
+    background-color: var(--complementary-gray);
+    color: var(--white-liese);
     top: -5px;
 }
 .btn-primary:focus {
-    background-color: var(--primary-color);
+    background-color: var(--complementary-gray);
+}
+
+.btn-black {
+    background-color: var(--complementary-black);
+    color: var(--white-liese);
+}
+.btn-black:hover {
+    background-color: var(--complementary-gray);
+    color: var(--white-liese);
+    top: -5px;
 }
 
 .btn-cta {
-    background-color: var(--verde-lima);
+    background-color: var(--complementary-green);
+    color: var(--white-liese);
 }
 .btn-cta:hover {
-    background-color: var(--azul-liese);
+    background-color: var(--complementary-green-light);
+    color: var(--white-liese);
     top: -5px;
 }
 
 .btn-transparent {
     background-color: transparent;
     border: none;
-    color: black;
+    color: var(--black-liese);
 }
 .btn-transparent:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Efecto hover opcional */
+    background-color: var(--complementary-green-light);/* Efecto hover opcional */
 }
-.btn-articblue {
-    background-color: var(--artic-blue);
+.btn-green {
+    background-color: var(--complementary-green);
     border: none;
-    color: black;
+    color: var(--white-liese);
     display: block;
     margin: 0px auto;
 }
-.btn-articblue:hover {
-    background-color: var(--azul-liese);
-    color: white;
-    top: -5px;
-}
-
-.btn-black {
-    background-color: black;
-    color: white;
-}
-.btn-black:hover {
-    background-color: black;
-    color: white;
+.btn-green:hover {
+    background-color: var(--complementary-green-light);
+    color: var(--white-liese);
     top: -5px;
 }
 
@@ -145,7 +154,7 @@ body {
 .navbar {
     padding: 17px 0;
     transition: all 0.5s ease;
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid var(--white-liese);
 }
 
 .icon {
@@ -172,8 +181,8 @@ body {
 
 .grey-bold-lines-table {
     width: 100%;
-    background-color: #b8b8b8;
-    color: #000;    
+    background-color: var(--complementary-gray-light);
+    color: var(--black-liese);    
     border-width: 10px;
 }
 .page{
@@ -187,9 +196,9 @@ body {
     object-fit: cover;
 }
 .card {
-    color: #f8f9fa;
+    color: var(--white-liese);
     border: none;
-    background-color: #000;
+    background-color: var(--black-liese);
 }
 .bold {
     font-weight: 700;
@@ -202,7 +211,7 @@ section.hero p {
 
 /* Partners */
 
- section.trusted {
+section.trusted {
     padding: 5rem 0;
 } 
 
@@ -215,13 +224,13 @@ section.hero p {
 #welcome {
     background-image: url(images/galaxia.png);
     background-size: cover;
-    color: #ffffff;
+    color: var(--white-liese);
     padding: 7.5rem 15%;
 }
 
 #about-us {
-    color: #000;
-    background-color: #ffffff;
+    color: var(--black-liese);
+    background-color: var(--white-liese);
     background-size: cover;
     padding: 7.5rem 10%;
 }
@@ -231,14 +240,14 @@ section.hero p {
 }
 
 #areas-de-investigacion {
-    color: #ffffff;
+    color: var(--white-liese);
     background-color: var(--azul-liese);
     background-size: cover;
     padding: 7.5rem 10%;
 }
 #areas-de-investigacion div.area{
-    color: black;
-    background-color: #ffffff;
+    color: var(--black-liese);
+    background-color: var(--white-liese);
     text-align: center;
     border-radius: 1rem;
     padding: 1rem;
@@ -248,20 +257,20 @@ section.hero p {
 }
 
 #footer {
-    background-color: white;
-    color: black;
+    background-color: var(--white-liese);
+    color: var(--black-liese);
     padding: 11.25rem 1rem 5.625rem 1rem;
 }
 #footer.btn-transparent {
     font-size: 3.5rem;
 }
 #footer a {
-    color: black;
+    color: var(--black-liese);
 }
 
 #proyectos {
-    color: #ffffff;
-    background-color: #000;
+    color: var(--white-liese);
+    background-color: var(--black-liese);
     background-size: cover;
     padding: 7.5rem 10%;
 }
