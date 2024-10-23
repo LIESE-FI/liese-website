@@ -194,6 +194,10 @@ body {
 .bold {
     font-weight: 700;
 }
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
 
 section.hero p {
     font-size: 18px;
