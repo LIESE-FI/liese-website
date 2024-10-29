@@ -122,11 +122,11 @@ body {
 }
 
 .btn-cta {
-    background-color: var(--complementary-green);
+    background-color: var(--azul-liese);
     color: var(--white-liese);
 }
 .btn-cta:hover {
-    background-color: var(--complementary-green-light);
+    background-color: var(--complementary-green);
     color: var(--white-liese);
     top: -5px;
 }
