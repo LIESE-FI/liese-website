@@ -87,7 +87,6 @@ body {
     border-radius: 8px;
     font-size: 18px;
     font-weight: 500;
-    position: relative;
     top: 0;
     cursor: pointer;
     transition: top ease 0.5s;
@@ -221,40 +220,6 @@ section.trusted {
     }
 }
 
-#welcome {
-    background-image: url(images/galaxia.png);
-    background-size: cover;
-    color: var(--white-liese);
-    padding: 7.5rem 15%;
-}
-
-#about-us {
-    color: var(--black-liese);
-    background-color: var(--white-liese);
-    background-size: cover;
-    padding: 7.5rem 10%;
-}
-
-#about-us p {
-    text-align: justify;
-}
-
-#areas-de-investigacion {
-    color: var(--white-liese);
-    background-color: var(--azul-liese);
-    background-size: cover;
-    padding: 7.5rem 10%;
-}
-#areas-de-investigacion div.area{
-    color: var(--black-liese);
-    background-color: var(--white-liese);
-    text-align: center;
-    border-radius: 1rem;
-    padding: 1rem;
-}
-#areas-de-investigacion p{
-    text-align: justify;
-}
 
 #footer {
     background-color: var(--white-liese);
@@ -268,9 +233,3 @@ section.trusted {
     color: var(--black-liese);
 }
 
-#proyectos {
-    color: var(--white-liese);
-    background-color: var(--black-liese);
-    background-size: cover;
-    padding: 7.5rem 10%;
-}

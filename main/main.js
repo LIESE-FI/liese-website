@@ -9,4 +9,11 @@ $(document).ready(function(){
         // Mostrar el div con id igual al href del botón
         $(target).fadeIn(500);
     });
+    $(function(){
+        $(".navbar-placeholder").load("../main/navbar.html");
+    });
+    
+    $(function(){
+        $(".footer-placeholder").load("../main/footer.html");
+    });
 });
