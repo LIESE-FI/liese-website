@@ -76,6 +76,13 @@ h6 {
     line-height: 150%;
 }
 
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+
+
+}
+
 body {
     font-family: "Lora", serif;
     font-optical-sizing: auto;

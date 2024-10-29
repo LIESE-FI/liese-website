@@ -17,3 +17,17 @@ $(document).ready(function(){
         $(".footer-placeholder").load("../main/footer.html");
     });
 });
+
+document.querySelectorAll('a[href^="index.html"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Aplicar la clase fade-out a la sección main-page
+        $('.main-page').fadeOut(500);
+
+        // Esperar a que termine la animación antes de navegar
+        setTimeout(() => {
+            window.location.href = this.getAttribute('href');
+        }, 500); // Tiempo de la animación
+    });
+});
