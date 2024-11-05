@@ -1,5 +1,5 @@
 #welcome {
-    background-image: url(./images/galaxia.png);
+    background-image: url(../images/galaxia.png);
     background-size: cover;
     color: var(--white-liese);
     padding: 7.5rem 15%;
