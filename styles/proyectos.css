@@ -3,4 +3,5 @@
     background-color: var(--black-liese);
     background-size: cover;
     padding: 7.5rem 10%;
+    text-align: justify;
 }
