@@ -239,4 +239,13 @@ section.trusted {
 #footer a {
     color: var(--black-liese);
 }
+#about-us {
+    color: var(--black-liese);
+    background-color: var(--white-liese);
+    background-size: cover;
+    padding: 7.5rem 10%;
+}
 
+#about-us p {
+    text-align: justify;
+}
