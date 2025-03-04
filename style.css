@@ -215,6 +215,74 @@ section.hero p {
         width: 84%;
     }
 }
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    #areas-de-investigacion .display-4 {
+        font-size: 2.5rem;
+    }
+
+    #areas-de-investigacion .lead {
+        font-size: 1.5rem;
+    }
+
+    #areas-de-investigacion .card-title {
+        font-size: 0.5rem;
+    }
+}
+#areas-de-investigacion .card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    /* Centrar texto */
+    text-align: center;
+}
+
+#areas-de-investigacion .card {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fondo semi-transparente */
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#areas-de-investigacion .card:hover {
+    transform: translateY(-5px);
+    /* Efecto de elevación al hacer hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#areas-de-investigacion .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+#areas-de-investigacion .btn-primary {
+    background-color: #D1F2C3;
+    /* Verde lima */
+    color: #022968;
+    /* Texto azul */
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#areas-de-investigacion .btn-primary:hover {
+    background-color: #AAEFFF;
+    /* Azul claro */
+    color: #022968;
+}
 
 #welcome {
     background-image: url(images/galaxia.png);
