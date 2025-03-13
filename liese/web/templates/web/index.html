@@ -1,0 +1,261 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}LIESE - Nosotros{% endblock %}
+
+{% block content %}
+<!-- Main welcome page -->
+    <div id="main-page" class="page active">
+        <!-- Welcome section-->
+        <div id="welcome" class="text-center">
+            <!-- <p class="large-bold">Descubre el Laboratorio de Instrumentación Electrónica de Sistemas Espaciales (LIESE)</p> -->
+            <h1>Descubre el Laboratorio de Instrumentación Electrónica de Sistemas Espaciales (LIESE)</h1>
+            <br>
+            <p class="large medium">En LIESE, te guiamos en tu viaje hacia el diseño y desarrollo de sistemas espaciales, desde la misión hasta la operación en órbita. ¡Únete a nosotros y sé parte de la innovación espacial en México!</p>
+        </div>
+
+        <!-- About section -->
+        <section id="about-us" class="trusted">
+            <div class="container">
+                <div class="row">
+                    <b>¿Quiénes somos?</b>
+                    <div class="col-lg-6 align-items-center">
+                        <h2>Laboratorio de Instrumentación Electrónica de Sistemas Espaciales (LIESE)</h2>
+                        <p class="regular medium"> 
+                            El LIESE, dirigido por el Dr. Saúl de la Rosa Nieves y adscrito al Departamento de Ingeniería Electrónica de la División de Ingeniería Eléctrica, se dedica al desarrollo de sistemas espaciales, con un enfoque especial en nano y microsatélites.
+                        </p>
+                        <p class="regular medium">
+                            Impulsará la formación de especialistas en desarrollo de sistemas, creando soluciones tecnológicas innovadoras que abarcan desde sistemas satelitales hasta la instrumentación de sistemas embebidos, IoT e IA. A través de la investigación, el diseño, la construcción y la implementación de sistemas electrónicos competitivos, buscamos formar talento de excelencia, fomentar la colaboración interdisciplinaria y contribuir al desarrollo científico y tecnológico de México, con un enfoque en la sostenibilidad y el bienestar social.
+
+                        </p>
+                        <button type="button" href="#nosotros" class="btn mx-auto btn-primary d-block border-0 shadow-none mb-3">Conócenos</a>
+                    </div>    
+                    <div class="col-lg-6 d-flex align-items-center">
+                        <img src="{% static 'web/images/LogoUnamSat2.png' %}" alt="UNAMSAT-B" class="rounded img-fluid">
+                    </div> 
+                </div>
+            </div> 
+        </section>
+
+        <!-- Areas de investigación -->
+        <section id="areas-de-investigacion" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Texto y descripción -->
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="display-4 mb-4">Áreas de investigación</h2>
+                        <p class="lead mb-4">
+                            En el LIESE, nos enfocamos en diversas áreas de investigación que abarcan desde el diseño de satélites hasta sistemas de comunicaciones espaciales. Nuestro objetivo es impulsar la innovación y el desarrollo tecnológico en el campo de la ingeniería espacial.
+                        </p>
+                        <a href="#proyectos" class="btn btn-primary btn-lg shadow">Nuestros Proyectos</a>
+                    </div>
+                
+                    <!-- Tarjetas de áreas -->
+                    <div class="col-lg-6">
+                        <div class="row row-cols-1 row-cols-md-2 g-4">
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Diseño de micro y nanosatélites</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Control de instrumentación a bordo</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Comando y manejo de información</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Estructuras mecánicas y opto mecánicas</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Sistemas tolerantes a fallas</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Telemetría de abordo</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Telecomunicación con SDR en FPGA</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Sistemas de potencia para vehículos espaciales</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Desarrollo de sistemas IoT</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Redes neuronales en FPGAs</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners -->
+        <section class="trusted text-center">
+            <div class="container">
+                <div class="row">
+                    <h5>Socios que confían en nosotros</h5>
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <img src="{% static 'web/images/partners/intel-logo.svg' %}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{% static 'web/images/partners/espacial-mexicana-logo.png' %}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{% static 'web/images/partners/logo-UDELAR.svg' %}" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col align-items-center">
+                        <button type="button" href="#partners" class="btn btn-articblue">Patrocínanos</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <secton id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="regular medium">
+                            ¿Te gusta lo que hacemos?
+                        </p>
+                        <a href="#donar" class="btn btn-transparent">
+                            <h1>PATROCÍNANOS</h1>
+                        </a>
+                        <a href="#eventos" class="btn btn-transparent">
+                            <h1>EVENTOS</h1>
+                        </a>
+                        <a href="#actividades" class="btn btn-transparent">
+                            <h1>ACTIVIDADES</h1>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Contacto</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <img src="{% static 'web/images/icons/location-icon.svg' %}" class="icon">
+                                <a href="https://maps.app.goo.gl/ig5mDr1SDVtc7wiE7" class="medium normal">
+                                    Anexo de Ingeniería, Edificio P Piso 2
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <img src="{% static 'web/images/icons/mail-icon.svg' %}" class="icon">
+                                <a href="mailto:mail@liese.com" class="medium normal">
+                                    mail@liese.com
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <img src="{% static 'web/images/icons/linkedin-icon.svg' %}" class="icon">
+                                <a href="https://www.linkedin.com/company/liese-unam/" class="medium normal">
+                                    LIESE UNAM
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <img src="{% static 'web/images/icons/facebook-icon.svg' %}" class="icon">
+                                <a href="https://www.facebook.com/LIESE.UNAM/" class="medium normal">
+                                    LIESE UNAM
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <img src="{% static 'web/images/icons/instagram-icon.svg' %}" class="icon">
+                                <a href="https://www.instagram.com/liese_unam/" class="medium normal">
+                                    LIESE UNAM
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <img src="{% static 'web/images/icons/x-icon.svg' %}" class="icon">
+                                <a href="https://x.com/UNAMLiese" class="medium normal">
+                                    LIESE UNAM
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!--- Proyectos -->
+    <div id="proyectos" class="page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Proyectos</h1>
+                    <p class="large bold">Explora nuestro trabajo</p> 
+                    <p class="regular normal">Descubre los proyectos innovadores en los que el Laboratorio de Instrumentación Electrónica de Sistemas Espaciales (LIESE) está trabajando actualmente. Desde el diseño de satélites hasta el desarrollo de sistemas de comunicación espacial, nuestros proyectos están a la vanguardia de la investigación en ingeniería espacial.</p>
+                </div>    
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <img src="{% static 'web/images/LogoUnamSat2.png' %}" class="card-img-top" alt="UNAMSAT-B">
+                        <div class="card-body">
+                            <p class="bold">Proyecto con trabajo de tesis</p>
+                            <h5 class="card-title">Proyecto AV</h5>
+                            <p class="card-text">Diseño de un sistema de monitoreo diágnostico y geolocalización de flotas vehiculares bajo el concepto de internet de las cosas</p>
+                            <p class="bold">Lider de proyecto: Ing. Rebeca Muñoz Melamed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <img src="{% static 'web/images/LogoUnamSat2.png' %}" class="card-img-top" alt="UNAMSAT-B">
+                        <div class="card-body">
+                            <p class="bold">Proyecto con trabajo de tesis</p>
+                            <h5 class="card-title">Proyecto AV</h5>
+                            <p class="card-text">Diseño de un sistema de monitoreo diágnostico y geolocalización de flotas vehiculares bajo el concepto de internet de las cosas</p>
+                            <p class="bold">Lider de proyecto: Ing. Rebeca Muñoz Melamed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+    <script src="main.js"></script>
+</body>
+</html>

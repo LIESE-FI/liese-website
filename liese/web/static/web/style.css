@@ -337,7 +337,3 @@ section.hero p {
     background-size: cover;
     padding: 7.5rem 10%;
 }
-.hover-green:hover {
-    background-color: #D1F2C3;
-    color: #01e083;
-}
