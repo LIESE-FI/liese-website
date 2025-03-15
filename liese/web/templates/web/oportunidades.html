@@ -1,0 +1,172 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}LIESE - Oportunidades{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-5 px-5 bg-black text-white">
+    <div class="text-start mb-5">
+        <h6 class="text-uppercase">Oportunidades</h6>
+        <h1 class="fw-bold mb-3">Se parte de LIESE</h1>
+        <p>Únete a nuestro equipo y sé parte de la innovación espacial. En el LIESE, ofrecemos diversas oportunidades para que te desarrolles profesionalmente y contribuyas a proyectos de vanguardia. ¡Descubre cómo puedes formar parte de nuestro equipo y llevar tu carrera al siguiente nivel!</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Oportunidad: Investigación -->
+        <div class="col">
+            <div class="opportunity-btn p-4 border border-white rounded text-center" 
+                 data-bs-toggle="modal" data-bs-target="#formInvestigacion">
+                <h5 class="fw-bold mb-2">Investigación</h5>
+                <p>Participa en proyectos de investigación pioneros en el diseño y desarrollo de sistemas espaciales.</p>
+            </div>
+        </div>
+
+        <!-- Oportunidad: Tesis -->
+        <div class="col">
+            <div class="opportunity-btn p-4 border border-white rounded text-center" 
+                 data-bs-toggle="modal" data-bs-target="#formTesis">
+                <h5 class="fw-bold mb-2">Tesis</h5>
+                <p>Desarrolla tu tesis en un entorno de vanguardia, trabajando en problemas reales y soluciones innovadoras.</p>
+            </div>
+        </div>
+
+        <!-- Oportunidad: Programas de maestría -->
+        <div class="col">
+            <div class="opportunity-btn p-4 border border-white rounded text-center" 
+                 data-bs-toggle="modal" data-bs-target="#formMaestria">
+                <h5 class="fw-bold mb-2">Programas de maestría</h5>
+                <p>Únete a nuestros programas de maestría y especialízate en áreas clave de la ingeniería espacial.</p>
+            </div>
+        </div>
+
+        <!-- Oportunidad: Servicio social -->
+        <div class="col">
+            <div class="opportunity-btn p-4 border border-white rounded text-center" 
+                 data-bs-toggle="modal" data-bs-target="#formServicio">
+                <h5 class="fw-bold mb-2">Servicio social</h5>
+                <p>Contribuye a proyectos significativos mientras adquieres experiencia práctica y conocimientos en el campo espacial.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="formInvestigacion" tabindex="-1" aria-labelledby="formInvestigacionLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-black text-white border border-white rounded-3">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formInvestigacionLabel">Investigación</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="{% url 'opportunity_request' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="opportunity_type" value="investigacion">
+                    <div class="mb-3">
+                        <label for="nameInvestigacion" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control bg-dark text-white border-white" name="full_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailInvestigacion" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control bg-dark text-white border-white" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="messageInvestigacion" class="form-label">Mensaje</label>
+                        <textarea class="form-control bg-dark text-white border-white" name="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-light w-100">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><div class="modal fade" id="formTesis" tabindex="-1" aria-labelledby="formTesisLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-black text-white border border-white rounded-3">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formTesisLabel">Tesis</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="{% url 'opportunity_request' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="opportunity_type" value="tesis">
+                    <div class="mb-3">
+                        <label for="nameTesis" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control bg-dark text-white border-white" name="full_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailTesis" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control bg-dark text-white border-white" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="messageTesis" class="form-label">Mensaje</label>
+                        <textarea class="form-control bg-dark text-white border-white" name="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-light w-100">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="formMaestria" tabindex="-1" aria-labelledby="formMaestriaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-black text-white border border-white rounded-3">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formMaestriaLabel">Programas de maestría</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="{% url 'opportunity_request' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="opportunity_type" value="maestria">
+                    <div class="mb-3">
+                        <label for="nameMaestria" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control bg-dark text-white border-white" name="full_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailMaestria" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control bg-dark text-white border-white" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="messageMaestria" class="form-label">Mensaje</label>
+                        <textarea class="form-control bg-dark text-white border-white" name="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-light w-100">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="formServicio" tabindex="-1" aria-labelledby="formServicioLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-black text-white border border-white rounded-3">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formServicioLabel">Servicio social</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="{% url 'opportunity_request' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="opportunity_type" value="servicio">
+                    <div class="mb-3">
+                        <label for="nameServicio" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control bg-dark text-white border-white" name="full_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailServicio" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control bg-dark text-white border-white" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="messageServicio" class="form-label">Mensaje</label>
+                        <textarea class="form-control bg-dark text-white border-white" name="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-light w-100">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

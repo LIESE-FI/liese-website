@@ -1,16 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 :root {
-    --azul-liese: #0042aa;
-    --red-liese: #A3310C;
-    --white-liese: #FFFFFF;
-    --black-liese: #000000;
-    --complementary-black: #14141e;
-    --complementary-gray: #7D7C7a;
-    --complementary-gray-light: #d9d9d9;
-    --complementary-green: #40653E;
-    --complementary-green-light: #8d8c02;
-    --complementary-yellow: #eeb124;
+    --primary-color: #393d64;
+    --azul-liese: #022968;
+    --verde-lima: #D1F2C3;
+    --artic-blue: #AAEFFF;
 }
 
 h1 {
@@ -76,13 +70,6 @@ h6 {
     line-height: 150%;
 }
 
-.fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-
-
-}
-
 body {
     font-family: "Lora", serif;
     font-optical-sizing: auto;
@@ -94,61 +81,59 @@ body {
     border-radius: 8px;
     font-size: 18px;
     font-weight: 500;
+    position: relative;
     top: 0;
     cursor: pointer;
     transition: top ease 0.5s;
 }
 
 .btn-primary {
-    background-color: var(--black-liese);
+    background-color: var(--primary-color);
 }
 .btn-primary:hover {
-    background-color: var(--complementary-gray);
-    color: var(--white-liese);
+    background-color: var(--primary-color);
     top: -5px;
 }
 .btn-primary:focus {
-    background-color: var(--complementary-gray);
-}
-
-.btn-black {
-    background-color: var(--complementary-black);
-    color: var(--white-liese);
-}
-.btn-black:hover {
-    background-color: var(--complementary-gray);
-    color: var(--white-liese);
-    top: -5px;
+    background-color: var(--primary-color);
 }
 
 .btn-cta {
-    background-color: var(--azul-liese);
-    color: var(--white-liese);
+    background-color: var(--verde-lima);
 }
 .btn-cta:hover {
-    background-color: var(--complementary-green);
-    color: var(--white-liese);
+    background-color: var(--azul-liese);
     top: -5px;
 }
 
 .btn-transparent {
     background-color: transparent;
     border: none;
-    color: var(--black-liese);
+    color: black;
 }
 .btn-transparent:hover {
-    background-color: var(--complementary-green-light);/* Efecto hover opcional */
+    background-color: rgba(0, 0, 0, 0.1); /* Efecto hover opcional */
 }
-.btn-green {
-    background-color: var(--complementary-green);
+.btn-articblue {
+    background-color: var(--artic-blue);
     border: none;
-    color: var(--white-liese);
+    color: black;
     display: block;
     margin: 0px auto;
 }
-.btn-green:hover {
-    background-color: var(--complementary-green-light);
-    color: var(--white-liese);
+.btn-articblue:hover {
+    background-color: var(--azul-liese);
+    color: white;
+    top: -5px;
+}
+
+.btn-black {
+    background-color: black;
+    color: white;
+}
+.btn-black:hover {
+    background-color: black;
+    color: white;
     top: -5px;
 }
 
@@ -160,7 +145,7 @@ body {
 .navbar {
     padding: 17px 0;
     transition: all 0.5s ease;
-    border-bottom: 1px solid var(--white-liese);
+    border-bottom: 1px solid #efefef;
 }
 
 .icon {
@@ -187,8 +172,8 @@ body {
 
 .grey-bold-lines-table {
     width: 100%;
-    background-color: var(--complementary-gray-light);
-    color: var(--black-liese);    
+    background-color: #b8b8b8;
+    color: #000;    
     border-width: 10px;
 }
 .page{
@@ -202,9 +187,9 @@ body {
     object-fit: cover;
 }
 .card {
-    color: var(--white-liese);
+    color: #f8f9fa;
     border: none;
-    background-color: var(--black-liese);
+    background-color: #000;
 }
 .bold {
     font-weight: 700;
@@ -214,7 +199,6 @@ body {
     transition: opacity 0.5s ease-out;
 }
 
-
 section.hero p {
     font-size: 18px;
     line-height: 23px;
@@ -222,7 +206,7 @@ section.hero p {
 
 /* Partners */
 
-section.trusted {
+ section.trusted {
     padding: 5rem 0;
 } 
 
@@ -300,21 +284,16 @@ section.trusted {
     color: #022968;
 }
 
+#welcome {
+    background-image: url(images/galaxia.png);
+    background-size: cover;
+    color: #ffffff;
+    padding: 7.5rem 15%;
+}
 
-#footer {
-    background-color: var(--white-liese);
-    color: var(--black-liese);
-    padding: 11.25rem 1rem 5.625rem 1rem;
-}
-#footer.btn-transparent {
-    font-size: 3.5rem;
-}
-#footer a {
-    color: var(--black-liese);
-}
 #about-us {
-    color: var(--black-liese);
-    background-color: var(--white-liese);
+    color: #000;
+    background-color: #ffffff;
     background-size: cover;
     padding: 7.5rem 10%;
 }
@@ -358,7 +337,29 @@ section.trusted {
     background-size: cover;
     padding: 7.5rem 10%;
 }
-.hover-green:hover {
-    background-color: #D1F2C3;
-    color: #01e083;
+.opportunity-btn {
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.opportunity-btn:hover {
+    background-color: #F0F0F0;
+    color: #000;
+    transform: scale(1.05);
+}
+
+.modal-content {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
