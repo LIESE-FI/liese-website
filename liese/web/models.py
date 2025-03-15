@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from datetime import timedelta
+import secrets
 
 class Role(models.Model):
     name = models.CharField(max_length=50)
@@ -18,6 +20,8 @@ class Member(models.Model):
     country = models.CharField(max_length=50)
     date_joined = models.DateField()
     active = models.BooleanField()
+    # Nullable image field
+    image = models.ImageField(upload_to='members/', null=True, blank=True)
     # Roles are defined in the Role model
     roles = models.ManyToManyField('Role')
     # The admin field is used to determine if the user is an admin
@@ -51,3 +55,26 @@ class Article(models.Model):
     
     def __str__(self):
         return self.title
+    
+    
+class OpportunityRequest(models.Model):
+    OPPORTUNITY_TYPES = [
+        ('investigacion', 'Investigación'),
+        ('tesis', 'Tesis'),
+        ('maestria', 'Programas de Maestría'),
+        ('servicio_social', 'Servicio Social'),
+    ]
+
+    full_name = models.CharField(max_length=255)
+    email = models.EmailField()
+    message = models.TextField()
+    opportunity_type = models.CharField(max_length=50, choices=OPPORTUNITY_TYPES, null=True)
+    verified = models.BooleanField(default=False)
+    verification_token = models.CharField(max_length=100, blank=True, null=True)
+    verification_token_expires = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def generate_verification_token(self):
+        self.verification_token = secrets.token_urlsafe(32)
+        self.verification_token_expires = timezone.now() + timedelta(hours=24)
+        self.save()

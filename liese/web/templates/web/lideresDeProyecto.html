@@ -1,0 +1,31 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}LIESE - Nosotros{% endblock %}
+
+{% block content %}
+    <div class="container-fluid py-5 px-5 bg-black text-white"> <!-- Cambia .container a .container-fluid -->
+        <div class="text-center">
+            <h1 class="mb-4">Líderes de proyecto</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+            {% for leader in leaders %}
+            <div class="col d-flex justify-content-center">
+                <div class="card bg-dark text-white border-0" style="width: 100%; max-width: 300px;">
+                    <img src="{% static 'images/' %}{{ leader.image }}" class="card-img-top" alt="Integrante">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ leader.name }}</h5>
+                        <p class="card-text">{{ leader.role }}</p>
+                        <p>{{ leader.description }}</p>
+                        <div>
+                            <a href="{{ leader.linkedin }}" class="text-white mx-2"><i class="bi bi-linkedin"></i></a>
+                            <a href="{{ leader.email }}" class="text-white mx-2"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

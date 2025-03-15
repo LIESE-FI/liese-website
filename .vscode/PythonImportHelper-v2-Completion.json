@@ -41,6 +41,14 @@
         "documentation": {}
     },
     {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -58,6 +66,14 @@
     },
     {
         "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -98,6 +114,54 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -111,6 +175,14 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
         "documentation": {}
     },
     {
@@ -130,6 +202,31 @@
         "documentation": {}
     },
     {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "secrets",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "secrets",
+        "description": "secrets",
+        "detail": "secrets",
+        "documentation": {}
+    },
+    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
@@ -143,6 +240,54 @@
         "description": "django.shortcuts",
         "isExtraImport": true,
         "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "send_mail",
+        "importPath": "django.core.mail",
+        "description": "django.core.mail",
+        "isExtraImport": true,
+        "detail": "django.core.mail",
+        "documentation": {}
+    },
+    {
+        "label": "render_to_string",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -276,7 +421,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -285,7 +430,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -294,7 +439,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -303,7 +448,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -312,7 +457,70 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "detail": "liese.liese.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_BACKEND",
+        "kind": 5,
+        "importPath": "liese.liese.settings",
+        "description": "liese.liese.settings",
+        "peekOfCode": "EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "detail": "liese.liese.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_HOST",
+        "kind": 5,
+        "importPath": "liese.liese.settings",
+        "description": "liese.liese.settings",
+        "peekOfCode": "EMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "detail": "liese.liese.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_PORT",
+        "kind": 5,
+        "importPath": "liese.liese.settings",
+        "description": "liese.liese.settings",
+        "peekOfCode": "EMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "detail": "liese.liese.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_USE_TLS",
+        "kind": 5,
+        "importPath": "liese.liese.settings",
+        "description": "liese.liese.settings",
+        "peekOfCode": "EMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "detail": "liese.liese.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_HOST_USER",
+        "kind": 5,
+        "importPath": "liese.liese.settings",
+        "description": "liese.liese.settings",
+        "peekOfCode": "EMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "detail": "liese.liese.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_HOST_PASSWORD",
+        "kind": 5,
+        "importPath": "liese.liese.settings",
+        "description": "liese.liese.settings",
+        "peekOfCode": "EMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "detail": "liese.liese.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_FROM_EMAIL",
+        "kind": 5,
+        "importPath": "liese.liese.settings",
+        "description": "liese.liese.settings",
+        "peekOfCode": "DEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -344,12 +552,57 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "liese.web.migrations.0002_member_image",
+        "description": "liese.web.migrations.0002_member_image",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('web', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='member',\n            name='image',\n            field=models.ImageField(blank=True, null=True, upload_to='members/'),\n        ),",
+        "detail": "liese.web.migrations.0002_member_image",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "liese.web.migrations.0003_opportunityrequest",
+        "description": "liese.web.migrations.0003_opportunityrequest",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('web', '0002_member_image'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='OpportunityRequest',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('full_name', models.CharField(max_length=255)),",
+        "detail": "liese.web.migrations.0003_opportunityrequest",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "liese.web.migrations.0004_opportunityrequest_opportunity_type",
+        "description": "liese.web.migrations.0004_opportunityrequest_opportunity_type",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('web', '0003_opportunityrequest'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='opportunityrequest',\n            name='opportunity_type',\n            field=models.CharField(choices=[('investigacion', 'Investigación'), ('tesis', 'Tesis'), ('maestria', 'Programas de Maestría'), ('servicio_social', 'Servicio Social')], max_length=50, null=True),\n        ),",
+        "detail": "liese.web.migrations.0004_opportunityrequest_opportunity_type",
+        "documentation": {}
+    },
+    {
+        "label": "OpportunityRequestAdmin",
+        "kind": 6,
+        "importPath": "liese.web.admin",
+        "description": "liese.web.admin",
+        "peekOfCode": "class OpportunityRequestAdmin(admin.ModelAdmin):\n    list_display = ('full_name', 'email', 'opportunity_type', 'verified', 'created_at')\n    list_filter = ('opportunity_type', 'verified')\n    search_fields = ('full_name', 'email')",
+        "detail": "liese.web.admin",
+        "documentation": {}
+    },
+    {
         "label": "WebConfig",
         "kind": 6,
         "importPath": "liese.web.apps",
         "description": "liese.web.apps",
         "peekOfCode": "class WebConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'web'",
         "detail": "liese.web.apps",
+        "documentation": {}
+    },
+    {
+        "label": "OpportunityRequestForm",
+        "kind": 6,
+        "importPath": "liese.web.forms",
+        "description": "liese.web.forms",
+        "peekOfCode": "class OpportunityRequestForm(forms.ModelForm):\n    opportunity_type = forms.CharField(widget=forms.HiddenInput())  # Hidden field for opportunity type\n    class Meta:\n        model = OpportunityRequest\n        fields = ['full_name', 'email', 'message', 'opportunity_type']",
+        "detail": "liese.web.forms",
         "documentation": {}
     },
     {
@@ -366,7 +619,7 @@
         "kind": 6,
         "importPath": "liese.web.models",
         "description": "liese.web.models",
-        "peekOfCode": "class Member(models.Model):\n    first_name = models.CharField(max_length=50)\n    last_name = models.CharField(max_length=50)\n    email = models.EmailField()\n    phone = models.CharField(max_length=20)\n    country = models.CharField(max_length=50)\n    date_joined = models.DateField()\n    active = models.BooleanField()\n    # Roles are defined in the Role model\n    roles = models.ManyToManyField('Role')",
+        "peekOfCode": "class Member(models.Model):\n    first_name = models.CharField(max_length=50)\n    last_name = models.CharField(max_length=50)\n    email = models.EmailField()\n    phone = models.CharField(max_length=20)\n    country = models.CharField(max_length=50)\n    date_joined = models.DateField()\n    active = models.BooleanField()\n    # Nullable image field\n    image = models.ImageField(upload_to='members/', null=True, blank=True)",
         "detail": "liese.web.models",
         "documentation": {}
     },
@@ -384,7 +637,16 @@
         "kind": 6,
         "importPath": "liese.web.models",
         "description": "liese.web.models",
-        "peekOfCode": "class Article(models.Model):\n    title = models.CharField(max_length=100)\n    content = models.TextField()\n    published = models.BooleanField()\n    publication_date = models.DateField()\n    author = models.ForeignKey('Member', on_delete=models.CASCADE)\n    def __str__(self):\n        return self.title",
+        "peekOfCode": "class Article(models.Model):\n    title = models.CharField(max_length=100)\n    content = models.TextField()\n    published = models.BooleanField()\n    publication_date = models.DateField()\n    author = models.ForeignKey('Member', on_delete=models.CASCADE)\n    def __str__(self):\n        return self.title\nclass OpportunityRequest(models.Model):\n    OPPORTUNITY_TYPES = [",
+        "detail": "liese.web.models",
+        "documentation": {}
+    },
+    {
+        "label": "OpportunityRequest",
+        "kind": 6,
+        "importPath": "liese.web.models",
+        "description": "liese.web.models",
+        "peekOfCode": "class OpportunityRequest(models.Model):\n    OPPORTUNITY_TYPES = [\n        ('investigacion', 'Investigación'),\n        ('tesis', 'Tesis'),\n        ('maestria', 'Programas de Maestría'),\n        ('servicio_social', 'Servicio Social'),\n    ]\n    full_name = models.CharField(max_length=255)\n    email = models.EmailField()\n    message = models.TextField()",
         "detail": "liese.web.models",
         "documentation": {}
     },
@@ -393,7 +655,7 @@
         "kind": 5,
         "importPath": "liese.web.urls",
         "description": "liese.web.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', index, name='index'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', index, name='index'),\n    path('lideresDeProyecto.html', leaders_view, name='leaders_view'),\n    path('oportunidades.html', opportunities_view, name='opportunities_view'),\n    path('opportunity_request/', opportunity_request, name='opportunity_request'),\n    path('verify-email/<str:token>/', verify_email, name='verify_email'),\n]",
         "detail": "liese.web.urls",
         "documentation": {}
     },
@@ -402,7 +664,43 @@
         "kind": 2,
         "importPath": "liese.web.views",
         "description": "liese.web.views",
-        "peekOfCode": "def index(request):\n    integrantes = [\n        {\"nombre\": \"Rubi Janet Núñez Dorantes\", \"rol\": \"Tesista de maestría\", \"descripcion\": \"Contribuye al diseño de sistemas de comando y control.\"},\n        {\"nombre\": \"Nombre Apellido\", \"rol\": \"Investigador\", \"descripcion\": \"Desarrollo de instrumentación para sistemas embebidos.\"},\n    ]\n    return render(request, \"web/index.html\", {\"integrantes\": integrantes})",
+        "peekOfCode": "def index(request):\n    integrantes = [\n        {\"nombre\": \"Rubi Janet Núñez Dorantes\", \"rol\": \"Tesista de maestría\", \"descripcion\": \"Contribuye al diseño de sistemas de comando y control.\"},\n        {\"nombre\": \"Nombre Apellido\", \"rol\": \"Investigador\", \"descripcion\": \"Desarrollo de instrumentación para sistemas embebidos.\"},\n    ]\n    return render(request, \"web/index.html\", {\"integrantes\": integrantes})\ndef leaders_view(request):\n    leaders = [\n        {\n            'name': 'Rubi Janet Núñez Dorantes',",
+        "detail": "liese.web.views",
+        "documentation": {}
+    },
+    {
+        "label": "leaders_view",
+        "kind": 2,
+        "importPath": "liese.web.views",
+        "description": "liese.web.views",
+        "peekOfCode": "def leaders_view(request):\n    leaders = [\n        {\n            'name': 'Rubi Janet Núñez Dorantes',\n            'role': 'Tesista de maestría',\n            'description': 'Contribuye al diseño de sistemas de comando y control, optimizando la gestión de información y el rendimiento operativo de los satélites.',\n            'image': 'Integrantes.png',\n            'linkedin': '#',\n            'email': '#',\n        },",
+        "detail": "liese.web.views",
+        "documentation": {}
+    },
+    {
+        "label": "opportunities_view",
+        "kind": 2,
+        "importPath": "liese.web.views",
+        "description": "liese.web.views",
+        "peekOfCode": "def opportunities_view(request):\n    return render(request, 'web/oportunidades.html')\ndef opportunity_request(request):\n    if request.method == 'POST':\n        form = OpportunityRequestForm(request.POST)\n        if form.is_valid():\n            opportunity_request = form.save(commit=False)\n            opportunity_request.generate_verification_token()\n            opportunity_request.save()\n            try:",
+        "detail": "liese.web.views",
+        "documentation": {}
+    },
+    {
+        "label": "opportunity_request",
+        "kind": 2,
+        "importPath": "liese.web.views",
+        "description": "liese.web.views",
+        "peekOfCode": "def opportunity_request(request):\n    if request.method == 'POST':\n        form = OpportunityRequestForm(request.POST)\n        if form.is_valid():\n            opportunity_request = form.save(commit=False)\n            opportunity_request.generate_verification_token()\n            opportunity_request.save()\n            try:\n                # Send verification email\n                verification_url = request.build_absolute_uri(",
+        "detail": "liese.web.views",
+        "documentation": {}
+    },
+    {
+        "label": "verify_email",
+        "kind": 2,
+        "importPath": "liese.web.views",
+        "description": "liese.web.views",
+        "peekOfCode": "def verify_email(request, token):\n    opportunity_request = get_object_or_404(OpportunityRequest, verification_token=token)\n    # Check if the token has expired\n    if opportunity_request.verification_token_expires < timezone.now():\n        messages.error(request, \"The verification link has expired. Please submit your request again.\")\n        return redirect('home')\n    # Mark the request as verified\n    opportunity_request.verified = True\n    opportunity_request.verification_token = None\n    opportunity_request.verification_token_expires = None",
         "detail": "liese.web.views",
         "documentation": {}
     },

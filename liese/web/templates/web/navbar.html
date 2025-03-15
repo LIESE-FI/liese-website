@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="navbar navbar-expand-md sticky-top navbar-white bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
                 <img src="{% static 'web/images/LogoUnamSat2.png' %}" alt="Logo LIESE" style="width:70px; height: 50px" class="rounded-pill"> 
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -10,10 +10,10 @@
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <button class="nav-link" href="#main-page">Nosotros</button>
+                        <a class="nav-link" href="{% url 'index' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link" href="#proyectos">Proyectos</button>
+                        <a class="nav-link" href="{% url 'leaders_view' %}">Líderes de Proyecto</a>
                     </li>
                     <li class="nav-item">
                         <button class="nav-link" href="#eventos">Eventos</button>
@@ -25,7 +25,7 @@
                         <button class="nav-link" href="#actividades">Actividades</button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link" href="#contacto">Contacto</button>
+                        <a class="nav-link" href="{% url 'opportunities_view' %}">Oportunidades</button>
                     </li>
                 </ul>
                 <a href="#partners" class="btn btn-cta ms-auto d-block border-0 shadow-none hover-green">Patrocínanos</a>
