@@ -11,7 +11,21 @@
 </head>
 <body>
     {% include 'web/navbar.html' %}
-    {% block content %}{% endblock %}
+    <div class="fade-in">
+        {% block content %}{% endblock %}
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    function applyFadeIn(element) {
+        element.style.opacity = 0;
+        element.style.animation = 'fadeIn 0.5s ease-out forwards'; // Match the CSS animation
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        fadeInElements.forEach(applyFadeIn);
+    });
+</script>
+
 </body>
 </html>
