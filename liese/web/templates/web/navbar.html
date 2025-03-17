@@ -1,6 +1,6 @@
 {% load static %}
-<nav class="navbar navbar-expand-md sticky-top navbar-white bg-white">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-md sticky-top navbar-white bg-white align-items-center">
+    <div class="container-fluid d-flex align-items-center">
         <a class="navbar-brand" href="/">
             <img src="{% static 'web/images/LogoUnamSat2.png' %}" alt="Logo LIESE" style="width:70px; height: 50px" class="rounded-pill"> 
         </a>
@@ -8,27 +8,27 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
+            <ul class="navbar-nav me-auto d-flex align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link text-center w-100" href="{% url 'index' %}">Inicio</a>
+                    <a class="nav-link d-flex text-center align-items-center" href="{% url 'index' %}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center w-100" href="{% url 'leaders_view' %}">Líderes de Proyecto</a>
+                    <a class="nav-link d-flex text-center align-items-center" href="{% url 'leaders_view' %}">Líderes de Proyecto</a>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link text-center w-100" href="#eventos">Eventos</button>
+                    <button class="nav-link d-flex text-center align-items-center" href="#eventos">Eventos</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center w-100" href="{% url 'articles_view' %}">Artículos</a>
+                    <a class="nav-link d-flex text-center align-items-center" href="{% url 'articles_view' %}">Artículos</a>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link text-center w-100" href="#actividades">Actividades</button>
+                    <button class="nav-link d-flex text-center align-items-center" href="#actividades">Actividades</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center w-100" href="{% url 'opportunities_view' %}">Oportunidades</a>
+                    <a class="nav-link d-flex text-center align-items-center" href="{% url 'opportunities_view' %}">Oportunidades</a>
                 </li>
             </ul>
-            <a href="#partners" class="btn btn-cta ms-auto d-block border-0 shadow-none hover-green">Patrocínanos</a>
+            <a href="#partners" class="btn btn-cta ms-auto d-flex align-items-center border-0 shadow-none hover-green">Patrocínanos</a>
         </div>
     </div>
 </nav>
