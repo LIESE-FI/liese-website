@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from django.conf import settings
 from .forms import OpportunityRequestForm
-from .models import OpportunityRequest
+from .models import OpportunityRequest, Article
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib import messages
 from django.utils import timezone
@@ -74,11 +74,46 @@ def leaders_view(request):
     return render(request, 'web/lideresDeProyecto.html', {'leaders': leaders})
 
 
+def articles_view(request):
+    articles = Article.objects.filter(published=True).order_by('-publication_date')
+    return render(request, 'web/articulos.html', {'articles': articles})
+
+def article_detail(request, article_id):
+    article = get_object_or_404(Article, id=article_id)
+    return render(request, 'web/article_detail.html', {'article': article})
+
+
+
 
 def opportunities_view(request):
     return render(request, 'web/oportunidades.html')
 
 
+def verify_email(request, token):
+    opportunity_request = get_object_or_404(OpportunityRequest, verification_token=token)
+
+    # Check if the token has expired
+    if opportunity_request.verification_token_expires < timezone.now():
+        return redirect('error_email_verification')
+    
+    # Check if the request has already been verified
+    if opportunity_request.verified:
+        return redirect('error_email_verification')
+
+    # Mark the request as verified
+    opportunity_request.verified = True
+    opportunity_request.verification_token = None
+    opportunity_request.verification_token_expires = None
+    opportunity_request.save()
+
+    return redirect('success_email_verification')
+
+
+def success_email_verification(request):
+    return render(request, 'web/verification_success.html')
+
+def error_email_verification(request):
+    return render(request, 'web/verification_error.html')
 
 def opportunity_request(request):
     if request.method == 'POST':
@@ -122,19 +157,3 @@ def opportunity_request(request):
 
 
 
-def verify_email(request, token):
-    opportunity_request = get_object_or_404(OpportunityRequest, verification_token=token)
-
-    # Check if the token has expired
-    if opportunity_request.verification_token_expires < timezone.now():
-        messages.error(request, "The verification link has expired. Please submit your request again.")
-        return redirect('home')
-
-    # Mark the request as verified
-    opportunity_request.verified = True
-    opportunity_request.verification_token = None
-    opportunity_request.verification_token_expires = None
-    opportunity_request.save()
-
-    messages.success(request, "Your email has been verified. Your request has been submitted.")
-    return redirect('home')  # Redirect to a success page or home page

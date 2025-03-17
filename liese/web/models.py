@@ -62,7 +62,7 @@ class OpportunityRequest(models.Model):
         ('investigacion', 'Investigación'),
         ('tesis', 'Tesis'),
         ('maestria', 'Programas de Maestría'),
-        ('servicio_social', 'Servicio Social'),
+        ('servicio', 'Servicio Social'),
     ]
 
     full_name = models.CharField(max_length=255)
@@ -78,3 +78,14 @@ class OpportunityRequest(models.Model):
         self.verification_token = secrets.token_urlsafe(32)
         self.verification_token_expires = timezone.now() + timedelta(hours=24)
         self.save()
+
+
+class News(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    published = models.BooleanField()
+    publication_date = models.DateField()
+    author = models.ForeignKey('Member', on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.title

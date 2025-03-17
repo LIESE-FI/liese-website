@@ -37,6 +37,11 @@ h6 {
     font-weight: 700;
     line-height: 140%;
 }
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
 .bold {
     font-weight: 700;
 }

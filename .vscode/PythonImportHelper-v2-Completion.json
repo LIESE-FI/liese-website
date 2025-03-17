@@ -162,6 +162,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -448,7 +464,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = ''",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -457,7 +473,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = ''\nEMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -466,7 +482,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "peekOfCode": "EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = ''\nEMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -475,7 +491,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "EMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "peekOfCode": "EMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = ''\nEMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -484,7 +500,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "EMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "peekOfCode": "EMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = ''\nEMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -493,7 +509,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "EMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "peekOfCode": "EMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = ''\nEMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -502,7 +518,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "EMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "peekOfCode": "EMAIL_HOST_USER = ''\nEMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -511,7 +527,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "EMAIL_HOST_PASSWORD = 'vnnv nztv kxst ojrl'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "peekOfCode": "EMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -520,7 +536,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "DEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
+        "peekOfCode": "DEFAULT_FROM_EMAIL = ''  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -576,6 +592,15 @@
         "description": "liese.web.migrations.0004_opportunityrequest_opportunity_type",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('web', '0003_opportunityrequest'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='opportunityrequest',\n            name='opportunity_type',\n            field=models.CharField(choices=[('investigacion', 'Investigación'), ('tesis', 'Tesis'), ('maestria', 'Programas de Maestría'), ('servicio_social', 'Servicio Social')], max_length=50, null=True),\n        ),",
         "detail": "liese.web.migrations.0004_opportunityrequest_opportunity_type",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "liese.web.migrations.0005_news",
+        "description": "liese.web.migrations.0005_news",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('web', '0004_opportunityrequest_opportunity_type'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='News',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(max_length=100)),",
+        "detail": "liese.web.migrations.0005_news",
         "documentation": {}
     },
     {
@@ -646,7 +671,16 @@
         "kind": 6,
         "importPath": "liese.web.models",
         "description": "liese.web.models",
-        "peekOfCode": "class OpportunityRequest(models.Model):\n    OPPORTUNITY_TYPES = [\n        ('investigacion', 'Investigación'),\n        ('tesis', 'Tesis'),\n        ('maestria', 'Programas de Maestría'),\n        ('servicio_social', 'Servicio Social'),\n    ]\n    full_name = models.CharField(max_length=255)\n    email = models.EmailField()\n    message = models.TextField()",
+        "peekOfCode": "class OpportunityRequest(models.Model):\n    OPPORTUNITY_TYPES = [\n        ('investigacion', 'Investigación'),\n        ('tesis', 'Tesis'),\n        ('maestria', 'Programas de Maestría'),\n        ('servicio', 'Servicio Social'),\n    ]\n    full_name = models.CharField(max_length=255)\n    email = models.EmailField()\n    message = models.TextField()",
+        "detail": "liese.web.models",
+        "documentation": {}
+    },
+    {
+        "label": "News",
+        "kind": 6,
+        "importPath": "liese.web.models",
+        "description": "liese.web.models",
+        "peekOfCode": "class News(models.Model):\n    title = models.CharField(max_length=100)\n    content = models.TextField()\n    published = models.BooleanField()\n    publication_date = models.DateField()\n    author = models.ForeignKey('Member', on_delete=models.CASCADE)\n    def __str__(self):\n        return self.title",
         "detail": "liese.web.models",
         "documentation": {}
     },
@@ -655,7 +689,7 @@
         "kind": 5,
         "importPath": "liese.web.urls",
         "description": "liese.web.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', index, name='index'),\n    path('lideresDeProyecto.html', leaders_view, name='leaders_view'),\n    path('oportunidades.html', opportunities_view, name='opportunities_view'),\n    path('opportunity_request/', opportunity_request, name='opportunity_request'),\n    path('verify-email/<str:token>/', verify_email, name='verify_email'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', index, name='index'),\n    path('lideresDeProyecto.html', leaders_view, name='leaders_view'),\n    path('oportunidades.html', opportunities_view, name='opportunities_view'),\n    path('articles/', articles_view, name='articles_page'),\n    path('opportunity_request/', opportunity_request, name='opportunity_request'),\n    path('verify-email/<str:token>/', verify_email, name='verify_email'),\n    path('success_email_verification/', success_email_verification, name='success_email_verification'),\n    path('error_email_verification/', error_email_verification, name='error_email_verification'),\n    path('articles/', articles_view, name='articles_view'),",
         "detail": "liese.web.urls",
         "documentation": {}
     },
@@ -678,11 +712,56 @@
         "documentation": {}
     },
     {
+        "label": "articles_view",
+        "kind": 2,
+        "importPath": "liese.web.views",
+        "description": "liese.web.views",
+        "peekOfCode": "def articles_view(request):\n    articles = Article.objects.filter(published=True).order_by('-publication_date')\n    return render(request, 'web/articulos.html', {'articles': articles})\ndef article_detail(request, article_id):\n    article = get_object_or_404(Article, id=article_id)\n    return render(request, 'web/article_detail.html', {'article': article})\ndef opportunities_view(request):\n    return render(request, 'web/oportunidades.html')\ndef verify_email(request, token):\n    opportunity_request = get_object_or_404(OpportunityRequest, verification_token=token)",
+        "detail": "liese.web.views",
+        "documentation": {}
+    },
+    {
+        "label": "article_detail",
+        "kind": 2,
+        "importPath": "liese.web.views",
+        "description": "liese.web.views",
+        "peekOfCode": "def article_detail(request, article_id):\n    article = get_object_or_404(Article, id=article_id)\n    return render(request, 'web/article_detail.html', {'article': article})\ndef opportunities_view(request):\n    return render(request, 'web/oportunidades.html')\ndef verify_email(request, token):\n    opportunity_request = get_object_or_404(OpportunityRequest, verification_token=token)\n    # Check if the token has expired\n    if opportunity_request.verification_token_expires < timezone.now():\n        return redirect('error_email_verification')",
+        "detail": "liese.web.views",
+        "documentation": {}
+    },
+    {
         "label": "opportunities_view",
         "kind": 2,
         "importPath": "liese.web.views",
         "description": "liese.web.views",
-        "peekOfCode": "def opportunities_view(request):\n    return render(request, 'web/oportunidades.html')\ndef opportunity_request(request):\n    if request.method == 'POST':\n        form = OpportunityRequestForm(request.POST)\n        if form.is_valid():\n            opportunity_request = form.save(commit=False)\n            opportunity_request.generate_verification_token()\n            opportunity_request.save()\n            try:",
+        "peekOfCode": "def opportunities_view(request):\n    return render(request, 'web/oportunidades.html')\ndef verify_email(request, token):\n    opportunity_request = get_object_or_404(OpportunityRequest, verification_token=token)\n    # Check if the token has expired\n    if opportunity_request.verification_token_expires < timezone.now():\n        return redirect('error_email_verification')\n    # Check if the request has already been verified\n    if opportunity_request.verified:\n        return redirect('error_email_verification')",
+        "detail": "liese.web.views",
+        "documentation": {}
+    },
+    {
+        "label": "verify_email",
+        "kind": 2,
+        "importPath": "liese.web.views",
+        "description": "liese.web.views",
+        "peekOfCode": "def verify_email(request, token):\n    opportunity_request = get_object_or_404(OpportunityRequest, verification_token=token)\n    # Check if the token has expired\n    if opportunity_request.verification_token_expires < timezone.now():\n        return redirect('error_email_verification')\n    # Check if the request has already been verified\n    if opportunity_request.verified:\n        return redirect('error_email_verification')\n    # Mark the request as verified\n    opportunity_request.verified = True",
+        "detail": "liese.web.views",
+        "documentation": {}
+    },
+    {
+        "label": "success_email_verification",
+        "kind": 2,
+        "importPath": "liese.web.views",
+        "description": "liese.web.views",
+        "peekOfCode": "def success_email_verification(request):\n    return render(request, 'web/verification_success.html')\ndef error_email_verification(request):\n    return render(request, 'web/verification_error.html')\ndef opportunity_request(request):\n    if request.method == 'POST':\n        form = OpportunityRequestForm(request.POST)\n        if form.is_valid():\n            opportunity_request = form.save(commit=False)\n            opportunity_request.generate_verification_token()",
+        "detail": "liese.web.views",
+        "documentation": {}
+    },
+    {
+        "label": "error_email_verification",
+        "kind": 2,
+        "importPath": "liese.web.views",
+        "description": "liese.web.views",
+        "peekOfCode": "def error_email_verification(request):\n    return render(request, 'web/verification_error.html')\ndef opportunity_request(request):\n    if request.method == 'POST':\n        form = OpportunityRequestForm(request.POST)\n        if form.is_valid():\n            opportunity_request = form.save(commit=False)\n            opportunity_request.generate_verification_token()\n            opportunity_request.save()\n            try:",
         "detail": "liese.web.views",
         "documentation": {}
     },
@@ -692,15 +771,6 @@
         "importPath": "liese.web.views",
         "description": "liese.web.views",
         "peekOfCode": "def opportunity_request(request):\n    if request.method == 'POST':\n        form = OpportunityRequestForm(request.POST)\n        if form.is_valid():\n            opportunity_request = form.save(commit=False)\n            opportunity_request.generate_verification_token()\n            opportunity_request.save()\n            try:\n                # Send verification email\n                verification_url = request.build_absolute_uri(",
-        "detail": "liese.web.views",
-        "documentation": {}
-    },
-    {
-        "label": "verify_email",
-        "kind": 2,
-        "importPath": "liese.web.views",
-        "description": "liese.web.views",
-        "peekOfCode": "def verify_email(request, token):\n    opportunity_request = get_object_or_404(OpportunityRequest, verification_token=token)\n    # Check if the token has expired\n    if opportunity_request.verification_token_expires < timezone.now():\n        messages.error(request, \"The verification link has expired. Please submit your request again.\")\n        return redirect('home')\n    # Mark the request as verified\n    opportunity_request.verified = True\n    opportunity_request.verification_token = None\n    opportunity_request.verification_token_expires = None",
         "detail": "liese.web.views",
         "documentation": {}
     },

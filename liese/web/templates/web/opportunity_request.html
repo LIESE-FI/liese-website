@@ -1,7 +1,7 @@
 {% extends 'web/base.html' %}
 {% block content %}
 <div class="container-fluid py-5 px-5 bg-black text-white">
-    <h1>Enivar solicitud</h1>
+    <h1>Enviar solicitud</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

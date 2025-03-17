@@ -69,7 +69,11 @@ h6 {
     font-size: 0.75rem;
     line-height: 150%;
 }
-
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
 body {
     font-family: "Lora", serif;
     font-optical-sizing: auto;
