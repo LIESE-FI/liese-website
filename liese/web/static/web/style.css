@@ -192,6 +192,7 @@ body {
     object-fit: cover;
 }
 .card {
+    font-family: "Lora", serif;
     color: #f8f9fa;
     border: none;
     background-color: #000;
@@ -391,11 +392,11 @@ section.hero p {
 }
 #articles-page .card {
     background-color: #fff !important;
-    /* Force the card background to white */
     color: #000 !important;
-    /* Ensure text color is black */
     border: 1px solid #ccc;
-    /* Add subtle border for clarity */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 #articles-page .card:hover {
@@ -413,4 +414,26 @@ section.hero p {
 #articles-page .btn-primary:hover {
     background-color: var(--primary-color);
     /* Darker blue on hover */
+}
+#articles-page .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+#articles-page .card-body p.text-muted {
+    margin-top: auto;
+}
+.read-more-btn {
+    margin: none;
+}
+.white {
+    color: white;
+}
+.grey {
+    color: #b8b8b8;
+}
+.hover-over-top-animation:hover {
+    background-color: var(--primary-color);
+    top: -5px;
 }

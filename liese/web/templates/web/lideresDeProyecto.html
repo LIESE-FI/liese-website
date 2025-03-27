@@ -12,7 +12,7 @@
         <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
             {% for leader in leaders %}
             <div class="col d-flex justify-content-center">
-                <div class="card bg-dark text-white border-0" style="width: 100%; max-width: 300px;">
+                <div class="card bg-dark text-white border-0 hover-over-top-animation" style="width: 100%; max-width: 300px;">
                     <img src="{% static 'images/' %}{{ leader.image }}" class="card-img-top" alt="Integrante">
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ leader.name }}</h5>
