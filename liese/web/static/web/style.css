@@ -368,3 +368,49 @@ section.hero p {
         transform: scale(1);
     }
 }
+.modal {
+    animation: none !important;
+    opacity: 1 !important;
+    z-index: 1050 !important;
+}
+
+.modal-backdrop {
+    z-index: 1040 !important;
+}
+
+.modal-backdrop,
+.modal {
+    pointer-events: auto !important;
+}
+
+.modal-content {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+#articles-page .card {
+    background-color: #fff !important;
+    /* Force the card background to white */
+    color: #000 !important;
+    /* Ensure text color is black */
+    border: 1px solid #ccc;
+    /* Add subtle border for clarity */
+}
+
+#articles-page .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+#articles-page .btn-primary {
+    background-color: var(--azul-liese);
+    /* Your primary blue */
+    color: #fff;
+    border: none;
+}
+
+#articles-page .btn-primary:hover {
+    background-color: var(--primary-color);
+    /* Darker blue on hover */
+}

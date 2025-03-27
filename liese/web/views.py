@@ -76,7 +76,9 @@ def leaders_view(request):
 
 def articles_view(request):
     articles = Article.objects.filter(published=True).order_by('-publication_date')
+    print(articles)
     return render(request, 'web/articulos.html', {'articles': articles})
+
 
 def article_detail(request, article_id):
     article = get_object_or_404(Article, id=article_id)

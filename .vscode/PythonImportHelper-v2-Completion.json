@@ -178,6 +178,94 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -464,7 +552,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = ''",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -473,7 +561,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = ''\nEMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email Configuration\nEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'cxjk tyyd unfo lzzs'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -482,7 +570,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = ''\nEMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
+        "peekOfCode": "EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'\nEMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'cxjk tyyd unfo lzzs'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -491,7 +579,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "EMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = ''\nEMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
+        "peekOfCode": "EMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server\nEMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'cxjk tyyd unfo lzzs'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -500,7 +588,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "EMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = ''\nEMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
+        "peekOfCode": "EMAIL_PORT = 587  # Port for TLS\nEMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'cxjk tyyd unfo lzzs'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -509,7 +597,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "EMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = ''\nEMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
+        "peekOfCode": "EMAIL_USE_TLS = True  # Use TLS for secure connection\nEMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'cxjk tyyd unfo lzzs'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -518,7 +606,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "EMAIL_HOST_USER = ''\nEMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
+        "peekOfCode": "EMAIL_HOST_USER = 'eiteenene18@gmail.com'\nEMAIL_HOST_PASSWORD = 'cxjk tyyd unfo lzzs'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -527,7 +615,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "EMAIL_HOST_PASSWORD = ''  # Replace with your email password\nDEFAULT_FROM_EMAIL = ''  # Replace with your email address",
+        "peekOfCode": "EMAIL_HOST_PASSWORD = 'cxjk tyyd unfo lzzs'  # Replace with your email password\nDEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -536,7 +624,7 @@
         "kind": 5,
         "importPath": "liese.liese.settings",
         "description": "liese.liese.settings",
-        "peekOfCode": "DEFAULT_FROM_EMAIL = ''  # Replace with your email address",
+        "peekOfCode": "DEFAULT_FROM_EMAIL = 'eiteenene18@gmail.com'  # Replace with your email address",
         "detail": "liese.liese.settings",
         "documentation": {}
     },
@@ -604,11 +692,74 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "liese.web.migrations.0006_alter_member_created_by_and_more",
+        "description": "liese.web.migrations.0006_alter_member_created_by_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('web', '0005_news'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='member',\n            name='created_by',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='web.member'),\n        ),",
+        "detail": "liese.web.migrations.0006_alter_member_created_by_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "liese.web.migrations.0007_remove_member_created_by",
+        "description": "liese.web.migrations.0007_remove_member_created_by",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('web', '0006_alter_member_created_by_and_more'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='member',\n            name='created_by',\n        ),\n    ]",
+        "detail": "liese.web.migrations.0007_remove_member_created_by",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "liese.web.migrations.0008_member_created_by",
+        "description": "liese.web.migrations.0008_member_created_by",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('web', '0007_remove_member_created_by'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='member',\n            name='created_by',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='web.member'),\n        ),",
+        "detail": "liese.web.migrations.0008_member_created_by",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "liese.web.migrations.0009_alter_member_created_by",
+        "description": "liese.web.migrations.0009_alter_member_created_by",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('web', '0008_member_created_by'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='member',\n            name='created_by',\n            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='web.member'),\n        ),",
+        "detail": "liese.web.migrations.0009_alter_member_created_by",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "liese.web.migrations.0010_article_picture",
+        "description": "liese.web.migrations.0010_article_picture",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('web', '0009_alter_member_created_by'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='article',\n            name='picture',\n            field=models.ImageField(blank=True, null=True, upload_to='articles/'),\n        ),",
+        "detail": "liese.web.migrations.0010_article_picture",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "liese.web.migrations.0011_article_document",
+        "description": "liese.web.migrations.0011_article_document",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('web', '0010_article_picture'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='article',\n            name='document',\n            field=models.FileField(blank=True, null=True, upload_to='articles/'),\n        ),",
+        "detail": "liese.web.migrations.0011_article_document",
+        "documentation": {}
+    },
+    {
         "label": "OpportunityRequestAdmin",
         "kind": 6,
         "importPath": "liese.web.admin",
         "description": "liese.web.admin",
-        "peekOfCode": "class OpportunityRequestAdmin(admin.ModelAdmin):\n    list_display = ('full_name', 'email', 'opportunity_type', 'verified', 'created_at')\n    list_filter = ('opportunity_type', 'verified')\n    search_fields = ('full_name', 'email')",
+        "peekOfCode": "class OpportunityRequestAdmin(admin.ModelAdmin):\n    list_display = ('full_name', 'email', 'opportunity_type', 'verified', 'created_at')\n    list_filter = ('opportunity_type', 'verified')\n    search_fields = ('full_name', 'email')\n@admin.register(Article)\nclass ArticleAdmin(admin.ModelAdmin):\n    list_display = ('title', 'author', 'published', 'publication_date')  # Fields to display in the list view\n    list_filter = ('published', 'publication_date')  # Filter options\n    search_fields = ('title', 'author__first_name', 'author__last_name')  # Searchable fields\n    ordering = ('-publication_date',)  # Ordering by date (descending)",
+        "detail": "liese.web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ArticleAdmin",
+        "kind": 6,
+        "importPath": "liese.web.admin",
+        "description": "liese.web.admin",
+        "peekOfCode": "class ArticleAdmin(admin.ModelAdmin):\n    list_display = ('title', 'author', 'published', 'publication_date')  # Fields to display in the list view\n    list_filter = ('published', 'publication_date')  # Filter options\n    search_fields = ('title', 'author__first_name', 'author__last_name')  # Searchable fields\n    ordering = ('-publication_date',)  # Ordering by date (descending)\nadmin.site.register(Member)\nadmin.site.register(Role)\nadmin.site.register(Project)\nadmin.site.register(News)",
         "detail": "liese.web.admin",
         "documentation": {}
     },
@@ -662,7 +813,7 @@
         "kind": 6,
         "importPath": "liese.web.models",
         "description": "liese.web.models",
-        "peekOfCode": "class Article(models.Model):\n    title = models.CharField(max_length=100)\n    content = models.TextField()\n    published = models.BooleanField()\n    publication_date = models.DateField()\n    author = models.ForeignKey('Member', on_delete=models.CASCADE)\n    def __str__(self):\n        return self.title\nclass OpportunityRequest(models.Model):\n    OPPORTUNITY_TYPES = [",
+        "peekOfCode": "class Article(models.Model):\n    title = models.CharField(max_length=100)\n    content = models.TextField()\n    published = models.BooleanField()\n    publication_date = models.DateField()\n    author = models.ForeignKey('Member', on_delete=models.CASCADE)\n    picture = models.ImageField(upload_to='articles/', null=True, blank=True)\n    document = models.FileField(upload_to='articles/', null=True, blank=True)\n    def __str__(self):\n        return self.title",
         "detail": "liese.web.models",
         "documentation": {}
     },
@@ -716,7 +867,7 @@
         "kind": 2,
         "importPath": "liese.web.views",
         "description": "liese.web.views",
-        "peekOfCode": "def articles_view(request):\n    articles = Article.objects.filter(published=True).order_by('-publication_date')\n    return render(request, 'web/articulos.html', {'articles': articles})\ndef article_detail(request, article_id):\n    article = get_object_or_404(Article, id=article_id)\n    return render(request, 'web/article_detail.html', {'article': article})\ndef opportunities_view(request):\n    return render(request, 'web/oportunidades.html')\ndef verify_email(request, token):\n    opportunity_request = get_object_or_404(OpportunityRequest, verification_token=token)",
+        "peekOfCode": "def articles_view(request):\n    articles = Article.objects.filter(published=True).order_by('-publication_date')\n    print(articles)\n    return render(request, 'web/articulos.html', {'articles': articles})\ndef article_detail(request, article_id):\n    article = get_object_or_404(Article, id=article_id)\n    return render(request, 'web/article_detail.html', {'article': article})\ndef opportunities_view(request):\n    return render(request, 'web/oportunidades.html')\ndef verify_email(request, token):",
         "detail": "liese.web.views",
         "documentation": {}
     },

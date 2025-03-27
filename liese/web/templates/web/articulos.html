@@ -5,10 +5,10 @@
 
 {% block content %}
 <!-- Articles Page -->
-<div id="articles-page" class="page">
+<div id="articles-page">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-lg-12 text-center text-white">
                 <h1>Artículos</h1>
                 <p class="lead">Explora los artículos publicados por los miembros de LIESE.</p>
             </div>
@@ -22,7 +22,15 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ article.title }}</h5>
                         <p class="card-text">{{ article.content|truncatewords:30 }}</p>
-                        <p class="text-muted">Publicado el {{ article.publication_date }} por {{ article.author.first_name }} {{ article.author.last_name }}</p>
+                        <p class="text-muted">
+                            Publicado el {{ article.publication_date }} 
+                            por 
+                            {% if article.author %}
+                                {{ article.author.first_name }} {{ article.author.last_name }}
+                            {% else %}
+                                Desconocido
+                            {% endif %}
+                        </p>
                         <a href="{% url 'article_detail' article.id %}" class="btn btn-primary">Leer más</a>
                     </div>
                 </div>

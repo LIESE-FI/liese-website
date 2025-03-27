@@ -27,7 +27,7 @@ class Member(models.Model):
     # The admin field is used to determine if the user is an admin
     admin = models.BooleanField()
     # Who created the user
-    created_by = models.ForeignKey('self', on_delete=models.CASCADE)
+    created_by = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
     
     # Authentication fields
     username = models.CharField(max_length=50)
@@ -52,6 +52,8 @@ class Article(models.Model):
     published = models.BooleanField()
     publication_date = models.DateField()
     author = models.ForeignKey('Member', on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='articles/', null=True, blank=True)
+    document = models.FileField(upload_to='articles/', null=True, blank=True)
     
     def __str__(self):
         return self.title
