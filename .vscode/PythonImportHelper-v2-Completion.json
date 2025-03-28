@@ -41,14 +41,6 @@
         "documentation": {}
     },
     {
-        "label": "messages",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -266,6 +258,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -315,6 +323,14 @@
     },
     {
         "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -392,6 +408,30 @@
         "description": "django.conf",
         "isExtraImport": true,
         "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "monthcalendar",
+        "importPath": "calendar",
+        "description": "calendar",
+        "isExtraImport": true,
+        "detail": "calendar",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "relativedelta",
+        "importPath": "dateutil.relativedelta",
+        "description": "dateutil.relativedelta",
+        "isExtraImport": true,
+        "detail": "dateutil.relativedelta",
         "documentation": {}
     },
     {
@@ -746,6 +786,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "liese.web.migrations.0012_event",
+        "description": "liese.web.migrations.0012_event",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('web', '0011_article_document'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Event',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(max_length=200)),",
+        "detail": "liese.web.migrations.0012_event",
+        "documentation": {}
+    },
+    {
         "label": "OpportunityRequestAdmin",
         "kind": 6,
         "importPath": "liese.web.admin",
@@ -759,7 +808,16 @@
         "kind": 6,
         "importPath": "liese.web.admin",
         "description": "liese.web.admin",
-        "peekOfCode": "class ArticleAdmin(admin.ModelAdmin):\n    list_display = ('title', 'author', 'published', 'publication_date')  # Fields to display in the list view\n    list_filter = ('published', 'publication_date')  # Filter options\n    search_fields = ('title', 'author__first_name', 'author__last_name')  # Searchable fields\n    ordering = ('-publication_date',)  # Ordering by date (descending)\nadmin.site.register(Member)\nadmin.site.register(Role)\nadmin.site.register(Project)\nadmin.site.register(News)",
+        "peekOfCode": "class ArticleAdmin(admin.ModelAdmin):\n    list_display = ('title', 'author', 'published', 'publication_date')  # Fields to display in the list view\n    list_filter = ('published', 'publication_date')  # Filter options\n    search_fields = ('title', 'author__first_name', 'author__last_name')  # Searchable fields\n    ordering = ('-publication_date',)  # Ordering by date (descending)\n@admin.register(Event)\nclass EventAdmin(admin.ModelAdmin):\n    list_display = ('title', 'start_date', 'end_date', 'category', 'created_by')\n    list_filter = ('description', 'location', 'image', 'published', 'created_at')\n    search_fields = ('title', 'category', 'created_by')",
+        "detail": "liese.web.admin",
+        "documentation": {}
+    },
+    {
+        "label": "EventAdmin",
+        "kind": 6,
+        "importPath": "liese.web.admin",
+        "description": "liese.web.admin",
+        "peekOfCode": "class EventAdmin(admin.ModelAdmin):\n    list_display = ('title', 'start_date', 'end_date', 'category', 'created_by')\n    list_filter = ('description', 'location', 'image', 'published', 'created_at')\n    search_fields = ('title', 'category', 'created_by')\n    ordering = ('-created_at',)\nadmin.site.register(Member)\nadmin.site.register(Role)\nadmin.site.register(Project)\nadmin.site.register(News)",
         "detail": "liese.web.admin",
         "documentation": {}
     },
@@ -831,7 +889,16 @@
         "kind": 6,
         "importPath": "liese.web.models",
         "description": "liese.web.models",
-        "peekOfCode": "class News(models.Model):\n    title = models.CharField(max_length=100)\n    content = models.TextField()\n    published = models.BooleanField()\n    publication_date = models.DateField()\n    author = models.ForeignKey('Member', on_delete=models.CASCADE)\n    def __str__(self):\n        return self.title",
+        "peekOfCode": "class News(models.Model):\n    title = models.CharField(max_length=100)\n    content = models.TextField()\n    published = models.BooleanField()\n    publication_date = models.DateField()\n    author = models.ForeignKey('Member', on_delete=models.CASCADE)\n    def __str__(self):\n        return self.title\nclass Event(models.Model):\n    CATEGORY_CHOICES = [",
+        "detail": "liese.web.models",
+        "documentation": {}
+    },
+    {
+        "label": "Event",
+        "kind": 6,
+        "importPath": "liese.web.models",
+        "description": "liese.web.models",
+        "peekOfCode": "class Event(models.Model):\n    CATEGORY_CHOICES = [\n        ('conferencia', 'Conferencia'),\n        ('taller', 'Taller'),\n        ('reunion', 'Reunión'),\n        ('otros', 'Otros'),\n    ]\n    title = models.CharField(max_length=200)\n    description = models.TextField()\n    start_date = models.DateTimeField()",
         "detail": "liese.web.models",
         "documentation": {}
     },
@@ -922,6 +989,15 @@
         "importPath": "liese.web.views",
         "description": "liese.web.views",
         "peekOfCode": "def opportunity_request(request):\n    if request.method == 'POST':\n        form = OpportunityRequestForm(request.POST)\n        if form.is_valid():\n            opportunity_request = form.save(commit=False)\n            opportunity_request.generate_verification_token()\n            opportunity_request.save()\n            try:\n                # Send verification email\n                verification_url = request.build_absolute_uri(",
+        "detail": "liese.web.views",
+        "documentation": {}
+    },
+    {
+        "label": "events_view",
+        "kind": 2,
+        "importPath": "liese.web.views",
+        "description": "liese.web.views",
+        "peekOfCode": "def events_view(request):\n    # Obtener parámetros de mes/año\n    month = request.GET.get('month')\n    year = request.GET.get('year')\n    try:\n        month = int(month)\n        year = int(year)\n    except:\n        current_date = timezone.now()\n        month = current_date.month",
         "detail": "liese.web.views",
         "documentation": {}
     },

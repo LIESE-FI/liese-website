@@ -1,0 +1,111 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}LIESE - Eventos{% endblock %}
+
+{% block content %}
+<div id="events-page" class="page active">
+    <section class="py-5">
+        <div class="container">
+            <h1 class="display-4 mb-4 white text-center">Calendario de Eventos</h1>
+                
+            <!-- Encabezado del Calendario -->
+             <div class="calendar-header bg-azul-liese text-white p-3 rounded-top d-flex justify-content-between align-items-center">
+                <h2 class="h4">Eventos de {{ current_month_name }} {{ current_year }}</h2>
+            </div>
+            
+            <!-- Calendario Tabular -->
+            <div class="calendar-wrapper mb-5">
+                 
+                <div class="calendar-header bg-azul-liese text-white p-3 rounded-top d-flex justify-content-between align-items-center">
+                    <a href="?month={{ prev_month }}&year={% if prev_month == 12 %}{{ previous_year }}{% else %}{{ current_year }}{% endif %}" 
+                       class="btn btn-calendar-nav">
+                        <svg class="nav-icon" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+                        </svg>
+                        Mes Anterior
+                    </a>
+                    
+                    <h3 class="mb-0 text-center">{{ current_month }}</h3>
+                    
+                    <a href="?month={{ next_month }}&year={% if next_month == 1 %}{{ next_year }}{% else %}{{ current_year }}{% endif %}" 
+                       class="btn btn-calendar-nav">
+                        Siguiente Mes
+                        <svg class="nav-icon" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="calendar-table bg-light p-3 rounded-bottom">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                {% for day in week_days %}
+                                <th class="text-center small">{{ day }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for week in weeks %}
+                            <tr>
+                                {% for day in week %}
+                                <td class="calendar-day {% if day.events %}event-day{% endif %} position-relative" 
+                                    style="height: 120px; vertical-align: top;">
+                                    {% if day.day != "" %}
+                                        <div class="day-number">{{ day.day }}</div>
+                                        <div class="events-list">
+                                            {% for event in day.events|slice:":2" %}
+                                            <div class="calendar-event">
+                                                <span class="event-title">{{ event.title }}</span>
+                                                <small class="event-time">{{ event.start_date|time:"H:i" }}</small>
+                                            </div>
+                                            {% endfor %}
+                                            {% if day.events|length > 2 %}
+                                            <div class="more-events">
+                                                +{{ day.events|length|add:"-2" }} más
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                </td>
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Listado de Eventos -->
+            <h2 class="h4 mb-4 white">Eventos de este mes</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                {% for event in all_events %}
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 hover-over-top-animation">
+                        {% if event.image %}
+                        <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}" 
+                             style="height: 200px; object-fit: cover;">
+                        {% endif %}
+                        <div class="card-body">
+                            <span class="badge grey mb-2">{{ event.get_category_display }}</span>
+                            <h5 class="card-title">{{ event.title }}</h5>
+                            <p class="card-text text-muted small">
+                                <i class="bi bi-calendar-event"></i> 
+                                {{ event.start_date|date:"d M Y H:i" }} - {{ event.end_date|date:"H:i" }}
+                            </p>
+                            <p class="card-text">
+                                <i class="bi bi-geo-alt"></i> 
+                                {{ event.location }}
+                            </p>
+                            <p class="card-text">{{ event.description|truncatechars:120 }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

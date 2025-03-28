@@ -91,3 +91,29 @@ class News(models.Model):
     
     def __str__(self):
         return self.title
+    
+    
+class Event(models.Model):
+    CATEGORY_CHOICES = [
+        ('conferencia', 'Conferencia'),
+        ('taller', 'Taller'),
+        ('reunion', 'Reunión'),
+        ('otros', 'Otros'),
+    ]
+    
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+    location = models.CharField(max_length=200)
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+    image = models.ImageField(upload_to='events/', null=True, blank=True)
+    published = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey('Member', on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['start_date']
