@@ -1,0 +1,13 @@
+[Unit]
+Description=Liese Django Runserver
+After=network.target
+
+[Service]
+User=saul
+Group=saul
+WorkingDirectory=/home/saul/liese-website
+ExecStart=/home/saul/liese-website/venv/bin/python /home/saul/liese-website/src/manage.py runserver 0.0.0.0:8000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
