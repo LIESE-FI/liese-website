@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from django.conf import settings
 from .forms import OpportunityRequestForm
-from .models import OpportunityRequest, Article, Event
+from .models import OpportunityRequest, Article, Event, News, Project
 from django.shortcuts import get_object_or_404, redirect
 from django.utils import timezone
 from datetime import datetime
@@ -176,10 +176,19 @@ def events_view(request):
         year = current_date.year
     
     # Calcular meses anterior y siguiente
-    prev_month = month - 1 if month > 1 else 12
-    next_month = month + 1 if month < 12 else 1
+    if month > 1:
+        prev_month = month - 1
+        prev_year = year
+    else:
+        prev_month = 12
+        prev_year = year - 1
     
-    
+    if month < 12:
+        next_month = month + 1
+        next_year = year
+    else:
+        next_month = 1
+        next_year = year + 1
     
     # Obtener eventos del mes seleccionado
     selected_month_events = Event.objects.filter(
@@ -210,16 +219,138 @@ def events_view(request):
 
     context = {
         'weeks': weeks,
-        'current_month': datetime_object.strftime('%B'),
         'current_month_name': datetime_object.strftime('%B'),
         'week_days': ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"],
         'all_events': selected_month_events,
         'prev_month': prev_month,
         'next_month': next_month,
-        'prev_month_name': datetime(year, prev_month, 1).strftime("%B"),
+        'prev_month_name': datetime(prev_year, prev_month, 1).strftime("%B"),
         'current_year': year,
-        'next_month_name': datetime(year, next_month, 1).strftime("%B"),
-        'prev_year': year,
-        'next_year': year,
+        'next_month_name': datetime(next_year, next_month, 1).strftime("%B"),
+        'prev_year': prev_year,
+        'next_year': next_year,
         }
     return render(request, 'web/events.html', context)
+
+def activities_view(request):
+    """
+    Vista que combina todas las actividades del laboratorio:
+    eventos, artículos, noticias y proyectos en un timeline unificado
+    """
+    activities = []
+    filter_type = request.GET.get('filter', 'all')
+    
+    # Eventos próximos y recientes
+    if filter_type in ['all', 'event']:
+        # Cambiamos el filtro para mostrar TODOS los eventos, no solo los futuros
+        events = Event.objects.filter(published=True).order_by('-start_date')[:10]
+        print(f"=== EVENTS DEBUG ===")
+        print(f"Total events found: {events.count()}")
+        for event in events:
+            print(f"- {event.title} | {event.start_date} | Published: {event.published}")
+            # Convertir datetime con timezone a datetime naive para comparación
+            event_date = event.start_date
+            if hasattr(event_date, 'tzinfo') and event_date.tzinfo is not None:
+                event_date = timezone.make_naive(event_date)
+            
+            activities.append({
+                'type': 'event',
+                'title': event.title,
+                'description': event.description[:150] + '...' if len(event.description) > 150 else event.description,
+                'date': event_date,
+                'image': event.image,
+                'url': f'/events/',
+                'category': 'Evento',
+                'location': event.location,
+                'color_class': 'event-color'
+            })
+    
+    # Artículos recientes
+    if filter_type in ['all', 'article']:
+        articles = Article.objects.filter(published=True).order_by('-publication_date')[:10]
+        for article in articles:
+            # Convertir date a datetime para comparación consistente
+            article_date = article.publication_date
+            if not isinstance(article_date, datetime):
+                article_date = datetime.combine(article_date, datetime.min.time())
+            
+            activities.append({
+                'type': 'article',
+                'title': article.title,
+                'description': article.content[:150] + '...' if len(article.content) > 150 else article.content,
+                'date': article_date,
+                'image': article.picture,
+                'url': f'/articles/{article.id}/',
+                'category': 'Artículo',
+                'author': article.author.first_name + ' ' + article.author.last_name,
+                'color_class': 'article-color'
+            })
+    
+    # Noticias recientes - mostrar TODAS las noticias, no solo publicadas
+    if filter_type in ['all', 'news']:
+        # Cambiar filtro para mostrar todas las noticias
+        news = News.objects.all().order_by('-publication_date')[:10]
+        print(f"Debug: Found {news.count()} total news")
+        for news_item in news:
+            print(f"Debug: News - {news_item.title} | Published: {getattr(news_item, 'published', 'No published field')}")
+            # Convertir date a datetime para comparación consistente
+            news_date = news_item.publication_date
+            if not isinstance(news_date, datetime):
+                news_date = datetime.combine(news_date, datetime.min.time())
+            
+            activities.append({
+                'type': 'news',
+                'title': news_item.title,
+                'description': news_item.content[:150] + '...' if len(news_item.content) > 150 else news_item.content,
+                'date': news_date,
+                'image': None,  # News model doesn't have image field
+                'url': '#',
+                'category': 'Noticia',
+                'author': news_item.author.first_name + ' ' + news_item.author.last_name,
+                'color_class': 'news-color'
+            })
+    
+    # Proyectos
+    if filter_type in ['all', 'project']:
+        projects = Project.objects.all().order_by('-start_date')[:5]
+        print(f"Debug: Found {projects.count()} projects")
+        for project in projects:
+            print(f"Debug: Project - {project.name}")
+            # Convertir date a datetime para comparación consistente
+            project_date = project.start_date
+            if not isinstance(project_date, datetime):
+                project_date = datetime.combine(project_date, datetime.min.time())
+            
+            activities.append({
+                'type': 'project',
+                'title': project.name,
+                'description': project.description[:150] + '...' if len(project.description) > 150 else project.description,
+                'date': project_date,
+                'image': None,  # Project model doesn't have image field
+                'url': '#',
+                'category': 'Proyecto',
+                'end_date': project.end_date,
+                'color_class': 'project-color'
+            })
+    
+    # Ordenar todas las actividades por fecha (más recientes primero)
+    activities.sort(key=lambda x: x['date'], reverse=True)
+    
+    # Debug: mostrar qué actividades se encontraron
+    print(f"Debug: Total activities before limit: {len(activities)}")
+    for activity in activities:
+        print(f"Debug: {activity['type']} - {activity['title']}")
+    
+    # Limitar a 20 actividades para mejor performance
+    activities = activities[:20]
+    
+    print(f"Debug: Final filter_type: {filter_type}")
+    print(f"Debug: Final activities count: {len(activities)}")
+    
+    context = {
+        'activities': activities,
+        'filter_type': filter_type,
+        'total_count': len(activities)
+    }
+    
+    return render(request, 'web/activities.html', context)

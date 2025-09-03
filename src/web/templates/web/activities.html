@@ -1,0 +1,171 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block title %}Actividades - LIESE{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-5 px-4 bg-black text-white">
+    <!-- Header Section -->
+    <div class="text-center mb-5">
+        <h6 class="text-uppercase text-light">Actividades</h6>
+        <h1 class="fw-bold mb-3 text-white">Todo lo que Hacemos en LIESE</h1>
+        <p class="lead text-light">Mantente al día con nuestros eventos, publicaciones, noticias y proyectos</p>
+    </div>
+</div>
+
+<!-- Main content with white background -->
+<div class="container-fluid py-5 px-4 bg-white">
+    <!-- Filter Tabs -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8">
+            <div class="filter-tabs d-flex flex-wrap justify-content-center gap-2">
+                <a href="?filter=all" class="btn-filter {% if filter_type == 'all' %}active{% endif %}" data-filter="all">
+                    <i class="fas fa-th-large me-2"></i>Todas
+                </a>
+                <a href="?filter=event" class="btn-filter {% if filter_type == 'event' %}active{% endif %}" data-filter="event">
+                    <i class="fas fa-calendar-alt me-2"></i>Eventos
+                </a>
+                <a href="?filter=news" class="btn-filter {% if filter_type == 'news' %}active{% endif %}" data-filter="news">
+                    <i class="fas fa-newspaper me-2"></i>Noticias
+                </a>
+                <a href="?filter=project" class="btn-filter {% if filter_type == 'project' %}active{% endif %}" data-filter="project">
+                    <i class="fas fa-rocket me-2"></i>Proyectos
+                </a>
+                <a href="?filter=article" class="btn-filter {% if filter_type == 'article' %}active{% endif %}" data-filter="article">
+                    <i class="fas fa-file-alt me-2"></i>Artículos
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activities Count and Debug Info -->
+    {% if total_count > 0 %}
+    <div class="text-center mb-4">
+        <small class="text-muted">Mostrando {{ total_count }} actividad{{ total_count|pluralize:"es" }}</small>
+    </div>
+    {% else %}
+    <div class="text-center mb-4">
+        <div class="alert alert-info">
+            <h5>😊 ¡No hay actividades todavía!</h5>
+            <p>Parece que aún no hay contenido para mostrar. Puedes:</p>
+            <ul class="list-unstyled">
+                <li>📝 Agregar artículos desde el admin</li>
+                <li>📅 Crear eventos en el calendario</li>
+                <li>📰 Publicar noticias</li>
+                <li>🚀 Registrar proyectos</li>
+            </ul>
+            <small class="text-muted">Filtro actual: <strong>{{ filter_type }}</strong></small>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Activities Timeline -->
+    <div class="activities-timeline">
+        <div class="row g-4">
+            {% for activity in activities %}
+            <div class="col-lg-6 col-xl-4">
+                <div class="activity-card h-100 {{ activity.color_class }}" data-type="{{ activity.type }}">
+                    <!-- Card Header with Color Band -->
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="activity-category">
+                                {% if activity.type == 'event' %}
+                                    <i class="fas fa-calendar-alt me-2"></i>
+                                {% elif activity.type == 'news' %}
+                                    <i class="fas fa-newspaper me-2"></i>
+                                {% elif activity.type == 'project' %}
+                                    <i class="fas fa-rocket me-2"></i>
+                                {% elif activity.type == 'article' %}
+                                    <i class="fas fa-file-alt me-2"></i>
+                                {% endif %}
+                                {{ activity.category }}
+                            </span>
+                            <small class="activity-date">
+                                {% if activity.date %}
+                                    {{ activity.date|date:"d M Y" }}
+                                {% endif %}
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <!-- Image if available -->
+                        {% if activity.image %}
+                        <div class="activity-image mb-3">
+                            <img src="{{ activity.image.url }}" alt="{{ activity.title }}" class="img-fluid rounded">
+                        </div>
+                        {% endif %}
+
+                        <!-- Title -->
+                        <h5 class="activity-title mb-3">{{ activity.title }}</h5>
+
+                        <!-- Description -->
+                        <p class="activity-description text-muted mb-3">{{ activity.description }}</p>
+
+                        <!-- Metadata -->
+                        <div class="activity-meta mb-3">
+                            {% if activity.author %}
+                            <small class="text-muted">
+                                <i class="fas fa-user me-1"></i>{{ activity.author }}
+                            </small>
+                            {% endif %}
+                            
+                            {% if activity.location %}
+                            <small class="text-muted ms-3">
+                                <i class="fas fa-map-marker-alt me-1"></i>{{ activity.location }}
+                            </small>
+                            {% endif %}
+                            
+                            {% if activity.end_date and activity.type == 'project' %}
+                            <small class="text-muted ms-3">
+                                <i class="fas fa-clock me-1"></i>Hasta {{ activity.end_date|date:"M Y" }}
+                            </small>
+                            {% endif %}
+                        </div>
+
+                        <!-- Action Button -->
+                        {% if activity.url != '#' %}
+                        <a href="{{ activity.url }}" class="btn btn-outline-primary btn-sm">
+                            {% if activity.type == 'event' %}
+                                Ver Evento
+                            {% elif activity.type == 'article' %}
+                                Leer Artículo
+                            {% elif activity.type == 'news' %}
+                                Leer Noticia
+                            {% elif activity.type == 'project' %}
+                                Ver Proyecto
+                            {% endif %}
+                            <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <div class="text-center py-5">
+                    <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                    <h4 class="text-muted">No hay actividades para mostrar</h4>
+                    <p class="text-muted">Intenta con un filtro diferente o vuelve más tarde.</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    {% if activities %}
+    <div class="text-center mt-5 pt-5 border-top">
+        <h4 class="mb-3">¿Quieres participar en nuestras actividades?</h4>
+        <p class="text-muted mb-4">Únete a LIESE y sé parte de la innovación espacial en México</p>
+        <a href="{% url 'opportunities_view' %}" class="btn btn-primary btn-lg">
+            <i class="fas fa-handshake me-2"></i>Ver Oportunidades
+        </a>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
