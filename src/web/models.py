@@ -79,6 +79,25 @@ class Article(models.Model):
     def __str__(self):
         return self.title
     
+    def get_image_url(self):
+        """Retorna la URL de la imagen del artículo o una imagen por defecto del espacio"""
+        if self.picture:
+            try:
+                return self.picture.url
+            except Exception:
+                pass
+        return '/static/web/images/default-article-space.png'
+    
+    @property
+    def image_url(self):
+        """Retorna la URL de la imagen del artículo o una imagen por defecto del espacio"""
+        if self.picture and hasattr(self.picture, 'url'):
+            try:
+                return self.picture.url
+            except Exception:
+                pass
+        return '/static/web/images/default-article-space.png'
+    
     
 class OpportunityRequest(models.Model):
     OPPORTUNITY_TYPES = [

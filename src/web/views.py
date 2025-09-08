@@ -25,6 +25,7 @@ def index(request):
 def leaders_view(request):
     """
     Vista que muestra los miembros del laboratorio marcados como líderes
+    y sus artículos publicados
     """
     # Obtener miembros que son líderes y están activos
     leaders = Member.objects.filter(is_leader=True, active=True).order_by('date_joined')
@@ -40,6 +41,7 @@ def leaders_view(request):
                 'image_url': '/static/web/images/default-avatar.png',
                 'linkedin_url': '#',
                 'email': 'rubi@liese.unam.mx',
+                'articles': []  # Sin artículos de ejemplo
             },
             {
                 'full_name': 'José Luis López Pérez',
@@ -48,6 +50,7 @@ def leaders_view(request):
                 'image_url': '/static/web/images/default-avatar.png',
                 'linkedin_url': '#',
                 'email': 'jose@liese.unam.mx',
+                'articles': []
             },
             {
                 'full_name': 'Dr. Saúl de la Rosa Nieves',
@@ -56,6 +59,7 @@ def leaders_view(request):
                 'image_url': '/static/web/images/default-avatar.png',
                 'linkedin_url': '#',
                 'email': 'director@liese.unam.mx',
+                'articles': []
             }
         ]
         return render(request, 'web/lideresDeProyecto.html', {'leaders': example_leaders, 'from_database': False})
@@ -63,6 +67,27 @@ def leaders_view(request):
     # Convertir QuerySet a lista de diccionarios para el template
     leaders_data = []
     for leader in leaders:
+        # Obtener artículos publicados del líder
+        leader_articles = Article.objects.filter(
+            author=leader, 
+            published=True
+        ).order_by('-publication_date')
+        
+        # Obtener solo los primeros 3 para mostrar
+        displayed_articles = leader_articles[:3]
+        has_more = leader_articles.count() > 3
+        
+        # Convertir artículos a formato para template
+        articles_data = []
+        for article in displayed_articles:
+            articles_data.append({
+                'title': article.title,
+                'content': article.content[:100] + '...' if len(article.content) > 100 else article.content,
+                'created_at': article.publication_date,  # Usar created_at para que coincida con el template
+                'image_url': article.image_url,
+                'url': f'/articles/{article.id}/',
+            })
+        
         leaders_data.append({
             'full_name': leader.full_name,
             'position': leader.position or 'Miembro del Laboratorio',
@@ -70,6 +95,9 @@ def leaders_view(request):
             'image_url': leader.image_url,
             'linkedin_url': leader.linkedin_url or '#',
             'email': leader.email,
+            'articles': articles_data,  # Agregar artículos del líder
+            'has_more_articles': has_more,  # Flag para mostrar "ver más"
+            'id': leader.id,  # ID para el enlace "ver más artículos"
         })
     
     return render(request, 'web/lideresDeProyecto.html', {'leaders': leaders_data, 'from_database': True})
@@ -77,7 +105,6 @@ def leaders_view(request):
 
 def articles_view(request):
     articles = Article.objects.filter(published=True).order_by('-publication_date')
-    print(articles)
     return render(request, 'web/articulos.html', {'articles': articles})
 
 

@@ -7,11 +7,40 @@
 <div id="article-detail">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 white">
-                <h1>{{ article.title }}</h1>
-                <p>Publicado el {{ article.publication_date }} por {{ article.author.first_name }} {{ article.author.last_name }}</p>
-                <div class="article-content">
-                    {{ article.content|linebreaks }}
+            <div class="col-lg-12">
+                <!-- Article Header -->
+                <div class="article-header text-center text-white mb-5">
+                    <h1 class="article-title">{{ article.title }}</h1>
+                    <div class="article-meta-detail">
+                        <p class="mb-2">
+                            <i class="fa fa-calendar"></i> {{ article.publication_date }}
+                            <span class="mx-3">|</span>
+                            <i class="fa fa-user"></i> {{ article.author.first_name }} {{ article.author.last_name }}
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Article Content -->
+                <div class="article-content-detail">
+                    <div class="content-wrapper">
+                        {{ article.content|linebreaks }}
+                    </div>
+                    
+                    <!-- Article Image at the bottom -->
+                    <div class="article-image-detail mt-4 mb-4">
+                        <img src="{{ article.get_image_url }}" 
+                             alt="{{ article.title }}" 
+                             class="img-fluid rounded shadow-lg article-main-image">
+                    </div>
+                    
+                    <!-- Back Button -->
+                    <div class="text-center mt-5">
+                        <a href="{% url 'articles_view' %}" class="btn btn-outline-light btn-lg">
+                            <i class="fa fa-arrow-left"></i> Volver a artículos
+                        </a>
+                    </div>
+                </div>
+                    </div>
                 </div>
             </div>
         </div>
