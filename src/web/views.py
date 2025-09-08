@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from django.conf import settings
 from .forms import OpportunityRequestForm
-from .models import OpportunityRequest, Article, Event, News, Project
+from .models import OpportunityRequest, Article, Event, News, Project, Member
 from django.shortcuts import get_object_or_404, redirect
 from django.utils import timezone
 from datetime import datetime
@@ -23,58 +23,56 @@ def index(request):
 
 
 def leaders_view(request):
-    leaders = [
-        {
-            'name': 'Rubi Janet Núñez Dorantes',
-            'role': 'Tesista de maestría',
-            'description': 'Contribuye al diseño de sistemas de comando y control, optimizando la gestión de información y el rendimiento operativo de los satélites.',
-            'image': 'Integrantes.png',
-            'linkedin': '#',
-            'email': '#',
-        },
-        {
-            'name': 'José Luis López Pérez',
-            'role': 'Investigador',
-            'description': 'Desarrollo de instrumentación para sistemas embebidos, con énfasis en la adquisición de datos y el control de sistemas.',
-            'image': 'Integrantes.png',
-            'linkedin': '#',
-            'email': '#',
-        },
-        {
-            'name': 'Nombre Apellido',
-            'role': 'Investigador',
-            'description': 'Desarrollo de sistemas de comunicación y control para aplicaciones aeroespaciales.',
-            'image': 'Integrantes.png',
-            'linkedin': '#',
-            'email': '#',
-        },
-        {
-            'name': 'Rubi Janet Núñez Dorantes',
-            'role': 'Tesista de maestría',
-            'description': 'Contribuye al diseño de sistemas de comando y control, optimizando la gestión de información y el rendimiento operativo de los satélites.',
-            'image': 'Integrantes.png',
-            'linkedin': '#',
-            'email': '#',
-        },
-        {
-            'name': 'José Luis López Pérez',
-            'role': 'Investigador',
-            'description': 'Desarrollo de instrumentación para sistemas embebidos, con énfasis en la adquisición de datos y el control de sistemas.',
-            'image': 'Integrantes.png',
-            'linkedin': '#',
-            'email': '#',
-        },
-        {
-            'name': 'Nombre Apellido',
-            'role': 'Investigador',
-            'description': 'Desarrollo de sistemas de comunicación y control para aplicaciones aeroespaciales.',
-            'image': 'Integrantes.png',
-            'linkedin': '#',
-            'email': '#',
-        }
-        # Add more leaders as needed
-    ]
-    return render(request, 'web/lideresDeProyecto.html', {'leaders': leaders})
+    """
+    Vista que muestra los miembros del laboratorio marcados como líderes
+    """
+    # Obtener miembros que son líderes y están activos
+    leaders = Member.objects.filter(is_leader=True, active=True).order_by('date_joined')
+    
+    # Si no hay líderes en la BD, usar datos de ejemplo
+    if not leaders.exists():
+        # Datos de respaldo por si no hay miembros en la BD
+        example_leaders = [
+            {
+                'full_name': 'Rubi Janet Núñez Dorantes',
+                'position': 'Tesista de maestría',
+                'description': 'Contribuye al diseño de sistemas de comando y control, optimizando la gestión de información y el rendimiento operativo de los satélites.',
+                'image_url': '/static/web/images/default-avatar.png',
+                'linkedin_url': '#',
+                'email': 'rubi@liese.unam.mx',
+            },
+            {
+                'full_name': 'José Luis López Pérez',
+                'position': 'Investigador',
+                'description': 'Desarrollo de instrumentación para sistemas embebidos, con énfasis en la adquisición de datos y el control de sistemas.',
+                'image_url': '/static/web/images/default-avatar.png',
+                'linkedin_url': '#',
+                'email': 'jose@liese.unam.mx',
+            },
+            {
+                'full_name': 'Dr. Saúl de la Rosa Nieves',
+                'position': 'Director del Laboratorio',
+                'description': 'Líder del LIESE, especialista en sistemas espaciales y desarrollo de microsatélites.',
+                'image_url': '/static/web/images/default-avatar.png',
+                'linkedin_url': '#',
+                'email': 'director@liese.unam.mx',
+            }
+        ]
+        return render(request, 'web/lideresDeProyecto.html', {'leaders': example_leaders, 'from_database': False})
+    
+    # Convertir QuerySet a lista de diccionarios para el template
+    leaders_data = []
+    for leader in leaders:
+        leaders_data.append({
+            'full_name': leader.full_name,
+            'position': leader.position or 'Miembro del Laboratorio',
+            'description': leader.description or 'Contribuye al desarrollo de sistemas espaciales en LIESE.',
+            'image_url': leader.image_url,
+            'linkedin_url': leader.linkedin_url or '#',
+            'email': leader.email,
+        })
+    
+    return render(request, 'web/lideresDeProyecto.html', {'leaders': leaders_data, 'from_database': True})
 
 
 def articles_view(request):

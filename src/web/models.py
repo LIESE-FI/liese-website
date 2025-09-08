@@ -16,25 +16,46 @@ class Member(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
-    phone = models.CharField(max_length=20)
-    country = models.CharField(max_length=50)
+    phone = models.CharField(max_length=20, blank=True, null=True)
+    country = models.CharField(max_length=50, blank=True, null=True)
     date_joined = models.DateField()
-    active = models.BooleanField()
+    active = models.BooleanField(default=True)
     # Nullable image field
     image = models.ImageField(upload_to='members/', null=True, blank=True)
+    
+    # Nuevos campos para la página de líderes
+    description = models.TextField(blank=True, null=True, help_text="Descripción del miembro para mostrar en la página de líderes")
+    linkedin_url = models.URLField(blank=True, null=True, help_text="URL del perfil de LinkedIn")
+    is_leader = models.BooleanField(default=False, help_text="¿Es un líder de proyecto?")
+    position = models.CharField(max_length=100, blank=True, null=True, help_text="Posición/título del miembro")
+    
     # Roles are defined in the Role model
-    roles = models.ManyToManyField('Role')
+    roles = models.ManyToManyField('Role', blank=True)
     # The admin field is used to determine if the user is an admin
-    admin = models.BooleanField()
+    admin = models.BooleanField(default=False)
     # Who created the user
     created_by = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
     
-    # Authentication fields
-    username = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
+    # Authentication fields (opcionales ahora)
+    username = models.CharField(max_length=50, blank=True, null=True)
+    password = models.CharField(max_length=50, blank=True, null=True)
     
     def __str__(self):
         return self.first_name + ' ' + self.last_name
+    
+    @property
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+    
+    @property
+    def image_url(self):
+        """Retorna la URL de la imagen o una imagen por defecto"""
+        if self.image and hasattr(self.image, 'url'):
+            try:
+                return self.image.url
+            except Exception:
+                pass
+        return '/static/web/images/default-avatar.png'
     
 class Project(models.Model):
     name = models.CharField(max_length=50)

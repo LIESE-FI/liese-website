@@ -1,31 +1,111 @@
 {% extends 'web/base.html' %}
 {% load static %}
 
-{% block title %}LIESE - Nosotros{% endblock %}
+{% block title %}Líderes de Proyecto - LIESE{% endblock %}
 
 {% block content %}
-    <div class="container-fluid py-5 px-5 bg-black text-white"> <!-- Cambia .container a .container-fluid -->
-        <div class="text-center">
-            <h1 class="mb-4">Líderes de proyecto</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<div class="container-fluid py-5 px-5 bg-black text-white">
+    <div class="text-center mb-5">
+        <h6 class="text-uppercase text-light">Nuestro Equipo</h6>
+        <h1 class="mb-4">Líderes de Proyecto</h1>
+        <p class="lead">Conoce a los investigadores y especialistas que lideran la innovación espacial en LIESE</p>
+        
+        {% if not from_database %}
+        <div class="alert alert-info mt-4" style="background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+            <small>
+                <i class="fas fa-info-circle me-2"></i>
+                Mostrando datos de ejemplo. Para ver miembros reales, agrégalos desde el panel de administración.
+            </small>
         </div>
-        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
-            {% for leader in leaders %}
-            <div class="col d-flex justify-content-center">
-                <div class="card bg-dark text-white border-0 hover-over-top-animation" style="width: 100%; max-width: 300px;">
-                    <img src="{% static 'images/' %}{{ leader.image }}" class="card-img-top" alt="Integrante">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{{ leader.name }}</h5>
-                        <p class="card-text">{{ leader.role }}</p>
-                        <p>{{ leader.description }}</p>
-                        <div>
-                            <a href="{{ leader.linkedin }}" class="text-white mx-2"><i class="bi bi-linkedin"></i></a>
-                            <a href="{{ leader.email }}" class="text-white mx-2"><i class="bi bi-envelope"></i></a>
+        {% endif %}
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 justify-content-center">
+        {% for leader in leaders %}
+        <div class="col d-flex justify-content-center">
+            <div class="card bg-dark text-white border-0 member-card h-100" style="max-width: 300px; border-radius: 15px; overflow: hidden;">
+                <!-- Member Image -->
+                <div class="member-image-container">
+                    <img src="{{ leader.image_url }}" 
+                         class="card-img-top member-image" 
+                         alt="{{ leader.full_name }}"
+                         onerror="this.src='{% static 'web/images/default-avatar.png' %}'; console.log('Error loading image: {{ leader.image_url }}');">
+                    
+                    <!-- Debug info (remove in production) -->
+                    {% if debug %}
+                    <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.7); color: white; padding: 2px; font-size: 10px;">
+                        IMG: {{ leader.image_url }}
+                    </div>
+                    {% endif %}
+                    
+                    <div class="member-overlay">
+                        <div class="member-links">
+                            {% if leader.linkedin_url and leader.linkedin_url != '#' %}
+                            <a href="{{ leader.linkedin_url }}" target="_blank" class="text-white mx-2" title="LinkedIn">
+                                <i class="fab fa-linkedin fa-lg"></i>
+                            </a>
+                            {% endif %}
+                            {% if leader.email %}
+                            <a href="mailto:{{ leader.email }}" class="text-white mx-2" title="Email">
+                                <i class="fas fa-envelope fa-lg"></i>
+                            </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
+
+                <!-- Member Info -->
+                <div class="card-body text-center p-4">
+                    <h5 class="card-title mb-2" style="color: #AAEFFF;">{{ leader.full_name }}</h5>
+                    <p class="card-subtitle mb-3 text-light" style="font-size: 0.9rem; font-weight: 500;">
+                        {{ leader.position }}
+                    </p>
+                    <p class="card-text small text-light opacity-75 mb-3" style="line-height: 1.5;">
+                        {{ leader.description|truncatewords:20 }}
+                    </p>
+                    
+                    <!-- Contact buttons for mobile -->
+                    <div class="member-contact-mobile d-md-none">
+                        {% if leader.linkedin_url and leader.linkedin_url != '#' %}
+                        <a href="{{ leader.linkedin_url }}" target="_blank" class="btn btn-outline-light btn-sm me-2">
+                            <i class="fab fa-linkedin me-1"></i>LinkedIn
+                        </a>
+                        {% endif %}
+                        {% if leader.email %}
+                        <a href="mailto:{{ leader.email }}" class="btn btn-outline-light btn-sm">
+                            <i class="fas fa-envelope me-1"></i>Email
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
-            {% endfor %}
         </div>
+        {% empty %}
+        <div class="col-12 text-center">
+            <div class="py-5">
+                <i class="fas fa-users fa-3x mb-4 text-muted"></i>
+                <h4 class="text-light">No hay líderes registrados</h4>
+                <p class="text-muted">Agrega miembros del laboratorio desde el panel de administración y márcalos como líderes.</p>
+                <a href="/admin/" class="btn btn-outline-light mt-3">
+                    <i class="fas fa-plus me-2"></i>Ir al Admin
+                </a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
+
+    <!-- Call to Action -->
+    {% if leaders %}
+    <div class="text-center mt-5 pt-5 border-top border-secondary">
+        <h4 class="mb-3 text-light">¿Quieres unirte a nuestro equipo?</h4>
+        <p class="text-muted mb-4">Explora las oportunidades disponibles en LIESE</p>
+        <a href="{% url 'opportunities_view' %}" class="btn btn-primary btn-lg">
+            <i class="fas fa-rocket me-2"></i>Ver Oportunidades
+        </a>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 {% endblock %}
