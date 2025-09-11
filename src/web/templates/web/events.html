@@ -7,7 +7,11 @@
 <div id="events-page" class="page active">
     <section class="py-5">
         <div class="container">
-            <h1 class="display-4 mb-4 white text-center">Calendario de Eventos</h1>
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase white">Eventos</h6>
+                <h1 class="fw-bold mb-3 white">Calendario de Eventos</h1>
+                <p class="white">Mantente al tanto de nuestros eventos y actividades.</p>
+            </div>
                 
             <!-- Encabezado del Calendario -->
              <div class="calendar-header bg-azul-liese text-white p-3 rounded-top d-flex justify-content-between align-items-center">
@@ -83,10 +87,8 @@
                 {% for event in all_events %}
                 <div class="col">
                     <div class="card h-100 shadow-sm border-0 hover-over-top-animation">
-                        {% if event.image %}
-                        <img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.title }}" 
+                        <img src="{{ event.get_image_url }}" class="card-img-top" alt="{{ event.title }}" 
                              style="height: 200px; object-fit: cover;">
-                        {% endif %}
                         <div class="card-body">
                             <span class="badge grey mb-2">{{ event.get_category_display }}</span>
                             <h5 class="card-title">{{ event.title }}</h5>

@@ -79,69 +79,7 @@
                     </div>
                 </div>
 
-                <!-- Leader's Articles Section -->
-                {% if leader.articles %}
-                <div class="leader-articles mt-4">
-                    <div class="articles-header text-center mb-3">
-                        <h6 class="text-light mb-2">
-                            <i class="fas fa-newspaper me-2"></i>Artículos Recientes
-                        </h6>
-                        <div class="articles-divider mx-auto" style="width: 50px; height: 2px; background: linear-gradient(90deg, #AAEFFF, #00C6FF);"></div>
-                    </div>
-                    
-                    <div class="articles-grid">
-                        {% for article in leader.articles %}
-                        <div class="article-card mb-3" style="background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden;">
-                            <div class="row g-0">
-                                <!-- Article Image -->
-                                <div class="col-4">
-                                    <div class="article-image-container" style="height: 80px; overflow: hidden;">
-                                        <img src="{{ article.image_url }}" 
-                                             class="img-fluid w-100 h-100" 
-                                             style="object-fit: cover;"
-                                             alt="{{ article.title }}"
-                                             onerror="this.src='{% static 'web/images/default-article-space.png' %}';">
-                                    </div>
-                                </div>
-                                
-                                <!-- Article Content -->
-                                <div class="col-8">
-                                    <div class="card-body p-2" style="min-height: 80px;">
-                                        <h6 class="card-title text-light mb-1" style="font-size: 0.8rem; line-height: 1.2;">
-                                            {{ article.title|truncatewords:8 }}
-                                        </h6>
-                                        <p class="card-text text-muted mb-1" style="font-size: 0.7rem; line-height: 1.3;">
-                                            {{ article.content|truncatewords:12 }}
-                                        </p>
-                                        <small class="text-muted" style="font-size: 0.65rem;">
-                                            <i class="fas fa-calendar-alt me-1"></i>
-                                            {{ article.created_at|date:"d M Y" }}
-                                        </small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                        
-                        <!-- "Ver más artículos" link if there are more articles -->
-                        {% if leader.has_more_articles %}
-                        <div class="text-center mt-2">
-                            <a href="{% url 'articles_view' %}?author={{ leader.id }}" class="text-decoration-none" style="color: #AAEFFF; font-size: 0.75rem;">
-                                <i class="fas fa-plus-circle me-1"></i>Ver más artículos
-                            </a>
-                        </div>
-                        {% endif %}
-                    </div>
-                </div>
-                {% else %}
-                <!-- No articles placeholder -->
-                <div class="leader-articles mt-4">
-                    <div class="text-center py-3" style="background: rgba(255,255,255,0.02); border-radius: 10px;">
-                        <i class="fas fa-file-alt text-muted mb-2" style="font-size: 1.5rem;"></i>
-                        <p class="text-muted mb-0" style="font-size: 0.8rem;">Sin artículos publicados</p>
-                    </div>
-                </div>
-                {% endif %}
+                <!-- Se eliminó la sección de artículos -->
             </div>
         </div>
         {% empty %}

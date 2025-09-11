@@ -59,11 +59,21 @@ class RoleAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('name', 'start_date', 'end_date')
-    list_filter = ('start_date', 'end_date')
+    list_display = ('name', 'start_date', 'end_date', 'active')
+    list_filter = ('active', 'start_date', 'end_date')
     search_fields = ('name', 'description')
     filter_horizontal = ('members',)
     ordering = ('-start_date',)
+
+    fieldsets = (
+        ('Información del Proyecto', {
+            'fields': ('name', 'description', 'start_date', 'end_date', 'active')
+        }),
+        ('Miembros y Media', {
+            'fields': ('members', 'image'),
+            'classes': ('collapse',)
+        }),
+    )
 
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):

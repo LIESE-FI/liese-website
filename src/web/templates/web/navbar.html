@@ -22,13 +22,19 @@
                     <a class="nav-link d-flex text-center align-items-center" href="{% url 'articles_view' %}">Artículos</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link d-flex text-center align-items-center" href="{% url 'projects_view' %}">Proyectos</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link d-flex text-center align-items-center" href="{% url 'activities_view' %}">Actividades</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link d-flex text-center align-items-center" href="{% url 'opportunities_view' %}">Oportunidades</a>
                 </li>
             </ul>
-            <a href="#partners" class="btn btn-cta ms-auto d-flex align-items-center border-0 shadow-none hover-green">Patrocínanos</a>
+            <div class="d-md-none text-center my-3">
+                <a href="#partners" class="btn btn-cta border-0 shadow-none hover-green">Patrocínanos</a>
+            </div>
+            <a href="#partners" class="btn btn-cta ms-auto d-none d-md-flex align-items-center border-0 shadow-none hover-green">Patrocínanos</a>
         </div>
     </div>
 </nav>

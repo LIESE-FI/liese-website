@@ -1,5 +1,9 @@
 from django.urls import path
-from .views import index, leaders_view, opportunities_view, opportunity_request, verify_email, articles_view, success_email_verification, error_email_verification, article_detail, events_view, activities_view
+from .views import (
+    index, leaders_view, opportunities_view, opportunity_request, verify_email,
+    articles_view, success_email_verification, error_email_verification,
+    article_detail, events_view, activities_view, projects_view, project_detail
+)
 
 urlpatterns = [
     path('', index, name='index'),
@@ -13,4 +17,6 @@ urlpatterns = [
     path('articles/', articles_view, name='articles_view'),
     path('articles/<int:article_id>/', article_detail, name='article_detail'),
     path('events/', events_view, name='events_view'),
+    path('proyectos/', projects_view, name='projects_view'),
+    path('proyectos/<int:project_id>/', project_detail, name='project_detail'),
 ]

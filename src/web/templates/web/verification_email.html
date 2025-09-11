@@ -1,15 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Verifica tu correo</title>
+    <title>Verifica tu correo - LIESE</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .email-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        .title {
+            color: #022968;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .opportunity-type {
+            background-color: #D1F2C3;
+            color: #022968;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .verification-button {
+            display: inline-block;
+            background-color: #022968;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin: 20px 0;
+        }
+        .verification-button:hover {
+            background-color: #033d91;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 14px;
+        }
+        .stars {
+            color: #AAEFFF;
+            font-size: 20px;
+            letter-spacing: 3px;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-    <p>Hola,</p>
-    <p>Solicitaste regístrarte como <strong>{{ opportunity_request.get_opportunity_type_display }}</strong> dentro del LIESE.</p>
-    <p>Por favor, verifica tu correo electrónico haciendo clic en el siguiente enlace:</p>
-    <p><a href="{{ verification_url }}">{{ verification_url }}</a></p>
-    <p>Si no solicitaste registrarte, ignora este mensaje.</p>
-    <p>Gracias.</p>
-    <p>El equipo de LIESE</p>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://raw.githubusercontent.com/e1th4nUwU/liese-website/main/src/web/static/web/images/LogoUnamSat2.png" alt="LIESE Logo">
+            <div class="stars">★ ★ ★ ★ ★</div>
+        </div>
+        
+        <h1 class="title">¡Bienvenido al Espacio!</h1>
+        
+        <p>Saludos, Explorador Espacial.</p>
+        
+        <p>Has iniciado tu viaje para unirte a LIESE como:</p>
+        <div style="text-align: center;">
+            <span class="opportunity-type">{{ opportunity_request.get_opportunity_type_display }}</span>
+        </div>
+        
+        <p>Para continuar con tu misión, necesitamos verificar tu correo electrónico. Por favor, haz clic en el botón a continuación:</p>
+        
+        <div style="text-align: center;">
+            <a href="{{ verification_url }}" class="verification-button">Verificar Correo Electrónico</a>
+        </div>
+        
+        <p style="font-size: 12px; color: #666;">Si el botón no funciona, puedes copiar y pegar este enlace en tu navegador:<br>
+        <span style="color: #022968;">{{ verification_url }}</span></p>
+        
+        <p>Si no solicitaste unirte a LIESE, puedes ignorar este mensaje. Tu correo electrónico no será verificado.</p>
+        
+        <div class="footer">
+            <div class="stars">· · · · ·</div>
+            <p>Laboratorio de Instrumentación Espacial<br>
+            Instituto de Ciencias Aplicadas y Tecnología<br>
+            Universidad Nacional Autónoma de México</p>
+        </div>
+    </div>
 </body>
 </html>

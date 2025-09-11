@@ -63,9 +63,22 @@ class Project(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     members = models.ManyToManyField('Member')
+    # Nuevo campo para imagen del proyecto
+    image = models.ImageField(upload_to='projects/', null=True, blank=True)
+    # Campo para indicar si el proyecto está activo
+    active = models.BooleanField(default=True)
     
     def __str__(self):
         return self.name
+    
+    def get_image_url(self):
+        """Retorna la URL de la imagen del proyecto o una imagen por defecto del espacio"""
+        if self.image and hasattr(self.image, 'url'):
+            try:
+                return self.image.url
+            except Exception:
+                pass
+        return '/static/web/images/default-article-space.png'
     
 class Article(models.Model):
     title = models.CharField(max_length=100)
@@ -157,3 +170,10 @@ class Event(models.Model):
 
     class Meta:
         ordering = ['start_date']
+
+    
+    def get_image_url(self):
+        """Retorna la URL de la imagen del evento o una imagen por defecto"""
+        if self.image:
+            return self.image.url if self.image else '/media/events/images.png'
+        return '/media/events/images.png'

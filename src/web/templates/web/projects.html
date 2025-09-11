@@ -1,0 +1,41 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<div id="projects-page" class="container-fluid bg-black">
+    <div class="container py-5">
+        <div class="text-center mb-5 text-white">
+            <h1 class="display-4 fw-bold">Proyectos</h1>
+            <p class="lead text-light">Explora nuestros proyectos de investigación espacial</p>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for project in projects %}
+            <div class="col">
+                <div class="card project-card h-100 bg-black text-white border-0">
+                    <div class="card-img-container">
+                        <img src="{{ project.get_image_url }}" class="card-img-top" alt="{{ project.name }}">
+                        <div class="card-img-overlay d-flex align-items-end p-0">
+                            <div class="card-overlay-content p-3 w-100">
+                                <h5 class="card-title fw-bold mb-1">{{ project.name }}</h5>
+                                <p class="card-meta mb-0">
+                                    <small>{{ project.start_date|date:"d M, Y" }}</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pb-4">
+                        <p class="card-text text-white">{{ project.description|truncatewords:25 }}</p>
+                        <a href="{% url 'project_detail' project.id %}" class="btn btn-outline-light btn-sm">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center text-white py-5">
+                <h3>No hay proyectos disponibles</h3>
+                <p>Pronto agregaremos nuevos proyectos.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

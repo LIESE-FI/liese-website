@@ -113,6 +113,16 @@ def article_detail(request, article_id):
     return render(request, 'web/article_detail.html', {'article': article})
 
 
+def projects_view(request):
+    """Vista que muestra los proyectos activos"""
+    projects = Project.objects.filter(active=True).order_by('-start_date')
+    return render(request, 'web/projects.html', {'projects': projects})
+
+
+def project_detail(request, project_id):
+    """Vista que muestra el detalle de un proyecto específico"""
+    project = get_object_or_404(Project, id=project_id)
+    return render(request, 'web/project_detail.html', {'project': project})
 
 
 def opportunities_view(request):
@@ -351,8 +361,8 @@ def activities_view(request):
                 'title': project.name,
                 'description': project.description[:150] + '...' if len(project.description) > 150 else project.description,
                 'date': project_date,
-                'image': None,  # Project model doesn't have image field
-                'url': '#',
+                'image': project.image,  # Usando el nuevo campo de imagen
+                'url': f'/proyectos/{project.id}/',  # URL para enlazar al detalle del proyecto
                 'category': 'Proyecto',
                 'end_date': project.end_date,
                 'color_class': 'project-color'

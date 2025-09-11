@@ -550,13 +550,21 @@ section.hero p {
 }
 .opportunity-btn {
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    position: relative;
+    top: 0;
+    transition: all 0.3s ease;
 }
 
 .opportunity-btn:hover {
-    background-color: #F0F0F0;
-    color: #000;
-    transform: scale(1.05);
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    transform: translateY(-5px);
+    top: -5px;
+}
+
+.opportunity-btn:hover h5,
+.opportunity-btn:hover p {
+    color: #000000 !important;
 }
 
 .modal-content {
@@ -602,7 +610,7 @@ section.hero p {
 #articles-page {
     min-height: 100vh;
     padding: 80px 0;
-    background: #000000 !important; /* Fondo completamente negro */
+    background: #0e0e0e !important; /* Fondo completamente negro */
 }
 
 #articles-page .card {
@@ -727,9 +735,22 @@ section.hero p {
 .grey {
     color: #b8b8b8;
 }
+.hover-over-top-animation {
+    position: relative;
+    top: 0;
+    transition: all 0.3s ease;
+}
+
 .hover-over-top-animation:hover {
-    background-color: var(--primary-color);
     top: -5px;
+    background-color: #ffffff;
+    color: #000000 !important;
+    transform: translateY(-5px);
+}
+
+.hover-over-top-animation:hover h5,
+.hover-over-top-animation:hover p {
+    color: #000000 !important;
 }
 /* Estilos para calendario tabular */
 .calendar-table table {
@@ -1404,4 +1425,141 @@ section.hero p {
 
 /* ========================================
    END ANIMATIONS COMPATIBILITY
+======================================== */
+
+/* ========================================
+   FADE IN ANIMATION
+======================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 1 !important;
+}
+
+/* ========================================
+   PROJECTS PAGE STYLES
+======================================== */
+#projects-page {
+    min-height: 100vh;
+    padding: 80px 0;
+    background: #0e0e0e !important;
+}
+
+.project-card {
+    overflow: hidden;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    will-change: transform, box-shadow !important;
+    backface-visibility: hidden !important;
+}
+
+.project-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2) !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.project-card .card-img-container {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease !important;
+    will-change: transform !important;
+}
+
+.project-card:hover img {
+    transform: scale(1.05) !important;
+}
+
+.project-card .card-img-overlay {
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    opacity: 1;
+    transition: opacity 0.3s ease !important;
+}
+
+.project-card .card-title {
+    color: #fff !important;
+    font-weight: bold !important;
+}
+
+.project-card .card-text,
+.project-card .card-meta {
+    color: #fff !important;
+}
+
+/* Project Detail Page */
+#project-detail {
+    min-height: 100vh;
+    padding: 80px 0;
+    background: #000000 !important;
+}
+
+.project-content {
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 30px !important;
+    border-radius: 15px;
+}
+
+.project-description {
+    color: #fff !important;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: var(--verde-lima) !important;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #fff !important;
+}
+
+.breadcrumb-item.active {
+    color: rgba(255,255,255,0.6) !important;
+}
+
+.project-meta .badge {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.project-members img {
+    object-fit: cover;
+    border: 2px solid var(--verde-lima);
+}
+
+.project-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+/* ========================================
+   END PROJECT PAGE STYLES
 ======================================== */
