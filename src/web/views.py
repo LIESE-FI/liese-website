@@ -173,6 +173,7 @@ def opportunity_request(request):
                 subject = "LIESE - Verifica tu correo electrónico"
                 message = render_to_string('web/verification_email.html', {
                     'verification_url': verification_url,
+                    'opportunity_request': opportunity_request
                 })
 
                 send_mail(

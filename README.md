@@ -170,7 +170,7 @@ Para configurar el servicio:
 
 1. Fork el repositorio
 2. Crear una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+3. Commit tus cambios (`git commit -m '[FLAG] Descripción de los cambios'`)
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abrir un Pull Request
 
