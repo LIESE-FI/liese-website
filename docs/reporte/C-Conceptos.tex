@@ -1,0 +1,26 @@
+\chapter{Conceptos}
+\label{chap:conceptos}
+
+Para comprender el servicio de escritura de MQTT a base de datos relacional, es fundamental familiarizarse con algunos conceptos clave que forman la base de esta tecnología. A continuación, se presentan los términos y conceptos más relevantes:
+
+\section{MQTT (Message Queuing Telemetry Transport)}
+MQTT es un protocolo de mensajería ligero y eficiente diseñado para la comunicación entre dispositivos en entornos con recursos limitados y redes inestables. Utiliza un modelo de publicación-suscripción, donde los dispositivos (publicadores) envían mensajes a un servidor (broker) que los
+distribuye a los suscriptores interesados. Este enfoque permite una comunicación asíncrona y escalable, ideal para aplicaciones de Internet de las Cosas (IoT). \[1\]
+
+\section{Broker MQTT}
+Un broker MQTT es un servidor que actúa como intermediario en la comunicación entre los publicadores y suscriptores. Su función principal es recibir mensajes de los publicadores y distribuirlos a los
+suscriptores correspondientes. El broker gestiona las conexiones, la autenticación y la autorización de los clientes, asegurando que los mensajes se entreguen de manera eficiente y confiable. \[1\]
+
+\section{Base de Datos Relacional}
+Una base de datos relacional es un sistema de gestión de datos que organiza la información en tablas relacionadas entre sí. Utiliza el lenguaje SQL (Structured Query Language) para definir, manipular y
+consultar los datos. Las bases de datos relacionales son ideales para almacenar grandes volúmenes de información estructurada y permiten realizar consultas complejas, garantizando la integridad y consistencia de los datos. PostgreSQL es un ejemplo de base de datos relacional ampliamente utilizada. \[2\]
+
+\section{Docker}
+Docker es una plataforma de software que permite crear, implementar y ejecutar aplicaciones en contenedores. Los contenedores son entornos ligeros y portátiles que agrupan todas las dependencias necesarias para ejecutar una aplicación, lo que facilita su despliegue en diferentes entornos sin preocuparse por las configuraciones específicas de cada uno. Docker utiliza un enfoque de virtualización a nivel de sistema operativo, lo que lo hace más eficiente en comparación con las máquinas virtuales tradicionales. \[3\]
+
+\section{Docker Compose}
+Docker Compose es una herramienta que permite definir y ejecutar aplicaciones multi-contenedor en Docker. Utiliza un archivo de configuración en formato YAML para especificar los servicios, redes y volúmenes necesarios para la aplicación. Con Docker Compose, es posible iniciar, detener y gestionar todos los contenedores de una aplicación con un solo comando, simplificando el proceso de desarrollo y despliegue. \[4\]
+
+\section{Makefile}
+Un Makefile es un archivo de configuración utilizado por la herramienta Make para automatizar tareas de construcción y despliegue de software. Define un conjunto de reglas y dependencias que especifican cómo se
+deben compilar y enlazar los archivos de un proyecto. Los Makefiles son especialmente útiles para proyectos complejos, ya que permiten gestionar de manera eficiente las dependencias y automatizar el proceso de construcción, facilitando la integración continua y el despliegue. \[5\]

@@ -1,0 +1,100 @@
+\documentclass{book}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{minted}
+\usepackage[spanish]{babel}
+
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage[T1]{fontenc}
+\usepackage{changepage}
+\usepackage{float}
+\usepackage{url}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{parskip}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup
+{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Servicio de Escritura de MQTT a Base de Datos Relacional},
+    pdfauthor={LIESE},
+    pdfsubject={Sistema de Telemetría Vehicular con Docker y PostgreSQL},
+    pdfkeywords={MQTT, PostgreSQL, Docker, Telemetría, IoT, Python},
+    pdfpagemode=FullScreen,
+}
+
+% Tablas
+\usepackage{array, multirow, multicol}
+\usepackage{multirow}
+%\usepackage[table,xcdraw]{xcolor}
+\usepackage{longtable,tabu}
+\usepackage[online]{threeparttablex}
+\usepackage{siunitx}
+
+\usepackage{cite} % Better handling of numeric citations
+
+% Center without space
+\newenvironment{nscenter}
+{\parskip=0pt\par\nopagebreak\centering}
+{\par\noindent\ignorespacesafterend}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+\usepackage{tabularx}
+\usepackage{lipsum}
+\usepackage{ltablex}
+
+
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\usepackage{color, colortbl}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\usepackage[first=0,last=9]{lcg}
+\newcommand{\ra}{\rand0.\arabic{rand}}
+
+\newenvironment{Figura}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\let\origdoublepage\cleardoublepage
+\renewcommand{\cleardoublepage}{\clearpage}
+
+\title{SERVICIO DE ESCRITURA DE MQTT A BASE DE DATOS RELACIONAL UTILIZANDO CONTENEDORES}
+\author{LIESE}
+\date{}
+
+\begin{document}
+    \include{A1-Portada} 
+    
+    \maketitle
+    \tableofcontents
+    \newpage
+
+    \include{B-Intro}
+    \include{C-Conceptos}
+    \include{D-AnalisisYDiseno}
+    \include{E-Cuenta}
+    \include{G-Despliegue}
+    \include{H-Manual}
+    \include{J-Conclusiones}
+    \include{K-Anexos}
+    \include{O-Reference}
+
+\end{document}

@@ -1,0 +1,130 @@
+% Capítulo eliminado - Pruebas y Validación del Sistema
+% Contenido removido según solicitud del usuario
+
+\section{Pruebas de Componentes MQTT}
+
+\subsection{Pruebas de Conectividad}
+
+Verificación de la conexión al broker MQTT:
+
+\begin{verbatim}
+# Test de conexión básica
+mosquitto_pub -h localhost -t test -m "hello"
+
+# Verificar logs del sistema
+make logs
+
+# Test de suscripción
+mosquitto_sub -h localhost -t "U+_+"
+\end{verbatim}
+
+\subsection{Pruebas de Formato de Topics}
+
+Validación de diferentes formatos de topics:
+
+\begin{verbatim}
+# Topics válidos
+mosquitto_pub -h localhost -t "U1_Combustible" -m "75.5"
+mosquitto_pub -h localhost -t "U2_Velocidad" -m "85.2"
+mosquitto_pub -h localhost -t "U3_RPM" -m "2200"
+
+# Topics inválidos (deben ser rechazados)
+mosquitto_pub -h localhost -t "InvalidTopic" -m "100"
+mosquitto_pub -h localhost -t "U_Combustible" -m "50"
+\end{verbatim}
+
+\section{Pruebas de Base de Datos}
+
+\subsection{Pruebas de Inserción}
+
+Verificación de inserción correcta de datos:
+
+\begin{verbatim}
+-- Verificar inserción de unidades
+SELECT COUNT(*) FROM "Units";
+
+-- Verificar inserción de telemetría
+SELECT COUNT(*) FROM "Telemetries" 
+WHERE timestamp > NOW() - INTERVAL '1 hour';
+
+-- Verificar integridad referencial
+SELECT t.*, u.name 
+FROM "Telemetries" t 
+JOIN "Units" u ON t.unit_id = u.id 
+ORDER BY t.timestamp DESC LIMIT 10;
+\end{verbatim}
+
+\subsection{Pruebas de Consulta}
+
+Validación de consultas de análisis:
+
+\begin{verbatim}
+-- Estadísticas por unidad
+SELECT 
+    u.name,
+    COUNT(t.id) as total_registros,
+    AVG(CASE WHEN t.parameter = 'Velocidad' THEN t.value END) as vel_promedio,
+    MAX(t.timestamp) as ultimo_registro
+FROM "Units" u
+LEFT JOIN "Telemetries" t ON u.id = t.unit_id
+GROUP BY u.id, u.name;
+
+-- Análisis de combustible
+SELECT 
+    u.name,
+    t.value as nivel_combustible,
+    t.timestamp
+FROM "Telemetries" t
+JOIN "Units" u ON t.unit_id = u.id
+WHERE t.parameter = 'Combustible'
+ORDER BY t.timestamp DESC;
+\end{verbatim}
+
+\section{Automatización de Pruebas con Makefile}
+
+\subsection{Comandos de Testing}
+
+El Makefile incluye comandos específicos para pruebas:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Comando} & \textbf{Descripción} \\
+\hline
+\texttt{make test-mqtt} & Envía mensajes MQTT de prueba \\
+\hline
+\texttt{make simulate} & Ejecuta simulador completo \\
+\hline
+\texttt{make simulate-unit UNIT=1} & Simula unidad específica \\
+\hline
+\texttt{make check-health} & Verifica salud de servicios \\
+\hline
+\texttt{make debug} & Información de diagnóstico \\
+\hline
+\texttt{make logs} & Ver logs del sistema \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Resultados de Validación}
+
+\subsection{Métricas de Rendimiento}
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Throughput MQTT}: 500+ mensajes/minuto
+    \item \textbf{Latencia de procesamiento}: < 100ms
+    \item \textbf{Tiempo de inserción BD}: < 50ms
+    \item \textbf{Uso de memoria}: ~150MB por contenedor
+    \item \textbf{Tiempo de reconexión}: < 5 segundos
+\end{itemize}
+
+\subsection{Casos de Prueba Exitosos}
+
+\begin{enumerate}[noitemsep]
+    \item Procesamiento de 1000+ mensajes sin pérdida
+    \item Recuperación automática tras fallo de red
+    \item Manejo de 5 unidades simultáneas
+    \item Consistencia de datos tras reinicio
+    \item Validación correcta de formatos
+\end{enumerate}

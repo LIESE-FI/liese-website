@@ -1,0 +1,496 @@
+\chapter{Anexos}
+
+\section{Anexo A: Configuraciones Completas}
+
+\subsection{docker-compose.yml Completo}
+
+\begin{minted}[bgcolor=backgroundColour,frame=lines,framesep=2mm]{yaml}
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: mqtt_postgres
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./src/Database:/docker-entrypoint-initdb.d
+    networks:
+      - mqtt_network
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: mqtt_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - "${PGADMIN_PORT}:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - mqtt_network
+    depends_on:
+      - postgres
+
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mqtt_broker
+    ports:
+      - "${MQTT_PORT}:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+    networks:
+      - mqtt_network
+
+  mqtt-writer:
+    build: .
+    container_name: mqtt_writer_service
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      MQTT_BROKER: mosquitto
+      MQTT_PORT: 1883
+      MQTT_TOPIC: ${MQTT_TOPIC}
+    networks:
+      - mqtt_network
+    depends_on:
+      - postgres
+      - mosquitto
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  pgadmin_data:
+
+networks:
+  mqtt_network:
+    driver: bridge
+\end{minted}
+
+\subsection{Archivo .env de Ejemplo}
+
+\begin{minted}[bgcolor=backgroundColour,frame=lines,framesep=2mm]{bash}
+# Base de Datos PostgreSQL
+DB_NAME=telemetry_db
+DB_USER=mqtt_user
+DB_PASSWORD=secure_password_123
+DB_HOST=localhost
+DB_PORT=5432
+
+# pgAdmin
+PGADMIN_EMAIL=admin@liese.com
+PGADMIN_PASSWORD=admin123
+PGADMIN_PORT=8080
+
+# MQTT Broker
+MQTT_BROKER=localhost
+MQTT_PORT=1883
+MQTT_TOPIC=vehicle/telemetry/+
+
+# Configuración del Writer
+LOG_LEVEL=INFO
+BATCH_SIZE=100
+RETRY_ATTEMPTS=3
+RETRY_DELAY=5
+
+# Configuración de Monitoreo
+ENABLE_METRICS=true
+METRICS_PORT=8090
+HEALTH_CHECK_INTERVAL=30
+\end{minted}
+
+\subsection{Configuración de Mosquitto}
+
+\begin{minted}[bgcolor=backgroundColour,frame=lines,framesep=2mm]{text}
+# mosquitto.conf
+listener 1883
+allow_anonymous true
+log_dest stdout
+log_type all
+connection_messages true
+log_timestamp true
+
+# WebSocket support
+listener 9001
+protocol websockets
+\end{minted}
+
+\section{Anexo B: Scripts de Utilidad}
+
+\subsection{Script de Backup Automático}
+
+\begin{minted}[bgcolor=backgroundColour,frame=lines,framesep=2mm]{bash}
+#!/bin/bash
+# backup_db.sh
+
+DATE=$(date +%Y%m%d_%H%M%S)
+BACKUP_DIR="./backups"
+CONTAINER_NAME="mqtt_postgres"
+DB_NAME="telemetry_db"
+DB_USER="mqtt_user"
+
+# Crear directorio de backup si no existe
+mkdir -p $BACKUP_DIR
+
+# Realizar backup
+docker exec $CONTAINER_NAME pg_dump \
+    -U $DB_USER \
+    -d $DB_NAME \
+    -f /tmp/backup_$DATE.sql
+
+# Copiar backup al host
+docker cp $CONTAINER_NAME:/tmp/backup_$DATE.sql \
+    $BACKUP_DIR/backup_$DATE.sql
+
+# Comprimir backup
+gzip $BACKUP_DIR/backup_$DATE.sql
+
+echo "Backup completado: $BACKUP_DIR/backup_$DATE.sql.gz"
+
+# Limpiar backups antiguos (mantener últimos 7 días)
+find $BACKUP_DIR -name "backup_*.sql.gz" -mtime +7 -delete
+\end{minted}
+
+\subsection{Script de Monitoreo del Sistema}
+
+\begin{minted}[bgcolor=backgroundColour,frame=lines,framesep=2mm]{bash}
+#!/bin/bash
+# monitor_system.sh
+
+echo "=== Estado del Sistema de Telemetría ==="
+echo "Fecha: $(date)"
+echo
+
+# Estado de contenedores
+echo "--- Estado de Contenedores ---"
+docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+echo
+
+# Uso de recursos
+echo "--- Uso de Recursos ---"
+docker stats --no-stream --format \
+    "table {{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}"
+echo
+
+# Logs recientes del writer
+echo "--- Últimos logs del MQTT Writer ---"
+docker logs --tail 10 mqtt_writer_service
+echo
+
+# Conexiones a la base de datos
+echo "--- Conexiones Activas a PostgreSQL ---"
+docker exec mqtt_postgres psql -U mqtt_user -d telemetry_db -c \
+    "SELECT count(*) as active_connections FROM pg_stat_activity 
+     WHERE state = 'active';"
+echo
+
+# Espacio en disco
+echo "--- Espacio en Disco ---"
+df -h | grep -E "(Filesystem|/dev/)"
+\end{minted}
+
+\subsection{Simulador de Telemetría Avanzado}
+
+\begin{minted}[bgcolor=backgroundColour,frame=lines,framesep=2mm]{python}
+#!/usr/bin/env python3
+# advanced_simulator.py
+
+import json
+import time
+import random
+import argparse
+from datetime import datetime, timezone
+import paho.mqtt.client as mqtt
+
+class TelemetrySimulator:
+    def __init__(self, broker_host, broker_port, topic_prefix):
+        self.client = mqtt.Client()
+        self.broker_host = broker_host
+        self.broker_port = broker_port
+        self.topic_prefix = topic_prefix
+        
+        # Configuración de vehículos simulados
+        self.vehicles = [
+            {"id": "AV001", "route": "urban", "speed_range": (20, 60)},
+            {"id": "AV002", "route": "highway", "speed_range": (60, 120)},
+            {"id": "AV003", "route": "mixed", "speed_range": (15, 80)}
+        ]
+        
+        # Posiciones iniciales (Ciudad de México)
+        self.positions = {
+            "AV001": {"lat": 19.4326, "lon": -99.1332},
+            "AV002": {"lat": 19.3910, "lon": -99.2837},
+            "AV003": {"lat": 19.4978, "lon": -99.1269}
+        }
+    
+    def connect(self):
+        """Conectar al broker MQTT"""
+        try:
+            self.client.connect(self.broker_host, self.broker_port, 60)
+            print(f"Conectado al broker {self.broker_host}:{self.broker_port}")
+            return True
+        except Exception as e:
+            print(f"Error conectando al broker: {e}")
+            return False
+    
+    def generate_telemetry(self, vehicle_id):
+        """Generar datos de telemetría para un vehículo"""
+        vehicle = next(v for v in self.vehicles if v["id"] == vehicle_id)
+        current_pos = self.positions[vehicle_id]
+        
+        # Simular movimiento
+        lat_delta = random.uniform(-0.001, 0.001)
+        lon_delta = random.uniform(-0.001, 0.001)
+        
+        current_pos["lat"] += lat_delta
+        current_pos["lon"] += lon_delta
+        
+        # Generar datos de telemetría
+        telemetry = {
+            "device_id": vehicle_id,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "latitude": round(current_pos["lat"], 6),
+            "longitude": round(current_pos["lon"], 6),
+            "altitude": round(random.uniform(2200, 2300), 1),
+            "speed": round(random.uniform(*vehicle["speed_range"]), 1),
+            "course": round(random.uniform(0, 360), 1),
+            "satellites": random.randint(6, 15),
+            "hdop": round(random.uniform(0.8, 2.5), 1),
+            "engine_rpm": random.randint(800, 3500),
+            "fuel_level": round(random.uniform(10, 100), 1),
+            "engine_temp": round(random.uniform(80, 105), 1)
+        }
+        
+        return telemetry
+    
+    def publish_telemetry(self, vehicle_id, telemetry):
+        """Publicar telemetría al broker MQTT"""
+        topic = f"{self.topic_prefix}/{vehicle_id}"
+        payload = json.dumps(telemetry)
+        
+        result = self.client.publish(topic, payload)
+        if result.rc == 0:
+            print(f"OK Telemetría enviada para {vehicle_id}")
+        else:
+            print(f"ERROR enviando telemetría para {vehicle_id}")
+    
+    def run_simulation(self, duration_minutes, frequency_seconds):
+        """Ejecutar simulación"""
+        if not self.connect():
+            return
+        
+        start_time = time.time()
+        end_time = start_time + (duration_minutes * 60)
+        
+        print(f"Iniciando simulación por {duration_minutes} minutos")
+        print(f"Frecuencia: cada {frequency_seconds} segundos")
+        print("Presiona Ctrl+C para detener\n")
+        
+        try:
+            while time.time() < end_time:
+                for vehicle in self.vehicles:
+                    telemetry = self.generate_telemetry(vehicle["id"])
+                    self.publish_telemetry(vehicle["id"], telemetry)
+                
+                time.sleep(frequency_seconds)
+                
+        except KeyboardInterrupt:
+            print("\nSimulación detenida por el usuario")
+        
+        finally:
+            self.client.disconnect()
+            print("Desconectado del broker MQTT")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Simulador de Telemetría Avanzado")
+    parser.add_argument("--broker", default="localhost", help="Host del broker MQTT")
+    parser.add_argument("--port", type=int, default=1883, help="Puerto del broker MQTT")
+    parser.add_argument("--topic", default="vehicle/telemetry", help="Prefijo del topic")
+    parser.add_argument("--duration", type=int, default=60, help="Duración en minutos")
+    parser.add_argument("--frequency", type=int, default=5, help="Frecuencia en segundos")
+    
+    args = parser.parse_args()
+    
+    simulator = TelemetrySimulator(args.broker, args.port, args.topic)
+    simulator.run_simulation(args.duration, args.frequency)
+\end{minted}
+
+\section{Anexo C: Esquemas y Diagramas}
+
+\subsection{Diagrama de Entidad-Relación Detallado}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.8\textwidth}
+        \begin{verbatim}
++-------------------------------------+
+|            vehicle_telemetry        |
++-------------------------------------+
+| id (SERIAL PRIMARY KEY)             |
+| device_id (VARCHAR(50) NOT NULL)    |
+| timestamp (TIMESTAMP WITH TIME ZONE)|
+| latitude (DECIMAL(10,8))            |
+| longitude (DECIMAL(11,8))           |
+| altitude (DECIMAL(8,2))             |
+| speed (DECIMAL(6,2))                |
+| course (DECIMAL(5,2))               |
+| satellites (INTEGER)                |
+| hdop (DECIMAL(4,2))                 |
+| created_at (TIMESTAMP DEFAULT NOW())|
++-------------------------------------+
+        \end{verbatim}
+    \end{minipage}
+    \caption{Esquema detallado de la tabla principal}
+    \label{fig:schema_detallado}
+\end{figure}
+
+\subsection{Diagrama de Flujo de Datos}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.8\textwidth}
+        \begin{verbatim}
+Device/Simulator -> MQTT Broker -> MQTT Writer -> PostgreSQL
+     |                  |             |             |
+     |                  |             |             v
+     |                  |             |         pgAdmin
+     |                  |             |        (Monitoring)
+     |                  |             |
+     |                  |             v
+     |                  |         Error Logs
+     |                  |         & Metrics
+     |                  |
+     |                  v
+     |              MQTT Explorer
+     |             (Real-time view)
+     |
+     v
+   GPS/OBD-II Data
+        \end{verbatim}
+    \end{minipage}
+    \caption{Flujo completo de datos en el sistema}
+    \label{fig:flujo_datos}
+\end{figure}
+
+\section{Anexo D: Comandos de Solución de Problemas}
+
+\subsection{Diagnóstico de Conectividad}
+
+\begin{minted}[bgcolor=backgroundColour,frame=lines,framesep=2mm]{bash}
+# Verificar conectividad MQTT
+mosquitto_pub -h localhost -p 1883 -t test/topic -m "test message"
+
+# Escuchar topic MQTT
+mosquitto_sub -h localhost -p 1883 -t "vehicle/telemetry/+"
+
+# Verificar conectividad a PostgreSQL
+docker exec mqtt_postgres psql -U mqtt_user -d telemetry_db -c "SELECT version();"
+
+# Verificar logs del writer
+docker logs -f mqtt_writer_service
+
+# Verificar puertos abiertos
+netstat -tulpn | grep -E "(1883|5432|8080)"
+\end{minted}
+
+\subsection{Comandos de Recuperación}
+
+\begin{minted}[bgcolor=backgroundColour,frame=lines,framesep=2mm]{bash}
+# Reiniciar servicios específicos
+docker restart mqtt_writer_service
+docker restart mqtt_broker
+docker restart mqtt_postgres
+
+# Limpiar y reconstruir
+make clean
+make build
+
+# Verificar integridad de la base de datos
+docker exec mqtt_postgres pg_dump -U mqtt_user -d telemetry_db --schema-only
+
+# Backup de emergencia
+make backup
+
+# Restaurar desde backup
+make restore BACKUP_FILE=backup_20240815_143022.sql.gz
+\end{minted}
+
+\section{Anexo E: Métricas y Monitoreo}
+
+\subsection{Consultas de Monitoreo SQL}
+
+\begin{minted}[bgcolor=backgroundColour,frame=lines,framesep=2mm]{sql}
+-- Estadísticas generales
+SELECT 
+    COUNT(*) as total_records,
+    COUNT(DISTINCT device_id) as unique_devices,
+    MIN(timestamp) as first_record,
+    MAX(timestamp) as last_record,
+    MAX(timestamp) - MIN(timestamp) as time_span
+FROM vehicle_telemetry;
+
+-- Actividad por dispositivo en las últimas 24 horas
+SELECT 
+    device_id,
+    COUNT(*) as message_count,
+    MIN(timestamp) as first_message,
+    MAX(timestamp) as last_message,
+    AVG(speed) as avg_speed
+FROM vehicle_telemetry 
+WHERE timestamp >= NOW() - INTERVAL '24 hours'
+GROUP BY device_id
+ORDER BY message_count DESC;
+
+-- Detección de anomalías
+SELECT *
+FROM vehicle_telemetry
+WHERE speed > 200 OR speed < 0
+   OR latitude NOT BETWEEN -90 AND 90
+   OR longitude NOT BETWEEN -180 AND 180
+   OR hdop > 10
+ORDER BY timestamp DESC;
+
+-- Rendimiento de inserción
+SELECT 
+    DATE_TRUNC('hour', created_at) as hour,
+    COUNT(*) as inserts_per_hour
+FROM vehicle_telemetry
+WHERE created_at >= NOW() - INTERVAL '24 hours'
+GROUP BY hour
+ORDER BY hour;
+\end{minted}
+
+\subsection{Alertas Recomendadas}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{3cm}|p{6cm}|}
+\hline
+\textbf{Métrica} & \textbf{Umbral} & \textbf{Acción} \\
+\hline
+CPU > 80\% & 5 minutos & Escalar horizontalmente \\
+\hline
+Memoria > 90\% & 2 minutos & Investigar memory leaks \\
+\hline
+Latencia > 100ms & 1 minuto & Verificar red y BD \\
+\hline
+Mensajes/seg = 0 & 30 segundos & Verificar broker MQTT \\
+\hline
+Conexiones BD > 80\% & Inmediato & Optimizar queries \\
+\hline
+Espacio disco > 85\% & Inmediato & Limpiar logs antiguos \\
+\hline
+\end{tabular}
+\caption{Umbrales de alerta recomendados}
+\label{tab:alertas}
+\end{table}
