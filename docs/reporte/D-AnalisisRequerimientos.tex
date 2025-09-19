@@ -1,0 +1,34 @@
+\chapter{Análisis y Requerimientos}
+\section{Requerimientos Funcionales}
+Los requerimientos funcionales describen las capacidades y servicios que el sistema debe proporcionar a los usuarios finales. Para el sitio web del Laboratorio de Instrumentación Electrónica de Sistemas Espaciales (LIESE), se identifican los siguientes:
+\begin{itemize}
+	\item Registro y gestión de miembros del laboratorio, incluyendo líderes de proyecto y administradores.
+	\item Visualización de información sobre proyectos, artículos, eventos y noticias.
+	\item Solicitud de oportunidades académicas (investigación, tesis, maestría, servicio social) mediante formularios web y verificación de correo electrónico.
+	\item Publicación y administración de artículos, eventos y noticias por parte de usuarios autorizados.
+	\item Sistema de autenticación y autorización para acceso a panel de administración y funcionalidades restringidas.
+	\item Envío de correos electrónicos automáticos para verificación y notificaciones relevantes.
+	\item Gestión de archivos multimedia (imágenes, documentos) asociados a miembros, proyectos y artículos.
+	\item Interfaz de usuario responsiva y accesible para diferentes dispositivos.
+\end{itemize}
+\section{Requerimientos No Funcionales}
+Los requerimientos no funcionales establecen criterios de calidad, restricciones y condiciones bajo las cuales el sistema debe operar:
+\begin{itemize}
+	\item Seguridad: Protección contra ataques comunes (CSRF, XSS, SQL Injection) y gestión segura de sesiones y contraseñas \cite{django-docs}.
+	\item Rendimiento: Respuesta eficiente a las solicitudes de los usuarios y manejo adecuado de archivos estáticos y multimedia.
+	\item Escalabilidad: Capacidad de migrar de SQLite a PostgreSQL para soportar mayor volumen de datos y usuarios \cite{postgresql-docs}.
+	\item Mantenibilidad: Código estructurado siguiendo el patrón MVT de Django y uso de migraciones para la evolución del esquema de datos.
+	\item Disponibilidad: Despliegue en servidores Ubuntu con servicios gestionados por Systemd y balanceo de carga mediante Nginx \cite{ubuntu-docs,nginx-docs}.
+	\item Accesibilidad: Cumplimiento de estándares web y diseño responsivo con Bootstrap \cite{bootstrap-docs}.
+	\item Usabilidad: Interfaz intuitiva y documentación clara para usuarios y administradores.
+\end{itemize}
+\section{Casos de Uso}
+Los casos de uso describen las interacciones principales entre los usuarios y el sistema. A continuación se presentan los casos de uso más relevantes:
+
+\begin{itemize}
+	\item \textbf{Registro de oportunidad académica:} Un visitante completa el formulario de solicitud, recibe un correo de verificación y, tras confirmar su correo, su solicitud es registrada y notificada a los administradores.
+	\item \textbf{Gestión de miembros:} Un administrador agrega, edita o elimina miembros y líderes de proyecto desde el panel de administración.
+	\item \textbf{Publicación de artículos y eventos:} Usuarios autorizados crean y editan artículos, eventos y noticias, incluyendo la carga de imágenes y documentos.
+	\item \textbf{Visualización de información:} Cualquier usuario puede consultar información pública sobre proyectos, artículos, eventos y miembros del laboratorio.
+	\item \textbf{Autenticación y acceso:} Los administradores y editores acceden a funcionalidades restringidas mediante autenticación segura.
+\end{itemize}

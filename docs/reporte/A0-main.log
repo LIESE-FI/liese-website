@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.6.2)  26 AUG 2025 06:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.6.2)  19 SEP 2025 13:49
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/nahtie/Desktop/liese/liese-av-geotel-mqtt-writter/docs/A0-main
-(/home/nahtie/Desktop/liese/liese-av-geotel-mqtt-writter/docs/A0-main.tex
+**/home/nahtie/Desktop/liese/liese-website/docs/reporte/A0-main
+(/home/nahtie/Desktop/liese/liese-website/docs/reporte/A0-main.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/share/texmf-dist/tex/latex/base/book.cls
@@ -619,8 +619,10 @@ runsystem(command -v pygmentize && touch A0-main.aex)...executed.
 
 runsystem(rm A0-main.aex)...executed.
 
-
-No file A0-main.aux.
+ (./A0-main.aux (./A1-Portada.aux)
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+ (./B-Introduccion.aux) (./C-MarcoTeorico.aux) (./D-AnalisisRequerimientos.aux) (./E-DisenoArquitectura.aux) (./F-Implementacion.aux) (./G-SistemaVerificacion.aux) (./H-InterfazUsuario.aux) (./I-PanelAdministracion.aux) (./K-UbuntuServer.aux) (./L-ConexionSSH.aux) (./M-ServiciosLinux.aux) (./J-Despliegue.aux) (./N-MejorasFuturas.aux) (./O-Conclusiones.aux) (./P-Referencias.aux))
 \openout1 = `A0-main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
@@ -641,7 +643,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
 LaTeX Font Info:    ... okay on input line 83.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 83.
 LaTeX Font Info:    ... okay on input line 83.
-(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count388
 \scratchdimen=\dimen273
@@ -711,17 +713,18 @@ LaTeX Info: Redefining \% on input line 83.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 83.
+(./A0-main.out) (./A0-main.out)
 \@outlinefile=\write5
 \openout5 = `A0-main.out'.
 
-(/usr/share/texmf-dist/tex/latex/translations/translations-basic-dictionary-spanish.trsl
+ (/usr/share/texmf-dist/tex/latex/translations/translations-basic-dictionary-spanish.trsl
 File: translations-basic-dictionary-spanish.trsl (spanish translation file `translations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' for `spanish'. on input line 83.
 \openout2 = `A1-Portada.aux'.
 
  (./A1-Portada.tex
-<Imagenes/escudounam_negro.jpg, id=4, 79.7379pt x 94.4328pt>
+<Imagenes/escudounam_negro.jpg, id=277, 79.7379pt x 94.4328pt>
 File: Imagenes/escudounam_negro.jpg Graphic file (type jpg)
 <use Imagenes/escudounam_negro.jpg>
 Package pdftex.def Info: Imagenes/escudounam_negro.jpg  used on input line 6.
@@ -730,7 +733,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 8.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 8.
-<Imagenes/escudofi_negro.jpg, id=5, 79.7379pt x 94.4328pt>
+<Imagenes/escudofi_negro.jpg, id=278, 79.7379pt x 94.4328pt>
 File: Imagenes/escudofi_negro.jpg Graphic file (type jpg)
 <use Imagenes/escudofi_negro.jpg>
 Package pdftex.def Info: Imagenes/escudofi_negro.jpg  used on input line 32.
@@ -751,321 +754,297 @@ Overfull \hbox (2.22166pt too wide) in paragraph at lines 3--54
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./Imagenes/escudounam_negro.jpg> <./Imagenes/escudofi_negro.jpg>])
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 87.
+(Font)              <12> on input line 86.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 87.
+(Font)              <8> on input line 86.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 87.
+(Font)              <6> on input line 86.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.87     \tableofcontents
-                          [1
+l.86   \tableofcontents
+                        [1
 
 
 
-]
-No file A0-main.toc.
+] (./A0-main.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [2
+
+])
 \tf@toc=\write6
 \openout6 = `A0-main.toc'.
 
-[2
+LaTeX Info: Redefining \. on input line 87.
+LaTeX Info: Redefining \% on input line 87.
+ [3]
+\openout2 = `B-Introduccion.aux'.
 
-]
-\openout2 = `B-Intro.aux'.
-
- (./B-Intro.tex
-LaTeX Info: Redefining \. on input line 14.
-LaTeX Info: Redefining \% on input line 14.
- [3
-
-]
-LaTeX Info: Redefining \. on input line 32.
-LaTeX Info: Redefining \% on input line 32.
- [4]
+ (./B-Introduccion.tex
 Cap\'{\i }tulo 1.
-[5
-
-]
-Cap\'{\i }tulo 2.
-<Imagenes/2PubSub.png, id=45, 696.6025pt x 391.4625pt>
-File: Imagenes/2PubSub.png Graphic file (type png)
-<use Imagenes/2PubSub.png>
-Package pdftex.def Info: Imagenes/2PubSub.png  used on input line 56.
-(pdftex.def)             Requested size: 377.62642pt x 212.21089pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[6
-
-]
-LaTeX Info: Redefining \. on input line 99.
-LaTeX Info: Redefining \% on input line 99.
- [7 <./Imagenes/2PubSub.png>])
-LaTeX Info: Redefining \. on input line 90.
-LaTeX Info: Redefining \% on input line 90.
- [8]
-\openout2 = `C-Conceptos.aux'.
-
- (./C-Conceptos.tex
-Cap\'{\i }tulo 3.
-[9
-
-
-
-
-])
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
- [10]
-\openout2 = `D-AnalisisYDiseno.aux'.
-
- (./D-AnalisisYDiseno.tex
-Cap\'{\i }tulo 4.
-[11
-
-
-
-
-]
-LaTeX Info: Redefining \. on input line 115.
-LaTeX Info: Redefining \% on input line 115.
- [12]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 129.
- (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-LaTeX Info: Redefining \. on input line 183.
-LaTeX Info: Redefining \% on input line 183.
- [13])
-LaTeX Info: Redefining \. on input line 92.
-LaTeX Info: Redefining \% on input line 92.
- [14]
-\openout2 = `E-Cuenta.aux'.
-
- (./E-Cuenta.tex
-Cap\'{\i }tulo 5.
-[15
-
-
-
-
-]
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 60.
- (/usr/share/texmf-dist/tex/latex/base/ts1cmtt.fd
-File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-LaTeX Info: Redefining \. on input line 105.
-LaTeX Info: Redefining \% on input line 105.
- [16{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-LaTeX Info: Redefining \. on input line 193.
-LaTeX Info: Redefining \% on input line 193.
- [17]
-LaTeX Info: Redefining \. on input line 223.
-LaTeX Info: Redefining \% on input line 223.
- [18])
-LaTeX Info: Redefining \. on input line 93.
-LaTeX Info: Redefining \% on input line 93.
- [19]
-\openout2 = `G-Despliegue.aux'.
-
- (./G-Despliegue.tex
-Cap\'{\i }tulo 6.
-[20
-
-
-
-
-]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 119.
-LaTeX Info: Redefining \. on input line 159.
-LaTeX Info: Redefining \% on input line 159.
- [21]
-Underfull \vbox (badness 5817) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 206.
-LaTeX Info: Redefining \% on input line 206.
- [22])
-LaTeX Info: Redefining \. on input line 94.
-LaTeX Info: Redefining \% on input line 94.
- [23]
-\openout2 = `H-Manual.aux'.
-
- (./H-Manual.tex
-Cap\'{\i }tulo 7.
-[24
-
-
-
-
-]
-Underfull \vbox (badness 2343) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 135.
-LaTeX Info: Redefining \% on input line 135.
- [25]
-LaTeX Info: Redefining \. on input line 192.
-LaTeX Info: Redefining \% on input line 192.
- [26])
-LaTeX Info: Redefining \. on input line 95.
-LaTeX Info: Redefining \% on input line 95.
- [27]
-\openout2 = `J-Conclusiones.aux'.
-
- (./J-Conclusiones.tex
-Cap\'{\i }tulo 8.
-[28
-
-
+) [4
 
 
 ]
 LaTeX Info: Redefining \. on input line 88.
 LaTeX Info: Redefining \% on input line 88.
- [29]
-LaTeX Info: Redefining \. on input line 145.
-LaTeX Info: Redefining \% on input line 145.
- [30]
-LaTeX Info: Redefining \. on input line 201.
-LaTeX Info: Redefining \% on input line 201.
- [31]
-LaTeX Info: Redefining \. on input line 242.
-LaTeX Info: Redefining \% on input line 242.
- [32])
-LaTeX Info: Redefining \. on input line 96.
-LaTeX Info: Redefining \% on input line 96.
- [33]
-\openout2 = `K-Anexos.aux'.
+ [5]
+\openout2 = `C-MarcoTeorico.aux'.
 
- (./K-Anexos.tex
+ (./C-MarcoTeorico.tex
+Cap\'{\i }tulo 2.
+[6
+
+
+
+
+]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 23.
+ (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+))
+LaTeX Info: Redefining \. on input line 89.
+LaTeX Info: Redefining \% on input line 89.
+ [7]
+\openout2 = `D-AnalisisRequerimientos.aux'.
+
+ (./D-AnalisisRequerimientos.tex
+Cap\'{\i }tulo 3.
+[8
+
+
+
+
+])
+LaTeX Info: Redefining \. on input line 90.
+LaTeX Info: Redefining \% on input line 90.
+ [9]
+\openout2 = `E-DisenoArquitectura.aux'.
+
+ (./E-DisenoArquitectura.tex
+Cap\'{\i }tulo 4.
+<uml/arquitectura-mvt.png, id=418, 578.16pt x 346.29375pt>
+File: uml/arquitectura-mvt.png Graphic file (type png)
+<use uml/arquitectura-mvt.png>
+Package pdftex.def Info: uml/arquitectura-mvt.png  used on input line 8.
+(pdftex.def)             Requested size: 377.62642pt x 226.18205pt.
+[10
+
+
+
+
+ <./uml/arquitectura-mvt.png (PNG copy)>]
+<uml/modelos-datos.png, id=424, 555.07375pt x 468.75125pt>
+File: uml/modelos-datos.png Graphic file (type png)
+<use uml/modelos-datos.png>
+Package pdftex.def Info: uml/modelos-datos.png  used on input line 18.
+(pdftex.def)             Requested size: 448.42822pt x 378.69221pt.
+LaTeX Info: Redefining \. on input line 21.
+LaTeX Info: Redefining \% on input line 21.
+ [11 <./uml/modelos-datos.png (PNG copy)>]
+<uml/diagrama-er.png, id=431, 491.8375pt x 245.91875pt>
+File: uml/diagrama-er.png Graphic file (type png)
+<use uml/diagrama-er.png>
+Package pdftex.def Info: uml/diagrama-er.png  used on input line 28.
+(pdftex.def)             Requested size: 448.42822pt x 224.22168pt.
+<uml/templates-herencia.png, id=433, 855.195pt x 169.63374pt>
+File: uml/templates-herencia.png Graphic file (type png)
+<use uml/templates-herencia.png>
+Package pdftex.def Info: uml/templates-herencia.png  used on input line 37.
+(pdftex.def)             Requested size: 330.42041pt x 65.54085pt.
+)
+LaTeX Info: Redefining \. on input line 91.
+LaTeX Info: Redefining \% on input line 91.
+ [12 <./uml/diagrama-er.png (PNG copy)> <./uml/templates-herencia.png (PNG copy)>]
+\openout2 = `F-Implementacion.aux'.
+
+ (./F-Implementacion.tex
+Cap\'{\i }tulo 5.
+<uml/estructura-proyecto.png, id=441, 1046.91125pt x 365.365pt>
+File: uml/estructura-proyecto.png Graphic file (type png)
+<use uml/estructura-proyecto.png>
+Package pdftex.def Info: uml/estructura-proyecto.png  used on input line 6.
+(pdftex.def)             Requested size: 424.82523pt x 148.25633pt.
+[13
+
+
+
+
+ <./uml/estructura-proyecto.png (PNG copy)>]
+<uml/flujo-oportunidad.png, id=447, 645.41125pt x 409.53pt>
+File: uml/flujo-oportunidad.png Graphic file (type png)
+<use uml/flujo-oportunidad.png>
+Package pdftex.def Info: uml/flujo-oportunidad.png  used on input line 14.
+(pdftex.def)             Requested size: 448.42822pt x 284.53816pt.
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+ [14 <./uml/flujo-oportunidad.png (PNG copy)>]
+<uml/admin-miembros.png, id=453, 566.115pt x 314.17375pt>
+File: uml/admin-miembros.png Graphic file (type png)
+<use uml/admin-miembros.png>
+Package pdftex.def Info: uml/admin-miembros.png  used on input line 24.
+(pdftex.def)             Requested size: 330.42041pt x 183.37622pt.
+)
+LaTeX Info: Redefining \. on input line 92.
+LaTeX Info: Redefining \% on input line 92.
+ [15 <./uml/admin-miembros.png (PNG copy)>]
+\openout2 = `G-SistemaVerificacion.aux'.
+
+ (./G-SistemaVerificacion.tex
+Cap\'{\i }tulo 6.
+) [16
+
+
+
+
+]
+\openout2 = `H-InterfazUsuario.aux'.
+
+ (./H-InterfazUsuario.tex
+Cap\'{\i }tulo 7.
+) [17
+
+
+
+
+]
+\openout2 = `I-PanelAdministracion.aux'.
+
+ (./I-PanelAdministracion.tex
+Cap\'{\i }tulo 8.
+) [18
+
+
+
+
+]
+\openout2 = `K-UbuntuServer.aux'.
+
+ (./K-UbuntuServer.tex
 Cap\'{\i }tulo 9.
-\openout3 = `A0-main.pyg'.
-
-(./_minted-A0-main/default.pygstyle) (./_minted-A0-main/D8ED9F6E13CC805D9B8DF2A3EE2AECA57EABC3C59B6B72DA672ACE5B6EC32DC7.pygtex
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
-) [34
+) [19
 
 
 
 
 ]
-\openout3 = `A0-main.pyg'.
+\openout2 = `L-ConexionSSH.aux'.
 
- (./_minted-A0-main/81FE5C349EDA56A886C7437996F269A58547B17F0EA7B198111893A849BBB209.pygtex)
-LaTeX Info: Redefining \. on input line 110.
-LaTeX Info: Redefining \% on input line 110.
- [35]
-\openout3 = `A0-main.pyg'.
-
- (./_minted-A0-main/FFCD693E387A069BCCCDD47B22CD09078D408F6AA458BFCF27FADB0DB6AD3169.pygtex)
-\openout3 = `A0-main.pyg'.
-
- (./_minted-A0-main/6418438459EC0FD2BFECBA4D726755FB8547B17F0EA7B198111893A849BBB209.pygtex)
-LaTeX Info: Redefining \. on input line 162.
-LaTeX Info: Redefining \% on input line 162.
- [36]
-\openout3 = `A0-main.pyg'.
-
- (./_minted-A0-main/02912C532B6BBF4C29C1C969B82DE1E68547B17F0EA7B198111893A849BBB209.pygtex)
-LaTeX Info: Redefining \. on input line 200.
-LaTeX Info: Redefining \% on input line 200.
- [37]
-\openout3 = `A0-main.pyg'.
-
- (./_minted-A0-main/0B2E8EB84B3DBA26C63FF0781142AA8BA6D97827B31812B13A3DB14F264FF6BD.pygtex)
-LaTeX Info: Redefining \. on input line 326.
-LaTeX Info: Redefining \% on input line 326.
- [38]
-Underfull \vbox (badness 10000) detected at line 326
- []
-
-
-Underfull \vbox (badness 10000) detected at line 326
- []
-
-LaTeX Info: Redefining \. on input line 326.
-LaTeX Info: Redefining \% on input line 326.
-[39]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 384.
-LaTeX Info: Redefining \% on input line 384.
- [40]
-\openout3 = `A0-main.pyg'.
-
- (./_minted-A0-main/3F743C52E70FD1EDBA56F648B30854398547B17F0EA7B198111893A849BBB209.pygtex)
-\openout3 = `A0-main.pyg'.
-
- (./_minted-A0-main/CC52E70CBDC2CFEE9CF7025F74EF718D8547B17F0EA7B198111893A849BBB209.pygtex)
-LaTeX Info: Redefining \. on input line 426.
-LaTeX Info: Redefining \% on input line 426.
- [41]
-\openout3 = `A0-main.pyg'.
-
- (./_minted-A0-main/CC7BB9AC8FF824ADFAF221909CE872ABCF9EDA4257A1A2FF6AD31FAF90AA7EFD.pygtex)
-LaTeX Info: Redefining \. on input line 471.
-LaTeX Info: Redefining \% on input line 471.
- [42])
-LaTeX Info: Redefining \. on input line 97.
-LaTeX Info: Redefining \% on input line 97.
- [43]
-\openout2 = `O-Reference.aux'.
-
- (./O-Reference.tex
+ (./L-ConexionSSH.tex
 Cap\'{\i }tulo 10.
-[44
+) [20
 
 
 
 
 ]
-LaTeX Info: Redefining \. on input line 120.
-LaTeX Info: Redefining \% on input line 120.
- [45]
-LaTeX Info: Redefining \. on input line 184.
-LaTeX Info: Redefining \% on input line 184.
- [46])
-LaTeX Info: Redefining \. on input line 98.
-LaTeX Info: Redefining \% on input line 98.
- [47] (./A0-main.aux (./A1-Portada.aux)
+\openout2 = `M-ServiciosLinux.aux'.
+
+ (./M-ServiciosLinux.tex
+Cap\'{\i }tulo 11.
+) [21
+
+
+
+
+]
+\openout2 = `J-Despliegue.aux'.
+
+ (./J-Despliegue.tex
+Cap\'{\i }tulo 12.
+) [22
+
+
+
+
+]
+\openout2 = `N-MejorasFuturas.aux'.
+
+ (./N-MejorasFuturas.tex
+Cap\'{\i }tulo 13.
+) [23
+
+
+
+
+]
+\openout2 = `O-Conclusiones.aux'.
+
+ (./O-Conclusiones.tex
+Cap\'{\i }tulo 14.
+) [24
+
+
+
+
+]
+\openout2 = `P-Referencias.aux'.
+
+ (./P-Referencias.tex
+Cap\'{\i }tulo 15.
+
+Overfull \hbox (52.05556pt too wide) in paragraph at lines 6--7
+[]\T1/cmr/m/n/10 Bootstrap. (2024). \T1/cmr/m/it/10 Boots-trap 5.3 Do-cu-men-ta-tion\T1/cmr/m/n/10 . https://getbootstrap.com/docs/5.3/getting-started/introduction/
+ []
+
+
+Overfull \hbox (57.81868pt too wide) in paragraph at lines 7--8
+[]\T1/cmr/m/n/10 The Post-greSQL Glo-bal De-ve-lop-ment Group. (2024). \T1/cmr/m/it/10 Post-greSQL Do-cu-men-ta-tion\T1/cmr/m/n/10 . https://www.postgresql.org/docs/
+ []
+
+
+Overfull \hbox (12.40982pt too wide) in paragraph at lines 9--10
+[]\T1/cmr/m/n/10 Django Soft-wa-re Foun-da-tion. (2024). \T1/cmr/m/it/10 Djan-go Email\T1/cmr/m/n/10 . https://docs.djangoproject.com/en/5.1/topics/email/
+ []
+
+[25
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+[]\T1/cmr/m/n/10 Bootstrap. (2024). Boots-trap 5.3 Do-cu-men-ta-tion. https://getbootstrap.com/docs/5.3/getting-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+[]\T1/cmr/m/n/10 The Post-greSQL Glo-bal De-ve-lop-ment Group. (2024). Post-greSQL Do-cu-men-ta-tion.
+ []
+
+
+Overfull \hbox (2.79848pt too wide) in paragraph at lines 17--18
+[]\T1/cmr/m/n/10 Django Soft-wa-re Foun-da-tion. (2024). Djan-go Email. https://docs.djangoproject.com/en/5.1/topics/email/ 
+ []
+
+) [26
+
+] (./A0-main.aux (./A1-Portada.aux)
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
- (./B-Intro.aux) (./C-Conceptos.aux) (./D-AnalisisYDiseno.aux) (./E-Cuenta.aux) (./G-Despliegue.aux) (./H-Manual.aux) (./J-Conclusiones.aux) (./K-Anexos.aux) (./O-Reference.aux))
+ (./B-Introduccion.aux) (./C-MarcoTeorico.aux) (./D-AnalisisRequerimientos.aux) (./E-DisenoArquitectura.aux) (./F-Implementacion.aux) (./G-SistemaVerificacion.aux) (./H-InterfazUsuario.aux) (./I-PanelAdministracion.aux) (./K-UbuntuServer.aux) (./L-ConexionSSH.aux) (./M-ServiciosLinux.aux) (./J-Despliegue.aux) (./N-MejorasFuturas.aux) (./O-Conclusiones.aux) (./P-Referencias.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `A0-main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `A0-main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  30AB0E465A4495529E311480A763B00D;24637.
-runsystem(rm A0-main.pyg)...executed.
-
+Package rerunfilecheck Info: File `A0-main.out' has not changed.
+(rerunfilecheck)             Checksum: 707EAA339E1EE7E0650964C37D364BC5;11874.
  ) 
 Here is how much of TeX's memory you used:
- 22772 strings out of 476014
- 449387 string characters out of 5792006
- 1945187 words of memory out of 5000000
- 44183 multiletter control sequences out of 15000+600000
- 577212 words of font info for 71 fonts, out of 8000000 for 9000
+ 22594 strings out of 476014
+ 447066 string characters out of 5792006
+ 1940187 words of memory out of 5000000
+ 44185 multiletter control sequences out of 15000+600000
+ 572357 words of font info for 61 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 79i,13n,93p,674b,1210s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on A0-main.pdf (48 pages, 836327 bytes).
+ 79i,7n,93p,1252b,1261s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on A0-main.pdf (27 pages, 710203 bytes).
 PDF statistics:
- 652 PDF objects out of 1000 (max. 8388607)
- 551 compressed objects within 6 object streams
- 312 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 594 PDF objects out of 1000 (max. 8388607)
+ 526 compressed objects within 6 object streams
+ 110 named destinations out of 1000 (max. 500000)
+ 590 words of extra memory for PDF output out of 10000 (max. 10000000)
 

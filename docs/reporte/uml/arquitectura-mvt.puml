@@ -1,0 +1,9 @@
+@startuml
+' Diagrama general de la arquitectura MVT
+actor Usuario
+Usuario --> Vista : Solicita página
+Vista --> Modelo : Consulta/actualiza datos
+Modelo --> BaseDeDatos : Acceso a datos
+Vista --> Template : Renderiza información
+Template --> Usuario : Muestra página
+@enduml

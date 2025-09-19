@@ -1,0 +1,12 @@
+@startuml
+' Diagrama de colaboración: administración de miembros
+actor Admin
+participant "Panel de Administración" as AdminPanel
+participant "Vista Django" as View
+participant "Modelo Member" as Member
+
+Admin -> AdminPanel : Accede
+AdminPanel -> View : Solicita datos
+View -> Member : Consulta/actualiza miembros
+View -> AdminPanel : Muestra resultados
+@enduml

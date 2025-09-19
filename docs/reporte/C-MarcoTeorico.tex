@@ -1,0 +1,23 @@
+\chapter{Marco Teórico y Conceptual}
+
+\section{Django Framework}
+Django es un framework de desarrollo web de alto nivel, escrito en Python, que fomenta el desarrollo rápido y limpio de aplicaciones web. Utiliza el patrón arquitectónico Modelo-Vista-Template (MVT), el cual separa la lógica de negocio, la presentación y el acceso a datos, facilitando la mantenibilidad y escalabilidad del sistema \cite{django-docs}. Django incluye un sistema de administración automática, un ORM (Object-Relational Mapping) para interactuar con bases de datos, y herramientas integradas para la gestión de usuarios, seguridad y envío de correos electrónicos. Entre sus características destacan la protección contra ataques comunes (CSRF, XSS, SQL Injection), el sistema de migraciones para la evolución del esquema de datos y la posibilidad de extender la funcionalidad mediante aplicaciones reutilizables. Es ampliamente utilizado en la industria y en el ámbito académico por su robustez, flexibilidad y comunidad activa.
+
+El patrón MVT de Django se compone de:
+\begin{itemize}
+    \item \textbf{Modelo}: Define la estructura de los datos y su representación en la base de datos.
+    \item \textbf{Vista}: Gestiona la lógica de negocio y responde a las solicitudes del usuario.
+    \item \textbf{Template}: Controla la presentación y el renderizado de la información al usuario final.
+\end{itemize}
+
+\section{Tecnologías Frontend}
+El frontend del sitio web está construido utilizando HTML5, CSS3 y el framework Bootstrap 5.3.3. HTML5 proporciona la estructura semántica de las páginas, permitiendo una mejor accesibilidad y posicionamiento en buscadores. CSS3 permite el diseño visual, la adaptación responsiva a diferentes dispositivos y la implementación de animaciones y transiciones. Bootstrap es una biblioteca de componentes y utilidades CSS/JS que facilita la creación de interfaces modernas, responsivas y accesibles, acelerando el desarrollo y asegurando la compatibilidad multiplataforma \cite{bootstrap-docs}. Se emplean también animaciones CSS y JavaScript para mejorar la experiencia de usuario, así como la integración de iconos y recursos multimedia.
+
+\section{Base de Datos}
+Durante el desarrollo, el sistema utiliza SQLite como base de datos por su simplicidad y portabilidad. SQLite es una base de datos relacional embebida, ideal para entornos de desarrollo y pruebas. Para entornos de producción, se recomienda el uso de PostgreSQL, un sistema de gestión de bases de datos relacional robusto, escalable y con soporte avanzado para transacciones, concurrencia y extensiones \cite{postgresql-docs}. Django abstrae el acceso a la base de datos mediante su ORM, permitiendo definir modelos de datos en Python y realizar migraciones automáticas. Esto facilita la evolución del esquema de datos y la portabilidad entre diferentes motores de base de datos. El uso de migraciones garantiza la integridad y consistencia de los datos a lo largo del ciclo de vida del proyecto.
+
+\section{Servicios Web}
+El sitio web implementa servicios de correo electrónico para la verificación de usuarios y la autenticación de dos factores (2FA) en el sistema de oportunidades. Utiliza el protocolo SMTP para el envío de correos, configurado en el archivo de settings de Django \cite{django-email}. Además, el sistema aprovecha las capacidades de seguridad integradas de Django, como la protección contra CSRF, la gestión de sesiones y la validación de formularios. El uso de formularios seguros y la validación del lado del servidor son fundamentales para prevenir ataques y garantizar la integridad de la información.
+
+\section{Despliegue}
+El despliegue del sistema se realiza sobre servidores Ubuntu, un sistema operativo de código abierto ampliamente utilizado en entornos de servidores por su estabilidad, seguridad y soporte a largo plazo (LTS) \cite{ubuntu-docs}. El servicio se gestiona mediante Systemd, utilizando el comando \texttt{runserver} de Django para exponer la aplicación en la red local, de acuerdo con el archivo de unidad real utilizado en el proyecto. El servicio se ejecuta bajo un usuario específico, define el directorio de trabajo y reinicia automáticamente en caso de fallo. Los archivos estáticos y media se sirven mediante la configuración de Django. Aunque en entornos de producción se recomienda el uso de Gunicorn y Nginx para mayor robustez y rendimiento, en este despliegue se utiliza el servidor de desarrollo de Django para simplificar la administración. El proceso de despliegue incluye la migración de la base de datos y la recolección de archivos estáticos, siguiendo buenas prácticas de administración de servicios en Linux.

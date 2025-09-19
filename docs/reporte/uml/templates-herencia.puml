@@ -1,0 +1,14 @@
+@startuml
+' Diagrama de herencia de templates
+abstract class base_html
+class navbar_html
+class index_html
+class articulos_html
+class lideresDeProyecto_html
+class oportunidades_html
+base_html <|-- navbar_html
+base_html <|-- index_html
+base_html <|-- articulos_html
+base_html <|-- lideresDeProyecto_html
+base_html <|-- oportunidades_html
+@enduml

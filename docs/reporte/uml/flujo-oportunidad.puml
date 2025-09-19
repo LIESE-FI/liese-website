@@ -1,0 +1,16 @@
+@startuml
+' Diagrama de secuencia: flujo de solicitud de oportunidad
+actor Usuario
+participant "Formulario Web" as Form
+participant "Vista Django" as View
+participant "Modelo OpportunityRequest" as Model
+participant "Correo" as Email
+
+Usuario -> Form : Ingresa datos y envía
+Form -> View : POST datos
+View -> Model : Crea registro y token
+View -> Email : Envía correo de verificación
+Email -> Usuario : Recibe correo
+Usuario -> View : Accede a enlace de verificación
+View -> Model : Marca como verificado
+@enduml

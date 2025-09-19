@@ -1,0 +1,27 @@
+@startuml
+' Diagrama ER simplificado
+entity Miembro {
+  nombre
+  email
+}
+entity Proyecto {
+  nombre
+}
+entity Articulo {
+  titulo
+}
+entity Evento {
+  titulo
+}
+entity Noticia {
+  titulo
+}
+entity SolicitudOportunidad {
+  nombre
+  email
+}
+Miembro ||--o{ Proyecto : "participa"
+Miembro ||--o{ Articulo : "autor"
+Miembro ||--o{ Evento : "creado_por"
+Miembro ||--o{ Noticia : "autor"
+@enduml

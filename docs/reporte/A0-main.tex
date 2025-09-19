@@ -27,10 +27,10 @@
     linkcolor=blue,
     filecolor=magenta,      
     urlcolor=cyan,
-    pdftitle={Servicio de Escritura de MQTT a Base de Datos Relacional},
+    pdftitle={Sitio Web del Laboratorio de Instrumentación Electrónica de Sistemas Espaciales},
     pdfauthor={LIESE},
-    pdfsubject={Sistema de Telemetría Vehicular con Docker y PostgreSQL},
-    pdfkeywords={MQTT, PostgreSQL, Docker, Telemetría, IoT, Python},
+    pdfsubject={Sitio Web del Laboratorio de Instrumentación Electrónica de Sistemas Espaciales},
+    pdfkeywords={Django, Python, HTML, CSS, JavaScript, Bootstrap, PostgreSQL, Nginx, Gunicorn, Ubuntu Server, SSH, Systemd},
     pdfpagemode=FullScreen,
 }
 
@@ -76,25 +76,28 @@
 \let\origdoublepage\cleardoublepage
 \renewcommand{\cleardoublepage}{\clearpage}
 
-\title{SERVICIO DE ESCRITURA DE MQTT A BASE DE DATOS RELACIONAL UTILIZANDO CONTENEDORES}
+\title{SITIO WEB DEL LABORATORIO DE INSTRUMENTACIÓN ELECTRÓNICA DE SISTEMAS ESPACIALES}
 \author{LIESE}
-\date{}
+\date{\today}
 
 \begin{document}
-    \include{A1-Portada} 
-    
-    \maketitle
-    \tableofcontents
-    \newpage
-
-    \include{B-Intro}
-    \include{C-Conceptos}
-    \include{D-AnalisisYDiseno}
-    \include{E-Cuenta}
-    \include{G-Despliegue}
-    \include{H-Manual}
-    \include{J-Conclusiones}
-    \include{K-Anexos}
-    \include{O-Reference}
-
+  \include{A1-Portada}
+  \maketitle
+  \tableofcontents
+  \newpage
+  \include{B-Introduccion}
+  \include{C-MarcoTeorico}
+  \include{D-AnalisisRequerimientos}
+  \include{E-DisenoArquitectura}
+  \include{F-Implementacion}
+  \include{G-SistemaVerificacion}
+  \include{H-InterfazUsuario}
+  \include{I-PanelAdministracion}
+  \include{K-UbuntuServer}
+  \include{L-ConexionSSH}
+  \include{M-ServiciosLinux}
+  \include{J-Despliegue}
+  \include{N-MejorasFuturas}
+  \include{O-Conclusiones}
+  \include{P-Referencias}
 \end{document}

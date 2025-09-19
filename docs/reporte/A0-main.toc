@@ -1,169 +1,69 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {1}Objetivos}{5}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Introducción}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Contexto del Proyecto}{6}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Características Principales del Sistema}{6}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}Arquitectura del Sistema}{7}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Justificación Tecnológica}{7}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Protocolo MQTT}{7}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}PostgreSQL}{7}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Python}{8}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Docker y Docker Compose}{8}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Makefile}{8}{subsection.2.3.5}%
-\contentsline {section}{\numberline {2.4}Alcance del Documento}{8}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Conceptos}{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1}MQTT (Message Queuing Telemetry Transport)}{9}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Broker MQTT}{9}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Base de Datos Relacional}{9}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Docker}{9}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Docker Compose}{10}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Makefile}{10}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Análisis y Diseño del Sistema}{11}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Análisis de Requerimientos}{11}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Requerimientos Funcionales}{11}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Requerimientos No Funcionales}{11}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Arquitectura del Sistema}{12}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Arquitectura General}{12}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Diagrama de Arquitectura}{12}{subsection.4.2.2}%
+\contentsline {chapter}{\numberline {1}Introducción}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Presentación del LIESE}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Objetivos del sitio web}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Alcance del sistema web}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Justificación del desarrollo}{5}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Marco Teórico y Conceptual}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Django Framework}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Tecnologías Frontend}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Base de Datos}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Servicios Web}{7}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Despliegue}{7}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Análisis y Requerimientos}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Requerimientos Funcionales}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Requerimientos No Funcionales}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Casos de Uso}{9}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Diseño y Arquitectura}{10}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Arquitectura MVT de Django}{10}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Modelos de Datos}{11}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Diseño de Base de Datos}{12}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Modelo Entidad-Relación}{12}{subsection.4.3.1}%
-\contentsline {subsubsection}{Entidad: Units}{12}{section*.5}%
-\contentsline {subsubsection}{Entidad: Telemetries}{12}{section*.6}%
-\contentsline {subsection}{\numberline {4.3.2}Relaciones}{13}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Diseño de la API MQTT}{13}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Estructura de Topics}{13}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Ejemplos de Topics}{13}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}Flujo de Datos}{13}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Proceso de Recepción y Almacenamiento}{13}{subsection.4.5.1}%
-\contentsline {section}{\numberline {4.6}Patrones de Diseño Implementados}{13}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Observer Pattern}{13}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Repository Pattern}{13}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}Factory Pattern}{14}{subsection.4.6.3}%
-\contentsline {section}{\numberline {4.7}Descarga de Git para Windows}{14}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Implementación del Sistema}{15}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Estructura del Proyecto}{15}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Organización de Directorios}{15}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}Implementación del Servicio MQTT Writer}{15}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Clase Principal: MQTTToDatabaseWriter}{15}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Procesamiento de Datos de Telemetría}{16}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Configuración de Base de Datos}{16}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Clase DatabaseConnection}{16}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Esquema de Base de Datos}{17}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Containerización con Docker}{17}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Dockerfile}{17}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Docker Compose}{17}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}Automatización con Makefile}{18}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Comandos Principales}{18}{subsection.5.5.1}%
-\contentsline {section}{\numberline {5.6}Scripts de Soporte}{19}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Generador de Datos de Ejemplo}{19}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Simulador MQTT}{19}{subsection.5.6.2}%
-\contentsline {chapter}{\numberline {6}Despliegue y Configuración}{20}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Requisitos del Sistema}{20}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Hardware Mínimo}{20}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Software Requerido}{20}{subsection.6.1.2}%
-\contentsline {section}{\numberline {6.2}Instalación Paso a Paso}{20}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Preparación del Entorno}{20}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Despliegue Automático}{21}{subsection.6.2.2}%
-\contentsline {section}{\numberline {6.3}Configuración de Variables de Entorno}{21}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Archivo .env}{21}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Configuraciones por Entorno}{21}{subsection.6.3.2}%
-\contentsline {subsubsection}{Desarrollo Local}{21}{section*.7}%
-\contentsline {subsubsection}{Producción}{21}{section*.8}%
-\contentsline {section}{\numberline {6.4}Comandos de Gestión}{22}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Tabla de Comandos Makefile}{22}{subsection.6.4.1}%
-\contentsline {section}{\numberline {6.5}Configuración de Red}{22}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Puertos Utilizados}{22}{subsection.6.5.1}%
-\contentsline {section}{\numberline {6.6}Monitoreo y Logging}{22}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}Configuración de Logs}{22}{subsection.6.6.1}%
-\contentsline {section}{\numberline {6.7}Seguridad}{23}{section.6.7}%
-\contentsline {subsection}{\numberline {6.7.1}Configuraciones de Seguridad Básica}{23}{subsection.6.7.1}%
-\contentsline {section}{\numberline {6.8}Backup y Recuperación}{23}{section.6.8}%
-\contentsline {subsection}{\numberline {6.8.1}Backup de Base de Datos}{23}{subsection.6.8.1}%
-\contentsline {subsection}{\numberline {6.8.2}Restauración}{23}{subsection.6.8.2}%
-\contentsline {chapter}{\numberline {7}Manual de Usuario}{24}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Acceso a las Interfaces del Sistema}{24}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}pgAdmin - Administración de Base de Datos}{24}{subsection.7.1.1}%
-\contentsline {subsubsection}{Acceso Inicial}{24}{section*.11}%
-\contentsline {subsubsection}{Configuración del Servidor}{24}{section*.12}%
-\contentsline {section}{\numberline {7.2}Consultas Comunes}{24}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Visualización de Datos de Telemetría}{24}{subsection.7.2.1}%
-\contentsline {subsubsection}{Últimos Registros por Unidad}{24}{section*.14}%
-\contentsline {subsubsection}{Estadísticas de Combustible}{25}{section*.15}%
-\contentsline {section}{\numberline {7.3}Uso del Simulador MQTT}{25}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Simulación Básica}{25}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Parámetros del Simulador}{25}{subsection.7.3.2}%
-\contentsline {section}{\numberline {7.4}Monitoreo del Sistema}{26}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Verificación del Estado}{26}{subsection.7.4.1}%
-\contentsline {subsubsection}{Estado de Servicios}{26}{section*.17}%
-\contentsline {section}{\numberline {7.5}Envío Manual de Datos MQTT}{26}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}Comandos Básicos}{26}{subsection.7.5.1}%
-\contentsline {section}{\numberline {7.6}Resolución de Problemas Comunes}{26}{section.7.6}%
-\contentsline {subsection}{\numberline {7.6.1}No se Reciben Mensajes MQTT}{26}{subsection.7.6.1}%
-\contentsline {subsection}{\numberline {7.6.2}Datos No Aparecen en la Base}{26}{subsection.7.6.2}%
-\contentsline {chapter}{\numberline {8}Conclusiones y Trabajo Futuro}{28}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Conclusiones Generales}{28}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Logros Principales}{28}{subsection.8.1.1}%
-\contentsline {subsubsection}{Arquitectura Robusta}{28}{section*.18}%
-\contentsline {subsubsection}{Automatización Completa}{28}{section*.19}%
-\contentsline {subsubsection}{Calidad del Software}{28}{section*.20}%
-\contentsline {section}{\numberline {8.2}Contribuciones del Proyecto}{29}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Contribuciones Técnicas}{29}{subsection.8.2.1}%
-\contentsline {subsubsection}{Patrón de Diseño para IoT}{29}{section*.21}%
-\contentsline {subsubsection}{Herramientas de Desarrollo}{29}{section*.22}%
-\contentsline {subsection}{\numberline {8.2.2}Contribuciones Metodológicas}{29}{subsection.8.2.2}%
-\contentsline {subsubsection}{Proceso de Desarrollo}{29}{section*.23}%
-\contentsline {subsubsection}{Estándares de Calidad}{29}{section*.24}%
-\contentsline {section}{\numberline {8.3}Impacto y Aplicaciones}{29}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Aplicaciones Inmediatas}{29}{subsection.8.3.1}%
-\contentsline {subsubsection}{Sistemas de Rastreo Vehicular}{29}{section*.25}%
-\contentsline {subsubsection}{Monitoreo Industrial}{30}{section*.26}%
-\contentsline {subsection}{\numberline {8.3.2}Escalabilidad del Impacto}{30}{subsection.8.3.2}%
-\contentsline {subsubsection}{Adopción Institucional}{30}{section*.27}%
-\contentsline {subsubsection}{Extensiones Posibles}{30}{section*.28}%
-\contentsline {section}{\numberline {8.4}Trabajo Futuro}{30}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Mejoras de Rendimiento}{30}{subsection.8.4.1}%
-\contentsline {subsubsection}{Optimización de Base de Datos}{30}{section*.29}%
-\contentsline {subsubsection}{Escalabilidad Horizontal}{30}{section*.30}%
-\contentsline {subsection}{\numberline {8.4.2}Funcionalidades Avanzadas}{31}{subsection.8.4.2}%
-\contentsline {subsubsection}{Análisis en Tiempo Real}{31}{section*.31}%
-\contentsline {subsubsection}{Interfaz de Usuario}{31}{section*.32}%
-\contentsline {subsection}{\numberline {8.4.3}Seguridad y Compliance}{31}{subsection.8.4.3}%
-\contentsline {subsubsection}{Seguridad Avanzada}{31}{section*.33}%
-\contentsline {subsubsection}{Cumplimiento Normativo}{31}{section*.34}%
-\contentsline {subsection}{\numberline {8.4.4}Integración con Ecosistemas}{31}{subsection.8.4.4}%
-\contentsline {subsubsection}{Plataformas Cloud}{31}{section*.35}%
-\contentsline {subsubsection}{Estándares de la Industria}{31}{section*.36}%
-\contentsline {section}{\numberline {8.5}Recomendaciones}{32}{section.8.5}%
-\contentsline {subsection}{\numberline {8.5.1}Para la Implementación en Producción}{32}{subsection.8.5.1}%
-\contentsline {subsubsection}{Infraestructura}{32}{section*.37}%
-\contentsline {subsubsection}{Operaciones}{32}{section*.38}%
-\contentsline {subsection}{\numberline {8.5.2}Para Futuros Desarrolladores}{32}{subsection.8.5.2}%
-\contentsline {subsubsection}{Mejores Prácticas}{32}{section*.39}%
-\contentsline {subsubsection}{Herramientas Recomendadas}{32}{section*.40}%
-\contentsline {section}{\numberline {8.6}Reflexiones Finales}{32}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}Palabras Clave del Proyecto}{33}{subsection.8.6.1}%
-\contentsline {chapter}{\numberline {9}Anexos}{34}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Anexo A: Configuraciones Completas}{34}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}docker-compose.yml Completo}{34}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}Archivo .env de Ejemplo}{35}{subsection.9.1.2}%
-\contentsline {subsection}{\numberline {9.1.3}Configuración de Mosquitto}{36}{subsection.9.1.3}%
-\contentsline {section}{\numberline {9.2}Anexo B: Scripts de Utilidad}{36}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}Script de Backup Automático}{36}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {9.2.2}Script de Monitoreo del Sistema}{37}{subsection.9.2.2}%
-\contentsline {subsection}{\numberline {9.2.3}Simulador de Telemetría Avanzado}{38}{subsection.9.2.3}%
-\contentsline {section}{\numberline {9.3}Anexo C: Esquemas y Diagramas}{40}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}Diagrama de Entidad-Relación Detallado}{40}{subsection.9.3.1}%
-\contentsline {subsection}{\numberline {9.3.2}Diagrama de Flujo de Datos}{41}{subsection.9.3.2}%
-\contentsline {section}{\numberline {9.4}Anexo D: Comandos de Solución de Problemas}{41}{section.9.4}%
-\contentsline {subsection}{\numberline {9.4.1}Diagnóstico de Conectividad}{41}{subsection.9.4.1}%
-\contentsline {subsection}{\numberline {9.4.2}Comandos de Recuperación}{41}{subsection.9.4.2}%
-\contentsline {section}{\numberline {9.5}Anexo E: Métricas y Monitoreo}{42}{section.9.5}%
-\contentsline {subsection}{\numberline {9.5.1}Consultas de Monitoreo SQL}{42}{subsection.9.5.1}%
-\contentsline {subsection}{\numberline {9.5.2}Alertas Recomendadas}{43}{subsection.9.5.2}%
-\contentsline {chapter}{\numberline {10}Referencias}{44}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Referencias Técnicas}{44}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Referencias Académicas}{45}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Referencias de Estándares}{45}{section.10.3}%
-\contentsline {section}{\numberline {10.4}Referencias de Herramientas}{46}{section.10.4}%
-\contentsline {section}{\numberline {10.5}Referencias de Buenas Prácticas}{46}{section.10.5}%
-\contentsline {section}{\numberline {10.6}Recursos de Aprendizaje}{46}{section.10.6}%
+\contentsline {section}{\numberline {4.4}Arquitectura de Templates}{12}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Implementación}{13}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Estructura del Proyecto Django}{13}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Modelos, Vistas y URLs}{14}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Templates y Frontend}{14}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Sistema de Administración}{15}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Sistema de Verificación y Seguridad}{16}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Autenticación de Dos Factores}{16}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Generación de Tokens de Verificación}{16}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Sistema de Correos HTML}{16}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Interfaz de Usuario y Experiencia}{17}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Diseño Responsivo}{17}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Páginas Principales}{17}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Sistema de Actividades}{17}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Panel de Administración}{18}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Django Admin Personalizado}{18}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Gestión de Contenido}{18}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Workflow de Publicación}{18}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Sistema Operativo Ubuntu Server}{19}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Introducción a Ubuntu Server}{19}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Configuración básica del servidor}{19}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Gestión de red (IP: 192.168.80.6)}{19}{section.9.3}%
+\contentsline {chapter}{\numberline {10}Conexión SSH y Administración Remota}{20}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Protocolo SSH}{20}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Conexión al servidor}{20}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Administración remota}{20}{section.10.3}%
+\contentsline {chapter}{\numberline {11}Servicios de Linux y Systemd}{21}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Conceptos de Servicios en Linux}{21}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Systemd}{21}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Servicio del Sitio Web LIESE}{21}{section.11.3}%
+\contentsline {chapter}{\numberline {12}Despliegue y Configuración}{22}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Configuración de Desarrollo}{22}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Despliegue con Systemd}{22}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Configuración de Producción}{22}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Variables de Entorno}{22}{section.12.4}%
+\contentsline {chapter}{\numberline {13}Mejoras y Trabajo Futuro}{23}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Seguridad y Certificación}{23}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Monetización y Patrocinio}{23}{section.13.2}%
+\contentsline {section}{\numberline {13.3}DevOps y Automatización}{23}{section.13.3}%
+\contentsline {section}{\numberline {13.4}Internacionalización}{23}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Analytics y Monitoreo}{23}{section.13.5}%
+\contentsline {section}{\numberline {13.6}Funcionalidades Avanzadas}{23}{section.13.6}%
+\contentsline {chapter}{\numberline {14}Conclusiones}{24}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Logros del Proyecto}{24}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Lecciones Aprendidas}{24}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Impacto y Aplicaciones}{24}{section.14.3}%
+\contentsline {chapter}{\numberline {15}Referencias}{25}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Documentación Técnica}{25}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Recursos Académicos}{26}{section.15.2}%

@@ -1,0 +1,33 @@
+@startuml
+' Diagrama de clases simplificado de los modelos principales
+class Miembro {
+  +nombre
+  +email
+  +is_leader
+}
+class Proyecto {
+  +nombre
+  +descripcion
+}
+class Articulo {
+  +titulo
+  +contenido
+}
+class Evento {
+  +titulo
+  +fecha
+}
+class Noticia {
+  +titulo
+  +contenido
+}
+class SolicitudOportunidad {
+  +nombre
+  +email
+  +tipo
+}
+Miembro "*" -- "*" Proyecto : participa
+Articulo "*" -- "1" Miembro : autor
+Evento "*" -- "1" Miembro : creado_por
+Noticia "*" -- "1" Miembro : autor
+@enduml

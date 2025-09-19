@@ -1,0 +1,24 @@
+@startuml
+' Diagrama de estructura de carpetas y archivos principales del proyecto Django
+package liese_website {
+  [manage.py]
+  package src {
+    package liese {
+      [settings.py]
+      [urls.py]
+      [wsgi.py]
+      [asgi.py]
+    }
+    package web {
+      [models.py]
+      [views.py]
+      [urls.py]
+      [admin.py]
+      [forms.py]
+      [templates/]
+      [static/]
+    }
+    [db.sqlite3]
+  }
+}
+@enduml
