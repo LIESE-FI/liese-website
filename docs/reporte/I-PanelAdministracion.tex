@@ -1,4 +1,71 @@
 \chapter{Panel de Administración}
-\section{Django Admin Personalizado}
-\section{Gestión de Contenido}
-\section{Workflow de Publicación}
+\label{ch:panel_administracion}
+
+El panel de administración de Django es una herramienta fundamental para la gestión del contenido del sitio web de LIESE. Proporciona una interfaz web intuitiva para que los administradores del sitio puedan gestionar los datos de la aplicación de forma centralizada. El panel se configura en el archivo \texttt{src/web/admin.py}.
+
+A continuación, se describen las configuraciones del panel de administración para cada uno de los modelos de la aplicación.
+
+\section{Gestión de Modelos}
+
+\subsection{OpportunityRequestAdmin}
+Este administrador gestiona las solicitudes de oportunidades.
+\begin{itemize}
+    \item \textbf{list\_display:} Muestra el nombre completo, email, tipo de oportunidad, estado de verificación y fecha de creación.
+    \item \textbf{list\_filter:} Permite filtrar por tipo de oportunidad y estado de verificación.
+    \item \textbf{search\_fields:} Habilita la búsqueda por nombre completo y email.
+\end{itemize}
+
+\subsection{ArticleAdmin}
+Para la gestión de artículos de investigación.
+\begin{itemize}
+    \item \textbf{list\_display:} Muestra el título, autor, estado de publicación y fecha de publicación.
+    \item \textbf{list\_filter:} Permite filtrar por estado de publicación y fecha.
+    \item \textbf{search\_fields:} Búsqueda por título y nombre del autor.
+    \item \textbf{ordering:} Ordena los artículos por fecha de publicación descendente.
+\end{itemize}
+
+\subsection{EventAdmin}
+Administra los eventos del laboratorio.
+\begin{itemize}
+    \item \textbf{list\_display:} Muestra el título, fechas de inicio y fin, categoría y creador.
+    \item \textbf{list\_filter:} Filtra por descripción, ubicación, imagen, estado de publicación y fecha de creación.
+    \item \textbf{search\_fields:} Búsqueda por título, categoría y creador.
+    \item \textbf{ordering:} Ordena los eventos por fecha de creación descendente.
+\end{itemize}
+
+\subsection{MemberAdmin}
+Para la gestión de los miembros del laboratorio.
+\begin{itemize}
+    \item \textbf{list\_display:} Muestra el nombre completo, cargo, email, si es líder, estado de actividad y fecha de ingreso.
+    \item \textbf{list\_filter:} Filtra por líder, activo, administrador y fecha de ingreso.
+    \item \textbf{search\_fields:} Búsqueda por nombre, apellido, email y cargo.
+    \item \textbf{fieldsets:} Agrupa los campos en secciones para una mejor organización en el formulario de edición.
+    \item \textbf{filter\_horizontal:} Facilita la asignación de roles.
+\end{itemize}
+
+\subsection{RoleAdmin}
+Administra los roles que pueden tener los miembros.
+\begin{itemize}
+    \item \textbf{list\_display:} Muestra el nombre y la descripción del rol.
+    \item \textbf{search\_fields:} Permite buscar por nombre de rol.
+\end{itemize}
+
+\subsection{ProjectAdmin}
+Para la gestión de los proyectos.
+\begin{itemize}
+    \item \textbf{list\_display:} Muestra el nombre, fechas de inicio y fin, y si el proyecto está activo.
+    \item \textbf{list\_filter:} Filtra por activo y fechas.
+    \item \textbf{search\_fields:} Búsqueda por nombre y descripción.
+    \item \textbf{filter\_horizontal:} Facilita la asignación de miembros a los proyectos.
+\end{itemize}
+
+\subsection{NewsAdmin}
+Administra las noticias del laboratorio.
+\begin{itemize}
+    \item \textbf{list\_display:} Muestra el título, autor, estado de publicación y fecha.
+    \item \textbf{list\_filter:} Filtra por publicado y fecha de publicación.
+    \item \textbf{search\_fields:} Búsqueda por título y nombre del autor.
+    \item \textbf{ordering:} Ordena las noticias por fecha de publicación descendente.
+\end{itemize}
+
+Esta configuración del panel de administración permite una gestión eficiente y organizada de toda la información que se muestra en el sitio web, facilitando las tareas de actualización y mantenimiento de contenido.

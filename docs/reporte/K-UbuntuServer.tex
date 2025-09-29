@@ -1,4 +1,73 @@
-\chapter{Sistema Operativo Ubuntu Server}
-\section{Introducción a Ubuntu Server}
-\section{Configuración básica del servidor}
-\section{Gestión de red (IP: 192.168.80.6)}
+\chapter{Configuración de Ubuntu Server}
+\label{ch:ubuntu_server}
+
+Para desplegar el sitio web de LIESE, se recomienda utilizar una distribución de Linux estable y ampliamente soportada como Ubuntu Server. Esta sección describe los pasos generales para configurar un servidor Ubuntu desde cero para alojar la aplicación Django.
+
+\section{Actualización del Sistema}
+
+El primer paso después de instalar Ubuntu Server es asegurarse de que todos los paquetes del sistema estén actualizados. Esto se hace con los siguientes comandos:
+
+\begin{verbatim}
+sudo apt update
+sudo apt upgrade
+\end{verbatim}
+
+\section{Instalación de Python y Dependencias}
+
+La aplicación está desarrollada en Python, por lo que es necesario instalar Python y las herramientas necesarias para gestionar los paquetes y entornos virtuales.
+
+\begin{verbatim}
+sudo apt install python3-pip python3-dev python3-venv
+\end{verbatim}
+
+\section{Clonación del Repositorio}
+
+Suponiendo que el código fuente del proyecto está alojado en un repositorio de Git, el siguiente paso es clonar el repositorio en el servidor.
+
+\begin{verbatim}
+git clone <URL_DEL_REPOSITORIO> liese-website
+cd liese-website
+\end{verbatim}
+
+\section{Creación del Entorno Virtual}
+
+Es una buena práctica aislar las dependencias de cada proyecto en su propio entorno virtual. Para crear y activar un entorno virtual para el proyecto, se utilizan los siguientes comandos dentro del directorio del proyecto:
+
+\begin{verbatim}
+python3 -m venv venv
+source venv/bin/activate
+\end{verbatim}
+
+Una vez activado el entorno, el prompt de la terminal cambiará para indicar que se está trabajando dentro del entorno virtual.
+
+\section{Instalación de Dependencias del Proyecto}
+
+Con el entorno virtual activado, se pueden instalar las dependencias del proyecto, que se encuentran listadas en el archivo \texttt{requirements.txt}.
+
+\begin{verbatim}
+pip install -r requirements.txt
+\end{verbatim}
+
+\section{Configuración de la Base de Datos}
+
+Antes de poder ejecutar la aplicación, es necesario aplicar las migraciones de la base de datos. Esto creará las tablas necesarias en la base de datos para los modelos de Django.
+
+\begin{verbatim}
+python src/manage.py migrate
+\end{verbatim}
+
+\section{Creación de un Superusuario}
+
+Para acceder al panel de administración de Django, es necesario crear un superusuario.
+
+\begin{verbatim}
+python src/manage.py createsuperuser
+\end{verbatim}
+
+Se solicitará un nombre de usuario, una dirección de correo electrónico y una contraseña.
+
+\section{Configuración del Servicio}
+
+Finalmente, como se describió en el capítulo anterior (Capítulo \ref{ch:despliegue}), se debe configurar el servicio de \texttt{systemd} para que la aplicación se ejecute de forma automática y persistente. Esto implica crear el archivo \texttt{.service}, habilitarlo e iniciarlo.
+
+Con estos pasos, el servidor Ubuntu estaría configurado para servir la aplicación web de LIESE. Para un entorno de producción, se requerirían pasos adicionales, como la configuración de un servidor web Nginx y un servidor de aplicaciones Gunicorn.

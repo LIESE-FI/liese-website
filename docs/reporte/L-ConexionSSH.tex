@@ -1,4 +1,50 @@
-\chapter{Conexión SSH y Administración Remota}
-\section{Protocolo SSH}
-\section{Conexión al servidor}
-\section{Administración remota}
+\chapter{Conexión Remota por SSH}
+\label{ch:conexion_ssh}
+
+La conexión remota a un servidor es una tarea fundamental para la administración y el despliegue de aplicaciones. El protocolo estándar para realizar esta tarea de forma segura es SSH (Secure Shell).
+
+\section{¿Qué es SSH?}
+
+SSH es un protocolo de red criptográfico que permite la operación de servicios de red de forma segura sobre una red insegura. La aplicación más conocida es el acceso remoto a sistemas operativos tipo Unix, aunque también se puede utilizar para tunelizar otros protocolos, transferir archivos (usando SFTP o SCP) y gestionar repositorios de Git de forma remota.
+
+La principal ventaja de SSH es que toda la comunicación entre el cliente y el servidor está cifrada, lo que protege la integridad y confidencialidad de los datos, incluyendo las credenciales de acceso.
+
+\section{Conexión a un Servidor}
+
+Para conectarse a un servidor remoto a través de SSH desde una terminal de Linux or macOS, se utiliza el comando \texttt{ssh}. La sintaxis básica es la siguiente:
+
+\begin{verbatim}
+ssh usuario@direccion_del_servidor
+\end{verbatim}
+
+Donde:
+\begin{itemize}
+    \item \textbf{usuario:} Es el nombre del usuario en el servidor remoto al que se desea acceder.
+    \item \textbf{direccion\_del\_servidor:} Puede ser una dirección IP (ej. \texttt{192.168.1.100}) o un nombre de dominio (ej. \texttt{servidor.ejemplo.com}).
+\end{itemize}
+
+La primera vez que se conecte a un servidor, se mostrará una advertencia sobre la autenticidad del host y se pedirá confirmación para agregar la huella digital de la clave del servidor a la lista de hosts conocidos. Después de confirmar, se solicitará la contraseña del usuario.
+
+\section{Autenticación con Claves SSH}
+
+Aunque la autenticación con contraseña es común, se considera más seguro y conveniente utilizar un par de claves SSH (una clave pública y una privada). La clave pública se instala en el servidor, mientras que la clave privada se mantiene segura en el cliente. De esta forma, el cliente puede autenticarse sin necesidad de introducir una contraseña cada vez.
+
+Los pasos generales para configurar la autenticación con claves son:
+\begin{enumerate}
+    \item Generar un par de claves SSH en la máquina cliente con el comando \texttt{ssh-keygen}.
+    \item Copiar la clave pública (generalmente el archivo \texttt{\textasciitilde{}/.ssh/id\_rsa.pub}) al servidor, en el archivo \texttt{\textasciitilde{}/.ssh/authorized\_keys} del usuario con el que se desea conectar.
+\end{enumerate}
+
+\section{Transferencia de Archivos}
+
+SSH también proporciona una forma segura de transferir archivos entre el cliente y el servidor a través del comando \texttt{scp} (Secure Copy). Por ejemplo, para copiar un archivo local a un servidor remoto:
+
+\begin{verbatim}
+scp /ruta/al/archivo/local.txt usuario@servidor:/ruta/remota/
+\end{verbatim}
+
+Y para copiar un archivo desde el servidor al cliente:
+
+\begin{verbatim}
+scp usuario@servidor:/ruta/remota/archivo.txt /ruta/local/
+\end{verbatim}

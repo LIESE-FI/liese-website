@@ -1,4 +1,4 @@
-\documentclass{book}
+\documentclass[openany]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{caption}
@@ -40,8 +40,6 @@
 %\usepackage[table,xcdraw]{xcolor}
 \usepackage{longtable,tabu}
 \usepackage[online]{threeparttablex}
-\usepackage{siunitx}
-
 \usepackage{cite} % Better handling of numeric citations
 
 % Center without space
@@ -76,6 +74,8 @@
 \let\origdoublepage\cleardoublepage
 \renewcommand{\cleardoublepage}{\clearpage}
 
+\renewcommand{\bibname}{Referencias}
+
 \title{SITIO WEB DEL LABORATORIO DE INSTRUMENTACIÓN ELECTRÓNICA DE SISTEMAS ESPACIALES}
 \author{LIESE}
 \date{\today}
@@ -93,10 +93,10 @@
   \include{G-SistemaVerificacion}
   \include{H-InterfazUsuario}
   \include{I-PanelAdministracion}
+  \include{J-Despliegue}
   \include{K-UbuntuServer}
   \include{L-ConexionSSH}
   \include{M-ServiciosLinux}
-  \include{J-Despliegue}
   \include{N-MejorasFuturas}
   \include{O-Conclusiones}
   \include{P-Referencias}

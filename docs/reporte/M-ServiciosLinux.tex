@@ -1,4 +1,78 @@
-\chapter{Servicios de Linux y Systemd}
-\section{Conceptos de Servicios en Linux}
-\section{Systemd}
-\section{Servicio del Sitio Web LIESE}
+\chapter{Servicios de Linux}
+\label{ch:servicios_linux}
+
+En un sistema operativo Linux, un servicio (o demonio) es un programa que se ejecuta en segundo plano, fuera del control interactivo de los usuarios. Para el despliegue del sitio web de LIESE, se utiliza el sistema de gestión de servicios \texttt{systemd} para asegurar que la aplicación se ejecute de forma continua.
+
+\section{Systemd y la Gestión de Servicios}
+
+\texttt{systemd} es el sistema de inicio y gestor de servicios estándar en la mayoría de las distribuciones modernas de Linux, incluyendo Ubuntu. Se encarga de arrancar el sistema y de gestionar los servicios que se ejecutan en él.
+
+Los servicios se definen en archivos de unidad (con extensión \texttt{.service}), que describen cómo se debe iniciar, detener y gestionar un programa.
+
+\section{El Servicio de la Aplicación LIESE}
+
+Como se introdujo en el Capítulo \ref{ch:despliegue}, la aplicación se gestiona a través del servicio \texttt{liese-website.service}. Analicemos en detalle su configuración:
+
+\begin{verbatim}
+[Unit]
+Description=Liese Django Runserver
+After=network.target
+
+[Service]
+User=saul
+Group=saul
+WorkingDirectory=/home/saul/liese-website
+ExecStart=/home/saul/liese-website/venv/bin/python ...
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+\end{verbatim}
+
+\begin{itemize}
+    \item \textbf{[Unit]:} Esta sección contiene metadatos sobre el servicio.
+    \begin{itemize}
+        \item \texttt{Description:} Una breve descripción del servicio.
+        \item \texttt{After=network.target:} Indica que este servicio debe iniciarse después de que la red esté disponible.
+    \end{itemize}
+    \item \textbf{[Service]:} Esta sección define cómo se ejecuta el servicio.
+    \begin{itemize}
+        \item \texttt{User=saul} y \texttt{Group=saul:} Especifica que el servicio se ejecutará con los permisos del usuario y grupo \texttt{saul}.
+        \item \texttt{WorkingDirectory:} Establece el directorio de trabajo para el proceso.
+        \item \texttt{ExecStart:} El comando que se ejecutará para iniciar el servicio. En este caso, inicia el servidor de desarrollo de Django.
+        \item \texttt{Restart=always:} Indica a \texttt{systemd} que reinicie el servicio automáticamente si el proceso termina.
+    \end{itemize}
+    \item \textbf{[Install]:} Esta sección define cómo se debe instalar el servicio.
+    \begin{itemize}
+        \item \texttt{WantedBy=multi-user.target:} Habilita el servicio para que se inicie en el arranque del sistema para un entorno multiusuario.
+    \end{itemize}
+\end{itemize}
+
+\section{Gestión del Servicio con systemctl}
+
+La herramienta de línea de comandos para interactuar con \texttt{systemd} es \texttt{systemctl}. A continuación se muestran los comandos más comunes para gestionar el servicio de la aplicación:
+
+\begin{itemize}
+    \item \textbf{Iniciar el servicio:}
+    \begin{verbatim}sudo systemctl start liese-website.service\end{verbatim}
+    \item \textbf{Detener el servicio:}
+    \begin{verbatim}sudo systemctl stop liese-website.service\end{verbatim}
+    \item \textbf{Reiniciar el servicio:}
+    \begin{verbatim}sudo systemctl restart liese-website.service\end{verbatim}
+    \item \textbf{Ver el estado del servicio:}
+    \begin{verbatim}sudo systemctl status liese-website.service\end{verbatim}
+    \item \textbf{Habilitar el inicio automático en el arranque:}
+    \begin{verbatim}sudo systemctl enable liese-website.service\end{verbatim}
+    \item \textbf{Deshabilitar el inicio automático:}
+    \begin{verbatim}sudo systemctl disable liese-website.service\end{verbatim}
+\end{itemize}
+
+\section{Otros Servicios}
+
+En la configuración actual, la aplicación Django y la base de datos SQLite no requieren servicios adicionales. La base de datos SQLite es un archivo en el sistema de ficheros y no un servicio de red.
+
+En un entorno de producción, se añadirían otros servicios, como:
+\begin{itemize}
+    \item \textbf{Servidor de base de datos:} Como PostgreSQL o MySQL, que se ejecutan como sus propios servicios.
+    \item \textbf{Servidor web Nginx:} Que actuaría como proxy inverso y serviría los archivos estáticos, también gestionado como un servicio de \texttt{systemd}.
+\end{itemize}

@@ -1,5 +1,54 @@
-\chapter{Despliegue y Configuración}
-\section{Configuración de Desarrollo}
-\section{Despliegue con Systemd}
+\chapter{Despliegue} 
+\label{ch:despliegue}
+
+El despliegue de la aplicación web de LIESE se ha configurado para ejecutarse como un servicio en un sistema Linux, utilizando \texttt{systemd}. Esta sección detalla la configuración actual del despliegue, así como algunas consideraciones importantes de seguridad y buenas prácticas.
+
+\section{Servicio de Systemd}
+
+Se ha creado un archivo de servicio de \texttt{systemd} llamado \texttt{liese-website.service} para gestionar la ejecución de la aplicación. Este archivo asegura que el servidor web se inicie automáticamente al arrancar el sistema y se reinicie en caso de fallo.
+
+El contenido del archivo \texttt{liese-website.service} es el siguiente:
+
+\begin{verbatim}
+[Unit]
+Description=Liese Django Runserver
+After=network.target
+
+[Service]
+User=saul
+Group=saul
+WorkingDirectory=/home/saul/liese-website
+ExecStart=/home/saul/liese-website/venv/bin/python \
+/home/saul/liese-website/src/manage.py runserver 0.0.0.0:8000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+\end{verbatim}
+
+Este servicio ejecuta el servidor de desarrollo de Django, \texttt{manage.py runserver}, que escucha en el puerto 8000. Es importante destacar que \textbf{este servidor no es adecuado para un entorno de producción}, ya que no es seguro ni tiene el mismo rendimiento que un servidor de aplicaciones WSGI como Gunicorn o uWSGI.
+
+\section{Dependencias}
+
+Las dependencias del proyecto están listadas en el archivo \texttt{requirements.txt}. Para desplegar la aplicación, es necesario instalar estas dependencias en un entorno virtual de Python. Las dependencias principales son:
+
+\begin{itemize}
+    \item \textbf{Django:} El framework sobre el que está construida la aplicación.
+    \item \textbf{Pillow:} Librería para el manejo de imágenes, utilizada para los campos de imagen en los modelos.
+\end{itemize}
+
 \section{Configuración de Producción}
-\section{Variables de Entorno}
+
+El archivo de configuración \texttt{src/liese/settings.py} contiene varias opciones que deben ser ajustadas para un entorno de producción con el fin de garantizar la seguridad y el rendimiento del sitio.
+
+\subsection{DEBUG}
+La variable \texttt{DEBUG} está actualmente configurada como \texttt{True}. En producción, esta variable \textbf{debe estar en \texttt{False}}. Mantenerla en \texttt{True} expone información sensible de la aplicación en caso de error.
+
+\subsection{SECRET\_KEY}
+La \texttt{SECRET\_KEY} está hardcodeada en el archivo de configuración. Para producción, esta clave debe ser única y secreta, y se recomienda cargarla desde una variable de entorno o un sistema de gestión de secretos, en lugar de mantenerla en el código fuente.
+
+\subsection{Base de Datos}
+La aplicación utiliza SQLite como motor de base de datos. Si bien SQLite es adecuado para desarrollo y aplicaciones de bajo tráfico, para un entorno de producción con mayor concurrencia se recomienda utilizar un sistema de gestión de bases de datos más robusto, como PostgreSQL o MySQL.
+
+\subsection{Servidor Web}
+Como se mencionó anteriormente, el servidor de desarrollo de Django no es para producción. La configuración recomendada para producción incluye el uso de un servidor de aplicaciones WSGI como \textbf{Gunicorn} y un servidor web inverso como \textbf{Nginx}, que se encargue de servir los archivos estáticos y redirigir las peticiones a Gunicorn.

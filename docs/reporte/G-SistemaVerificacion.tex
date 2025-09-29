@@ -1,4 +1,31 @@
-\chapter{Sistema de Verificación y Seguridad}
-\section{Autenticación de Dos Factores}
-\section{Generación de Tokens de Verificación}
-\section{Sistema de Correos HTML}
+\chapter{Sistema de Verificación}
+\label{ch:sistema_verificacion}
+
+Para asegurar el correcto funcionamiento del sistema LIESE, se contemplan varios niveles de verificación y pruebas. Aunque el archivo de pruebas automatizadas \texttt{src/web/tests.py} se encuentra actualmente vacío, la verificación del sistema se ha llevado a cabo principalmente de forma manual.
+
+\section{Pruebas Unitarias}
+
+Las pruebas unitarias se centran en verificar el correcto funcionamiento de las unidades más pequeñas de código, como funciones o métodos de un modelo. En Django, estas pruebas se implementan comúnmente utilizando el framework de testing que provee el mismo.
+
+Aunque no se hayan implementado pruebas automatizadas, se pueden diseñar casos de prueba para los modelos y vistas, por ejemplo:
+\begin{itemize}
+    \item \textbf{Modelo Miembro:} Verificar que el nombre completo se genere correctamente a partir del nombre y apellido.
+    \item \textbf{Modelo Proyecto:} Comprobar que el estado (activo/inactivo) funcione como se espera.
+    \item \textbf{Vistas:} Asegurar que cada vista renderice la plantilla correcta y que solo usuarios autorizados puedan acceder a vistas protegidas.
+\end{itemize}
+
+\section{Pruebas de Integración}
+
+Las pruebas de integración buscan asegurar que los diferentes componentes del sistema funcionen correctamente al interactuar entre sí. Por ejemplo, que al crear un nuevo artículo, este se muestre correctamente en la lista de artículos.
+
+\section{Pruebas Manuales}
+
+Debido a la falta de pruebas automatizadas, la verificación del sistema se ha realizado de forma manual, cubriendo los siguientes aspectos:
+\begin{itemize}
+    \item \textbf{Navegación:} Se ha verificado que todos los enlaces del sitio funcionen correctamente y que la navegación sea intuitiva.
+    \item \textbf{Formularios:} Se ha comprobado el funcionamiento de los formularios de contacto y solicitud de oportunidades, incluyendo la validación de campos y el envío de correos.
+    \item \textbf{Panel de Administración:} Se ha verificado que sea posible crear, editar y eliminar registros de los diferentes modelos a través del panel de administración de Django.
+    \item \textbf{Visualización de Contenido:} Se ha asegurado que los artículos, proyectos, eventos y noticias se muestren correctamente en sus respectivas secciones.
+\end{itemize}
+
+Para un desarrollo futuro, es altamente recomendable la implementación de un conjunto de pruebas automatizadas que permita detectar regresiones y asegurar la calidad del software de manera más eficiente.

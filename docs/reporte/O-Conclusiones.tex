@@ -1,4 +1,33 @@
 \chapter{Conclusiones}
+\label{chap:conclusiones}
+
+El desarrollo del sitio web para el Laboratorio de Instrumentación Electrónica de Sistemas Espaciales (LIESE) ha culminado en la creación de una plataforma digital integral que no solo sirve como una vitrina para las actividades del laboratorio, sino que también funciona como una herramienta de gestión y comunicación estratégica.
+
 \section{Logros del Proyecto}
+
+El proyecto ha alcanzado exitosamente sus objetivos principales, entregando una solución tecnológica completa y funcional. Entre los logros más destacados se encuentran:
+\begin{itemize}
+    \item \textbf{Plataforma Web Completa:} Se ha construido una aplicación web moderna y responsiva utilizando Django, proporcionando una base sólida, segura y escalable para la presencia digital del LIESE.
+    \item \textbf{Centralización de la Información:} El sitio unifica la gestión de miembros, proyectos, artículos, eventos y noticias, proporcionando una fuente única y autorizada de información.
+    \item \textbf{Portal de Oportunidades Funcional:} Se implementó un sistema robusto para que los estudiantes puedan solicitar tesis, servicio social o investigación, incluyendo un mecanismo de verificación por correo electrónico que previene el spam y valida la autenticidad de los solicitantes.
+    \item \textbf{Autonomía en la Gestión de Contenido:} Gracias al panel de administración de Django, el personal del laboratorio puede actualizar el contenido del sitio de manera autónoma, sin necesidad de conocimientos técnicos de programación.
+\end{itemize}
+
 \section{Lecciones Aprendidas}
+
+A lo largo del ciclo de vida del proyecto, se obtuvieron varias lecciones importantes que serán valiosas para futuros desarrollos:
+\begin{itemize}
+    \item \textbf{Importancia de un Despliegue para Producción:} Se constató que el servidor de desarrollo de Django (\texttt{runserver}) es inadecuado para un entorno de producción. La transición a una configuración más robusta con Gunicorn y Nginx es un paso crucial para garantizar la estabilidad y seguridad.
+    \item \textbf{Necesidad de Pruebas Automatizadas:} La ausencia de un conjunto de pruebas unitarias y de integración (el archivo \texttt{tests.py} está vacío) representa un riesgo para la mantenibilidad a largo plazo. La implementación de pruebas es fundamental para detectar regresiones y asegurar la calidad del código.
+    \item \textbf{Gestión de Secretos:} La práctica de mantener claves secretas y credenciales directamente en el código (como en \texttt{settings.py}) es insegura. La lección es la necesidad de adoptar sistemas de gestión de secretos o variables de entorno, como se sugiere en la documentación del propio proyecto (README.md).
+\end{itemize}
+
 \section{Impacto y Aplicaciones}
+
+El nuevo sitio web tendrá un impacto significativo y diversas aplicaciones prácticas para el LIESE:
+\begin{itemize}
+    \item \textbf{Mejora de la Visibilidad y Vinculación:} La plataforma aumentará drásticamente la presencia digital del laboratorio, sirviendo como el principal canal de comunicación y atrayendo talento (estudiantes, investigadores) y potenciales socios industriales o académicos.
+    \item \textbf{Diseminación del Conocimiento:} Facilitará la difusión de los resultados de investigación, publicaciones y proyectos del laboratorio a una audiencia global, fortaleciendo su reputación académica.
+    \item \textbf{Herramienta de Reclutamiento:} El portal de oportunidades agilizará el proceso de captación de nuevos miembros para el laboratorio, centralizando las solicitudes y facilitando su gestión.
+    \item \textbf{Fomento de la Comunidad:} Al centralizar noticias y eventos, el sitio ayuda a construir un sentido de comunidad tanto dentro del laboratorio como con el público externo interesado en las actividades de LIESE.
+\end{itemize}

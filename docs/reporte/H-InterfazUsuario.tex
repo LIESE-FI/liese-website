@@ -1,4 +1,38 @@
-\chapter{Interfaz de Usuario y Experiencia}
-\section{Diseño Responsivo}
-\section{Páginas Principales}
-\section{Sistema de Actividades}
+\chapter{Interfaz de Usuario}
+\label{ch:interfaz_usuario}
+
+La interfaz de usuario del sitio web de LIESE ha sido diseñada para ser clara, intuitiva y accesible, permitiendo a los visitantes navegar fácilmente por las diferentes secciones y encontrar la información que buscan. La interfaz se basa en un sistema de plantillas de Django, utilizando Bootstrap 5 para asegurar un diseño responsivo y moderno.
+
+\section{Estructura de las Plantillas}
+
+El código de la interfaz se organiza en plantillas HTML que se encuentran en el directorio \texttt{src/web/templates/web/}. La estructura principal se define en el archivo \texttt{base.html}, que sirve como plantilla base para todas las demás páginas del sitio.
+
+\subsection{Plantilla Base (base.html)}
+
+Esta plantilla incluye los elementos comunes a todas las páginas:
+\begin{itemize}
+    \item La cabecera (\texttt{<head>}), donde se definen el título, los metadatos, y se enlazan las hojas de estilo de Bootstrap y la hoja de estilos personalizada (\texttt{style.css}).
+    \item La barra de navegación, incluida desde el archivo \texttt{navbar.html}.
+    \item Un contenedor principal donde se renderiza el contenido específico de cada página, definido en un bloque \texttt{\{\% block content \%\}}.
+    \item La inclusión de scripts de JavaScript de Bootstrap al final del cuerpo del documento.
+\end{itemize}
+
+\subsection{Páginas Principales}
+
+El sitio se compone de varias páginas, cada una con un propósito específico:
+
+\begin{itemize}
+    \item \textbf{index.html:} La página de inicio, que presenta una introducción al laboratorio, las áreas de investigación, los socios y un pie de página con información de contacto.
+    \item \textbf{projects.html y project\_detail.html:} Muestran la lista de proyectos del laboratorio y el detalle de cada uno, respectivamente.
+    \item \textbf{articulos.html y article\_detail.html:} Presentan los artículos de investigación, con una página para la lista completa y otra para el detalle de cada artículo.
+    \item \textbf{events.html:} Anuncia los próximos eventos organizados o en los que participa el laboratorio.
+    \item \textbf{lideresDeProyecto.html:} Muestra información sobre los líderes de los proyectos.
+    \item \textbf{oportunidades.html y opportunity\_request.html:} Despliega las oportunidades de colaboración o participación y un formulario para que los interesados puedan postularse.
+    \item \textbf{activities.html:} Describe las diversas actividades que se realizan en el laboratorio.
+\end{itemize}
+
+\section{Diseño y Estilo}
+
+El diseño del sitio se apoya en el framework de CSS Bootstrap 5, lo que garantiza que el sitio sea responsivo y se adapte a diferentes tamaños de pantalla, desde dispositivos móviles hasta computadoras de escritorio. Además, se utiliza una hoja de estilos personalizada, \texttt{src/web/static/web/style.css}, para definir estilos específicos del sitio, como colores, tipografías y otros elementos visuales que se alinean con la identidad del laboratorio.
+
+Las imágenes y otros recursos estáticos se gestionan a través de la configuración de archivos estáticos de Django y se encuentran en el directorio \texttt{src/web/static/web/images/}.
